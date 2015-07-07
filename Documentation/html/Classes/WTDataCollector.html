@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>WTDataCollector Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">WebtrendsSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Webtrends</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/sharedCollector">+ sharedCollector</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/appendSessionParamsToUrl:">- appendSessionParamsToUrl:</option>
+		
+		<option value="//api/name/eventStoreCount">- eventStoreCount</option>
+		
+		<option value="//api/name/isEnabled">- isEnabled</option>
+		
+		<option value="//api/name/openURL:">- openURL:</option>
+		
+		<option value="//api/name/pause">- pause</option>
+		
+		<option value="//api/name/resume">- resume</option>
+		
+		<option value="//api/name/scheduleSend">- scheduleSend</option>
+		
+		<option value="//api/name/scheduleSendAll">- scheduleSendAll</option>
+		
+		<option value="//api/name/setValue:forConfigKey:">- setValue:forConfigKey:</option>
+		
+		<option value="//api/name/setValue:forConfigKey:persists:">- setValue:forConfigKey:persists:</option>
+		
+		<option value="//api/name/setValue:forRCSMetaKey:">- setValue:forRCSMetaKey:</option>
+		
+		<option value="//api/name/triggerEventForAction:">- triggerEventForAction:</option>
+		
+		<option value="//api/name/triggerEventForAdClickName:eventMeta:">- triggerEventForAdClickName:eventMeta:</option>
+		
+		<option value="//api/name/triggerEventForAdImpressionNames:eventMeta:">- triggerEventForAdImpressionNames:eventMeta:</option>
+		
+		<option value="//api/name/triggerEventForApplication:didEnterBackgroundWithCustomParams:">- triggerEventForApplication:didEnterBackgroundWithCustomParams:</option>
+		
+		<option value="//api/name/triggerEventForApplication:startWithCustomParams:">- triggerEventForApplication:startWithCustomParams:</option>
+		
+		<option value="//api/name/triggerEventForApplication:terminateWithCustomParams:">- triggerEventForApplication:terminateWithCustomParams:</option>
+		
+		<option value="//api/name/triggerEventForApplication:willEnterForegroundWithCustomParams:">- triggerEventForApplication:willEnterForegroundWithCustomParams:</option>
+		
+		<option value="//api/name/triggerEventForApplication:withErrorMessage:customParams:">- triggerEventForApplication:withErrorMessage:customParams:</option>
+		
+		<option value="//api/name/triggerEventForContentView:contentGroup:">- triggerEventForContentView:contentGroup:</option>
+		
+		<option value="//api/name/triggerEventForConversion:contentGroup:eventMeta:">- triggerEventForConversion:contentGroup:eventMeta:</option>
+		
+		<option value="//api/name/triggerEventForCustomEvent:">- triggerEventForCustomEvent:</option>
+		
+		<option value="//api/name/triggerEventForEventMedia:contentGroup:eventMeta:">- triggerEventForEventMedia:contentGroup:eventMeta:</option>
+		
+		<option value="//api/name/triggerEventForNotification:withCustomParams:">- triggerEventForNotification:withCustomParams:</option>
+		
+		<option value="//api/name/triggerEventForProductId:productSku:contentGroup:eventMeta:">- triggerEventForProductId:productSku:contentGroup:eventMeta:</option>
+		
+		<option value="//api/name/triggerEventForScreenView:contentGroup:">- triggerEventForScreenView:contentGroup:</option>
+		
+		<option value="//api/name/triggerEventForSearchPhrase:searchResult:eventMeta:">- triggerEventForSearchPhrase:searchResult:eventMeta:</option>
+		
+		<option value="//api/name/triggerEventForViewDidAppear:withCustomParams:">- triggerEventForViewDidAppear:withCustomParams:</option>
+		
+		<option value="//api/name/triggerEventForViewDidDisappear:withCustomParams:">- triggerEventForViewDidDisappear:withCustomParams:</option>
+		
+		<option value="//api/name/valueForConfigKey:">- valueForConfigKey:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">WTDataCollector Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>WTDataCollector.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>WTDataCollector is the central class provided by WebtrendsSDK. Its central purpose is to log and send events to the Webtrends collection servers. It&rsquo;s primarily accessed through its sharedCollector singleton. It should not be manually initialized.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="Singleton" name="task_Singleton"></a>
+						<h2 class="task-title">Singleton</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/sharedCollector" title="sharedCollector"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedCollector">+&nbsp;sharedCollector</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>WTDataCollector should not be initialized manually, but should instead be messaged through this singleton instance.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)sharedCollector</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The WTDataCollector singleton.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Triggering Events" name="task_Triggering Events"></a>
+						<h2 class="task-title">Triggering Events</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/triggerEventForApplication:startWithCustomParams:" title="triggerEventForApplication:startWithCustomParams:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForApplication:startWithCustomParams:">&ndash;&nbsp;triggerEventForApplication:startWithCustomParams:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and schedules an event for the application starting. If automatic events are enabled, an event of this type will automatically be logged, if not, it can be manually logged with this method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)triggerEventForApplication:(NSString *)<em>appName</em> startWithCustomParams:(NSDictionary *)<em>customParams</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>appName</code></th>
+						<td><p>Specifies the name of your application</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>customParams</code></th>
+						<td><p>Specifies any user-defined data to be included with the event. Must be a dictionary with strings as both the key and the value. For example, a user id string to tie events to a given user.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of the event that is created</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerEventForApplication:terminateWithCustomParams:" title="triggerEventForApplication:terminateWithCustomParams:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForApplication:terminateWithCustomParams:">&ndash;&nbsp;triggerEventForApplication:terminateWithCustomParams:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and schedules an event for the application terminating. If automatic events are enabled, an event of this type will automatically be logged, if not, it can be manually logged with this method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)triggerEventForApplication:(NSString *)<em>appName</em> terminateWithCustomParams:(NSDictionary *)<em>customParams</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>appName</code></th>
+						<td><p>Specifies the name of your application</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>customParams</code></th>
+						<td><p>Specifies any user-defined data to be included with the event. Must be a dictionary with strings as both the key and the value. For example, a user id string to tie events to a given user.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of the event that is created</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerEventForApplication:didEnterBackgroundWithCustomParams:" title="triggerEventForApplication:didEnterBackgroundWithCustomParams:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForApplication:didEnterBackgroundWithCustomParams:">&ndash;&nbsp;triggerEventForApplication:didEnterBackgroundWithCustomParams:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and schedules an event for the application entering the background. If automatic events are enabled, an event of this type will automatically be logged, if not, it can be manually logged with this method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)triggerEventForApplication:(NSString *)<em>appName</em> didEnterBackgroundWithCustomParams:(NSDictionary *)<em>customParams</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>appName</code></th>
+						<td><p>Specifies the name of your application</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>customParams</code></th>
+						<td><p>Specifies any user-defined data to be included with the event. Must be a dictionary with strings as both the key and the value. For example, a user id string to tie events to a given user.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of the event that is created</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerEventForApplication:willEnterForegroundWithCustomParams:" title="triggerEventForApplication:willEnterForegroundWithCustomParams:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForApplication:willEnterForegroundWithCustomParams:">&ndash;&nbsp;triggerEventForApplication:willEnterForegroundWithCustomParams:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and schedules an event for the application entering the foreground. If automatic events are enabled, an event of this type will automatically be logged, if not, it can be manually logged with this method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)triggerEventForApplication:(NSString *)<em>appName</em> willEnterForegroundWithCustomParams:(NSDictionary *)<em>customParams</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>appName</code></th>
+						<td><p>Specifies the name of your application</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>customParams</code></th>
+						<td><p>Specifies any user-defined data to be included with the event. Must be a dictionary with strings as both the key and the value. For example, a user id string to tie events to a given user.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of the event that is created</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerEventForApplication:withErrorMessage:customParams:" title="triggerEventForApplication:withErrorMessage:customParams:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForApplication:withErrorMessage:customParams:">&ndash;&nbsp;triggerEventForApplication:withErrorMessage:customParams:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and schedules an event for the application errors.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)triggerEventForApplication:(NSString *)<em>appName</em> withErrorMessage:(NSString *)<em>errorMessage</em> customParams:(NSDictionary *)<em>customParams</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>appName</code></th>
+						<td><p>Specifies the name of your application</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorMessage</code></th>
+						<td><p>Specifies the error message associated with the error.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>customParams</code></th>
+						<td><p>Specifies any user-defined data to be included with the event. Must be a dictionary with strings as both the key and the value. For example, a user id string to tie events to a given user.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of the event that is created</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerEventForViewDidAppear:withCustomParams:" title="triggerEventForViewDidAppear:withCustomParams:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForViewDidAppear:withCustomParams:">&ndash;&nbsp;triggerEventForViewDidAppear:withCustomParams:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and schedules an event for a view controller appearing. If automatic events are enabled, an event of this type will automatically be logged, if not, it can be manually logged with this method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)triggerEventForViewDidAppear:(NSString *)<em>controllerTitle</em> withCustomParams:(NSDictionary *)<em>customParams</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controllerTitle</code></th>
+						<td><p>Specifies the title of the view controller</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>customParams</code></th>
+						<td><p>Specifies any user-defined data to be included with the event. Must be a dictionary with strings as both the key and the value. For example, a user id string to tie events to a given user.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of the event that is created</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerEventForViewDidDisappear:withCustomParams:" title="triggerEventForViewDidDisappear:withCustomParams:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForViewDidDisappear:withCustomParams:">&ndash;&nbsp;triggerEventForViewDidDisappear:withCustomParams:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and schedules an event for a view controller disappearing. If automatic events are enabled, an event of this type will automatically be logged, if not, it can be manually logged with this method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)triggerEventForViewDidDisappear:(NSString *)<em>controllerTitle</em> withCustomParams:(NSDictionary *)<em>customParams</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controllerTitle</code></th>
+						<td><p>Specifies the title of the view controller</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>customParams</code></th>
+						<td><p>Specifies any user-defined data to be included with the event. Must be a dictionary with strings as both the key and the value. For example, a user id string to tie events to a given user.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of the event that is created</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerEventForNotification:withCustomParams:" title="triggerEventForNotification:withCustomParams:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForNotification:withCustomParams:">&ndash;&nbsp;triggerEventForNotification:withCustomParams:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and schedules an event for a notification firing. This can be used for both local and remote notifications. If automatic events are enabled, an event of this type will automatically be logged, if not, it can be manually logged with this method.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)triggerEventForNotification:(NSString *)<em>notificationMessage</em> withCustomParams:(NSDictionary *)<em>customParams</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>notificationMessage</code></th>
+						<td><p>Specifies the message presented in the notification</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>customParams</code></th>
+						<td><p>Specifies any user-defined data to be included with the event. Must be a dictionary with strings as both the key and the value. For example, a user id string to tie events to a given user.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of the event that is created</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerEventForAdClickName:eventMeta:" title="triggerEventForAdClickName:eventMeta:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForAdClickName:eventMeta:">&ndash;&nbsp;triggerEventForAdClickName:eventMeta:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and schedules an event for an advertisement being tapped.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)triggerEventForAdClickName:(NSString *)<em>adName</em> eventMeta:(WTEventMeta *)<em>meta</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>adName</code></th>
+						<td><p>Specifies the name of the advertisement.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>meta</code></th>
+						<td><p>Specifies a <a href="../Classes/WTEventMeta.html">WTEventMeta</a> object that stores common parameter types attached to this event.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of the event that is created</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/WTEventMeta.html">WTEventMeta</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerEventForAdImpressionNames:eventMeta:" title="triggerEventForAdImpressionNames:eventMeta:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForAdImpressionNames:eventMeta:">&ndash;&nbsp;triggerEventForAdImpressionNames:eventMeta:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and schedules an event for an ad impression</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)triggerEventForAdImpressionNames:(NSArray *)<em>adNames</em> eventMeta:(WTEventMeta *)<em>meta</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>adNames</code></th>
+						<td><p>Specifies an array of string ad names that were shown.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>meta</code></th>
+						<td><p>Specifies a <a href="../Classes/WTEventMeta.html">WTEventMeta</a> object that stores common parameter types attached to this event.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of the event that is created</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/WTEventMeta.html">WTEventMeta</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerEventForSearchPhrase:searchResult:eventMeta:" title="triggerEventForSearchPhrase:searchResult:eventMeta:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForSearchPhrase:searchResult:eventMeta:">&ndash;&nbsp;triggerEventForSearchPhrase:searchResult:eventMeta:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and schedules an event for a search event</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)triggerEventForSearchPhrase:(NSString *)<em>searchPhrase</em> searchResult:(NSString *)<em>searchResult</em> eventMeta:(WTEventMeta *)<em>meta</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>searchPhrase</code></th>
+						<td><p>Specifies the string the user searched for.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>searchResult</code></th>
+						<td><p>Specifies the string of the search result.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>meta</code></th>
+						<td><p>Specifies a <a href="../Classes/WTEventMeta.html">WTEventMeta</a> object that stores common parameter types attached to this event.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of the event that is created</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/WTEventMeta.html">WTEventMeta</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerEventForContentView:contentGroup:" title="triggerEventForContentView:contentGroup:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForContentView:contentGroup:">&ndash;&nbsp;triggerEventForContentView:contentGroup:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and schedules an event for a content view such as when an article or image is viewed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)triggerEventForContentView:(WTEventMeta *)<em>meta</em> contentGroup:(NSString *)<em>contentGroup</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>meta</code></th>
+						<td><p>Specifies a <a href="../Classes/WTEventMeta.html">WTEventMeta</a> object that stores common parameter types attached to this event.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>contentGroup</code></th>
+						<td><p>Specifies a group of related application views.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of the event that is created</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/WTEventMeta.html">WTEventMeta</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerEventForScreenView:contentGroup:" title="triggerEventForScreenView:contentGroup:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForScreenView:contentGroup:">&ndash;&nbsp;triggerEventForScreenView:contentGroup:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and schedules an event for a screen view such as when a screen, article, or image is viewed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)triggerEventForScreenView:(WTEventMeta *)<em>meta</em> contentGroup:(NSString *)<em>contentGroup</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>meta</code></th>
+						<td><p>Specifies a <a href="../Classes/WTEventMeta.html">WTEventMeta</a> object that stores common parameter types attached to this event.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>contentGroup</code></th>
+						<td><p>Specifies a group of related application views.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of the event that is created</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/WTEventMeta.html">WTEventMeta</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerEventForProductId:productSku:contentGroup:eventMeta:" title="triggerEventForProductId:productSku:contentGroup:eventMeta:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForProductId:productSku:contentGroup:eventMeta:">&ndash;&nbsp;triggerEventForProductId:productSku:contentGroup:eventMeta:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and schedules an event for a product view</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)triggerEventForProductId:(NSString *)<em>productId</em> productSku:(NSString *)<em>productSku</em> contentGroup:(NSString *)<em>contentGroup</em> eventMeta:(WTEventMeta *)<em>meta</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>productId</code></th>
+						<td><p>Specifies a product identifier.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>productSku</code></th>
+						<td><p>Specifies a unique product stock-keeping unit (SKU) number.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>contentGroup</code></th>
+						<td><p>Specifies a group of related application views.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>meta</code></th>
+						<td><p>Specifies a <a href="../Classes/WTEventMeta.html">WTEventMeta</a> object that stores common parameter types attached to this event.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of the event that is created</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/WTEventMeta.html">WTEventMeta</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerEventForEventMedia:contentGroup:eventMeta:" title="triggerEventForEventMedia:contentGroup:eventMeta:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForEventMedia:contentGroup:eventMeta:">&ndash;&nbsp;triggerEventForEventMedia:contentGroup:eventMeta:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and schedules an event for a media view</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)triggerEventForEventMedia:(WTEventMedia *)<em>media</em> contentGroup:(NSString *)<em>contentGroup</em> eventMeta:(WTEventMeta *)<em>meta</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>media</code></th>
+						<td><p>Specifies a <a href="../Classes/WTEventMedia.html">WTEventMedia</a> object that stores parameter types associated with media events.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>contentGroup</code></th>
+						<td><p>Specifies a group of related application views.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>meta</code></th>
+						<td><p>Specifies a <a href="../Classes/WTEventMeta.html">WTEventMeta</a> object that stores common parameter types attached to this event.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of the event that is created</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/WTEventMeta.html">WTEventMeta</a></p></code></li>
+					
+					<li><code><p><a href="../Classes/WTEventMedia.html">WTEventMedia</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerEventForConversion:contentGroup:eventMeta:" title="triggerEventForConversion:contentGroup:eventMeta:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForConversion:contentGroup:eventMeta:">&ndash;&nbsp;triggerEventForConversion:contentGroup:eventMeta:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and schedules an event for a conversion, such as when a purchase or registration, occurs.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)triggerEventForConversion:(NSString *)<em>conversionName</em> contentGroup:(NSString *)<em>contentGroup</em> eventMeta:(WTEventMeta *)<em>meta</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>conversionName</code></th>
+						<td><p>Specifies the name used to identify a customer conversion.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>contentGroup</code></th>
+						<td><p>Specifies a group of related application views.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>meta</code></th>
+						<td><p>Specifies a <a href="../Classes/WTEventMeta.html">WTEventMeta</a> object that stores common parameter types attached to this event.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of the event that is created</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Classes/WTEventMeta.html">WTEventMeta</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerEventForAction:" title="triggerEventForAction:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForAction:">&ndash;&nbsp;triggerEventForAction:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and schedules an event for an arbitrary action, such as a button tap</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)triggerEventForAction:(WTEventMeta *)<em>meta</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>meta</code></th>
+						<td><p>Specifies a <a href="../Classes/WTEventMeta.html">WTEventMeta</a> object that stores common parameter types attached to this event.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of the event that is created</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerEventForCustomEvent:" title="triggerEventForCustomEvent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForCustomEvent:">&ndash;&nbsp;triggerEventForCustomEvent:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates and schedules a custom event, used to encapsulate any event not covered by the convenience event types.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)triggerEventForCustomEvent:(WTEventMeta *)<em>meta</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>meta</code></th>
+						<td><p>Specifies a <a href="../Classes/WTEventMeta.html">WTEventMeta</a> object that stores common parameter types attached to this event.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A dictionary of the event that is created</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="General Methods" name="task_General Methods"></a>
+						<h2 class="task-title">General Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/appendSessionParamsToUrl:" title="appendSessionParamsToUrl:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/appendSessionParamsToUrl:">&ndash;&nbsp;appendSessionParamsToUrl:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is used for maintaining a session within an embedded UIWebView. Before loading a new webview, use this method to append the current session information onto the URL you wish to load.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSURL *)appendSessionParamsToUrl:(NSURL *)<em>url</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>url</code></th>
+						<td><p>The url you wish to append</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The final URL to load in your webview, with the current session information appended as a query string.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/openURL:" title="openURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/openURL:">&ndash;&nbsp;openURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Opens the given URL in Safari after appending the current session information.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)openURL:(NSURL *)<em>url</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>url</code></th>
+						<td><p>The url to open.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scheduleSend" title="scheduleSend"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scheduleSend">&ndash;&nbsp;scheduleSend</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a single send operation onto the Data Collector&rsquo;s internal queue. Each send operation sends a batch of events to the collector&rsquo;s servers. Operations are executed in the order they are received.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)scheduleSend</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/scheduleSendAll" title="scheduleSendAll"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scheduleSendAll">&ndash;&nbsp;scheduleSendAll</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a send all operation onto the Data Collector&rsquo;s internal queue. This operation sends all events currently in the event store to the collector&rsquo;s servers. Operations are executed in the order they are received.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)scheduleSendAll</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pause" title="pause"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pause">&ndash;&nbsp;pause</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>By default, the Data Collector will periodically send events to its data collection servers based on your configuration settings. This method temporarily disables that periodic sending. You can still manually send events using -scheduleSend and -scheduleSendAll while periodic sending is paused.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pause</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resume" title="resume"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resume">&ndash;&nbsp;resume</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>By default, the Data Collector will periodically send events to its data collection servers based on your configuration settings. This method resumes that periodic sending, and also immediately schedules a send event.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)resume</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueForConfigKey:" title="valueForConfigKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueForConfigKey:">&ndash;&nbsp;valueForConfigKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the value for a given Webtrends config key (or a user-defined key). See the <a href="../docs/public_guides/Advanced-Configuration-Guide.html">Advanced Configuration Guide</a> for a list of first party keys.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)valueForConfigKey:(NSString *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The key for the value you want returned</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The value, as an id. Depending on the key supplied, this may be a NSNumber<em>, an NSString</em>, or an NSURL*</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setValue:forConfigKey:" title="setValue:forConfigKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setValue:forConfigKey:">&ndash;&nbsp;setValue:forConfigKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets a new value for a given Webtrends config key (or a user-defined key). See the <a href="../docs/public_guides/Advanced-Configuration-Guide.html">Advanced Configuration Guide</a> for a list of first party keys. This value will only be set in memory, use <a href="#//api/name/setValue:forConfigKey:persists:">setValue:forConfigKey:persists:</a> to store values permanently. Both the key and value must be NSString*</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setValue:(NSString *)<em>value</em> forConfigKey:(NSString *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>The value to store, as an NSString*</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The key for the value to be associated with</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setValue:forConfigKey:persists:" title="setValue:forConfigKey:persists:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setValue:forConfigKey:persists:">&ndash;&nbsp;setValue:forConfigKey:persists:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets a new value for a given Webtrends config key (or a user-defined key). See the <a href="../docs/public_guides/Advanced-Configuration-Guide.html">Advanced Configuration Guide</a> for a list of first party keys. Both the key and value must be NSString*</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setValue:(NSString *)<em>value</em> forConfigKey:(NSString *)<em>key</em> persists:(BOOL)<em>persists</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>The value to store, as an NSString*</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The key for the value to be associated with</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>persists</code></th>
+						<td><p>Whether or not the value will be persisted to disk</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isEnabled" title="isEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isEnabled">&ndash;&nbsp;isEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method returns whether or not data collection is currently enabled. If disabled, no events will be logged, and no events currently in the event store will be sent to the data collector&rsquo;s servers.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isEnabled</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Whether or not data collection is currently enabled.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/eventStoreCount" title="eventStoreCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/eventStoreCount">&ndash;&nbsp;eventStoreCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The count of events currently stored locally.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)eventStoreCount</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The count of events currently stored locally.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setValue:forRCSMetaKey:" title="setValue:forRCSMetaKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setValue:forRCSMetaKey:">&ndash;&nbsp;setValue:forRCSMetaKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets a new value for the given Remote Configuration Server meta key. Use this if you want to set Remote Configuration rules against arbitrary user-defined keys.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setValue:(NSString *)<em>value</em> forRCSMetaKey:(NSString *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>The value to store, as an NSString*</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The key for the value to be associated with</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTDataCollector.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Webtrends. All rights reserved. Updated: 2015-07-07</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

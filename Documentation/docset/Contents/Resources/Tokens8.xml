@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/WTEventMeta.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/WTEventMeta</TokenIdentifier>
+			<Abstract type="html">WTEventMeta is a wrapper class to store common parameter types attached to each event. For all but the most basic events, start by creating a new instance of WTEventMeta, which will subsequently be attached to the event.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+            
+			
+			<NodeRef refid="8"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMeta/setEventPath:</TokenIdentifier>
+			<Abstract type="html">Specifies the hierarchical representation of an application view at the time of the event. For example, this parameter can specify an application path. You can leave this nil to use the default event path.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *eventPath</Declaration>
+			
+			
+			<Anchor>//api/name/eventPath</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMeta/eventPath</TokenIdentifier>
+			<Abstract type="html">Specifies the hierarchical representation of an application view at the time of the event. For example, this parameter can specify an application path. You can leave this nil to use the default event path.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *eventPath</Declaration>
+			
+			
+			<Anchor>//api/name/eventPath</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTEventMeta/eventPath</TokenIdentifier>
+			<Abstract type="html">Specifies the hierarchical representation of an application view at the time of the event. For example, this parameter can specify an application path. You can leave this nil to use the default event path.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *eventPath</Declaration>
+			
+			
+			<Anchor>//api/name/eventPath</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMeta/setEventDescription:</TokenIdentifier>
+			<Abstract type="html">Specifies the representation of an application view at the time of the event. For example, this parameter can specify the name of a screen. Should not be nil.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *eventDescription</Declaration>
+			
+			
+			<Anchor>//api/name/eventDescription</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMeta/eventDescription</TokenIdentifier>
+			<Abstract type="html">Specifies the representation of an application view at the time of the event. For example, this parameter can specify the name of a screen. Should not be nil.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *eventDescription</Declaration>
+			
+			
+			<Anchor>//api/name/eventDescription</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTEventMeta/eventDescription</TokenIdentifier>
+			<Abstract type="html">Specifies the representation of an application view at the time of the event. For example, this parameter can specify the name of a screen. Should not be nil.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *eventDescription</Declaration>
+			
+			
+			<Anchor>//api/name/eventDescription</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMeta/setEventType:</TokenIdentifier>
+			<Abstract type="html">Specifies the type of event that occurred, such as a view or tap. Should not be nil.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *eventType</Declaration>
+			
+			
+			<Anchor>//api/name/eventType</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMeta/eventType</TokenIdentifier>
+			<Abstract type="html">Specifies the type of event that occurred, such as a view or tap. Should not be nil.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *eventType</Declaration>
+			
+			
+			<Anchor>//api/name/eventType</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTEventMeta/eventType</TokenIdentifier>
+			<Abstract type="html">Specifies the type of event that occurred, such as a view or tap. Should not be nil.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *eventType</Declaration>
+			
+			
+			<Anchor>//api/name/eventType</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMeta/setCustomParams:</TokenIdentifier>
+			<Abstract type="html">Specifies any user-defined data to be included with the event. Must be a dictionary with strings as both the key and the value. For example, a user id string to tie events to a given user.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSDictionary *customParams</Declaration>
+			
+			
+			<Anchor>//api/name/customParams</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMeta/customParams</TokenIdentifier>
+			<Abstract type="html">Specifies any user-defined data to be included with the event. Must be a dictionary with strings as both the key and the value. For example, a user id string to tie events to a given user.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSDictionary *customParams</Declaration>
+			
+			
+			<Anchor>//api/name/customParams</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTEventMeta/customParams</TokenIdentifier>
+			<Abstract type="html">Specifies any user-defined data to be included with the event. Must be a dictionary with strings as both the key and the value. For example, a user id string to tie events to a given user.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSDictionary *customParams</Declaration>
+			
+			
+			<Anchor>//api/name/customParams</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/WTEventMeta/eventMetaForPath:description:type:customParams:</TokenIdentifier>
+			<Abstract type="html">Creates a meta object that stores information about an event</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)eventMetaForPath:(NSString *)eventPath description:(NSString *)eventDescription type:(NSString *)eventType customParams:(NSDictionary *)customParams</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventPath</Name>
+					<Abstract type="html">Specifies the hierarchical representation of an application view at the time of the event. For example, this parameter can specify an application path. Leave this nil to use the default event path.</Abstract>
+				</Parameter><Parameter>
+					<Name>eventDescription</Name>
+					<Abstract type="html">Specifies the representation of an application view at the time of the event. For example, this parameter can specify the name of a screen. Should not be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>eventType</Name>
+					<Abstract type="html">Specifies the type of event that occurred, such as a view or tap. Should not be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>customParams</Name>
+					<Abstract type="html">Specifies any user-defined data to be included with the event. Must be a dictionary with strings as both the key and the value. For example, a user id string to tie events to a given user.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The WTEventMeta object describing your event</Abstract></ReturnValue>
+			<Anchor>//api/name/eventMetaForPath:description:type:customParams:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMeta/initWithEventPath:description:type:customParams:</TokenIdentifier>
+			<Abstract type="html">Creates a meta object that stores information about an event</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithEventPath:(NSString *)eventPath description:(NSString *)eventDescription type:(NSString *)eventType customParams:(NSDictionary *)customParams</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventPath</Name>
+					<Abstract type="html">Specifies the hierarchical representation of an application view at the time of the event. For example, this parameter can specify an application path. Leave this nil to use the default event path.</Abstract>
+				</Parameter><Parameter>
+					<Name>eventDescription</Name>
+					<Abstract type="html">Specifies the representation of an application view at the time of the event. For example, this parameter can specify the name of a screen. Should not be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>eventType</Name>
+					<Abstract type="html">Specifies the type of event that occurred, such as a view or tap. Should not be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>customParams</Name>
+					<Abstract type="html">Specifies any user-defined data to be included with the event. Must be a dictionary with strings as both the key and the value. For example, a user id string to tie events to a given user.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The WTEventMeta object describing your event</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithEventPath:description:type:customParams:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>
