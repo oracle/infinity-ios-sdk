@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "7.0"
   s.ios.frameworks = "Foundation", "UIKit", "CoreData", "SystemConfiguration", "Security", "CoreTelephony"
   
-  s.source       = { :git => "https://github.com/webtrends/ios-sdk", :tag => "3.0.0" }
+  s.source       = { :git => "https://github.com/webtrends/ios-sdk.git", :tag => "3.0.0" }
 
   s.subspec 'Watch' do |watch|
     watch.source_files = "WatchHeaders", "WatchHeaders/**/*.h"
