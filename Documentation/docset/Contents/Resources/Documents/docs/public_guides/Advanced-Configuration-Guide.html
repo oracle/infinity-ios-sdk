@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Advanced Configuration Guide Document</title>
+
+	<link rel="stylesheet" href="../../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc wt-document">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../../index.html">WebtrendsSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../../index.html">Webtrends</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../../index.html">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Advanced Configuration Guide Document</h1>
+
+					<h2>Setting Configuration Settings via WTDataCollector</h2>
+
+<p>All configuration settings may be set programmatically using the  method <a href="../../Classes/WTDataCollector.html#//api/name/setValue:forConfigKey:persists:">[WTDataCollector setValue:forConfigKey:persists:]</a>. All settings are stored as strings. Each configuration key is associated with a constant for easier reference.</p>
+
+<p>See <a href="#Configuration-Settings">Configuration Settings</a> for details. For example, to set the <strong>maximum number of persisted events</strong> config setting, use the following line of code:</p>
+
+<pre><code>[[WTDataCollector sharedCollector] setValue:@"10000" forConfigKey:kWTConfigMaxPersistedEvents persists:YES];
+</code></pre>
+
+<p>If the <code>persists</code> flag is set to <code>YES</code>, the configuration setting will be written to disk and persisted across application stops and starts. If it is set to <code>NO</code>, the setting will only be set in memory and will reset to the value stored in <code>webtrends.plist</code> or its default value.</p>
+
+<h2>Setting Configuration Settings via webtrends.plist</h2>
+
+<p>Configuration settings may also be set by editing the <code>webtrends.plist</code> file. Settings defined in the this file will have a <em>lower priority</em> than settings defined programmatically via the <a href="../../Classes/WTDataCollector.html#//api/name/setValue:forConfigKey:persists:">[WTDataCollector setValue:forConfigKey:persists:]</a> method. If you choose to edit the <code>webtrends.plist</code> file directly, you <em>must</em> use the string literals as keys, not the constant name.</p>
+
+<div style="text-align:center">
+<img src="images/webtrends.plist_screenshot2.png" alt="webtrends.plist screenshot"/>
+</div>
+
+
+<p><span id="Configuration-Settings"></span></p>
+
+<h2>Configuration Settings</h2>
+
+<p>The following settings are known to the Webtrends SDK. Changing the values associated with any of them will change the behavior of the SDK as explained under each setting&rsquo;s &ldquo;Description&rdquo;.</p>
+
+<h4><a href="#kWTConfigEnabled" id="kWTConfigEnabled">Webtrends SDK Enabled</a></h4>
+
+<p><strong>Description</strong>: Enable/Disable the Webtrends Data Collector SDK<br/>
+<strong>String Literal</strong>: wt_dc_enabled<br/>
+<strong>Constant Name</strong>: kWTConfigEnabled<br/>
+<strong>Default Value</strong>: &ldquo;true"<br/>
+<strong>Acceptable Values</strong>: <em>boolean as a string</em> — "true&rdquo; or &ldquo;false&rdquo;</p>
+
+<hr />
+
+<h4><a href="#kWTConfigDCSID" id="kWTConfigDCSID">DCSID — Required</a></h4>
+
+<p><strong>Description</strong>: The Webtrends-assigned DCSID used for this account<br/>
+<strong>String Literal</strong>: wt_dc_dcsid<br/>
+<strong>Constant Name</strong>: kWTConfigDCSID<br/>
+<strong>Default Value</strong>: none<br/>
+<strong>Acceptable Values</strong>: <em>Webtrends-supplied DCSID string</em></p>
+
+<hr />
+
+<h4><a href="#kWTConfigTimezone" id="kWTConfigTimezone">Timezone</a></h4>
+
+<p><strong>Description</strong>: The timezone that will be used to calculate session information. This setting is <em>only</em> used to establish when a new day starts/ends. Generally, this should be set to the timezone that will be used for session reporting. It is NOT NECESSARILY the timezone that the device is operating in.<br/>
+<strong>String Literal</strong>: wt_dc_timezone<br/>
+<strong>Constant Name</strong>: kWTConfigTimezone<br/>
+<strong>Default Value</strong>: &ldquo;-8&rdquo; (Pacific Time)<br/>
+<strong>Acceptable Values</strong>: <em>integer as a string</em> — (between &ldquo;-12&rdquo; and &ldquo;12&rdquo;, inclusive)</p>
+
+<hr />
+
+<h4><a href="#kWTConfigMaxPersistedEvents" id="kWTConfigMaxPersistedEvents">Max Persisted Events</a></h4>
+
+<p><strong>Description</strong>: The maximum number of events to store locally on the device. If new events are generated while the event store is full, the oldest events will be permanently deleted.<br/>
+<strong>String Literal</strong>: wt_dc_event_table_size_maximum<br/>
+<strong>Constant Name</strong>: kWTConfigMaxPersistedEvents<br/>
+<strong>Default Value</strong>: &ldquo;5000"<br/>
+<strong>Acceptable Values</strong>: <em>integer as a string</em> — (Any valid positive integer value)</p>
+
+<hr />
+
+<h4><a href="#kWTConfigSendIntervalMilliseconds" id="kWTConfigSendIntervalMilliseconds">Send Interval Milliseconds</a></h4>
+
+<p><strong>Description</strong>: Time (in milliseconds) between stored events being transmitted to the Webtrends data collection servers. If no events are queued, nothing is transmitted and a new send event is scheduled.<br/>
+<strong>String Literal</strong>: wt_dc_send_interval_millis<br/>
+<strong>Constant Name</strong>: kWTConfigSendIntervalMilliseconds<br/>
+<strong>Default Value</strong>: &ldquo;600000"<br/>
+<strong>Acceptable Values</strong>: <em>integer as a string</em> — (any valid positive integer value)</p>
+
+<hr />
+
+<h4><a href="#kWTConigAutoSendThresholdPercent" id="kWTConfigAutoSendThresholdPercent">Auto Send Threshold Percent</a></h4>
+
+<p><strong>Description</strong>: Percentage of the event store capacity (defined in the <a href="#kWTConfigMaxPersistedEvents">Max Persisted Events configuration setting</a>) at which events will be automatically sent to the Webtrends data collection servers. This setting expects an integer from 0 to 100, inclusive.<br/>
+<strong>String Literal</strong>: wt_dc_auto_send_threshold_percent<br/>
+<strong>Constant Name</strong>: kWTConfigAutoSendThresholdPercent<br/>
+<strong>Default Value</strong>: &ldquo;80"<br/>
+<strong>Acceptable Values</strong>: <em>integer as a string</em> — (an integer from "0&rdquo; to &ldquo;100&rdquo;, inclusive)</p>
+
+<hr />
+
+<h4><a href="#kWTConfigEventsPerSend" id="kWTConfigEventsPerSend">Events Per Send</a></h4>
+
+<p><strong>Description</strong>: Events are collected and sent in batches to the Webtrends data collection servers. This setting controls the number of events to send in a single batch.  <br/>
+<strong>String Literal</strong>: wt_dc_event_send_maximum<br/>
+<strong>Constant Name</strong>: kWTConfigEventsPerSend<br/>
+<strong>Default Value</strong>: &ldquo;500"<br/>
+<strong>Acceptable Values</strong>: <em>integer as a string</em> — (any valid positive integer value)</p>
+
+<hr />
+
+<h4><a href="#kWTConfigMaxEventsPerRequest" id="kWTConfigMaxEventsPerRequest">Max Events Per Request (Version 2 Data Collection Server API or Newer)</a></h4>
+
+<p><strong>Description</strong>: If the application is configured to use API version 2 (or higher), this setting controls how many events are bundled in a single HTTP request.<br/>
+<strong>String Literal</strong>: wt_dc_max_events_per_request<br/>
+<strong>Constant Name</strong>: kWTConfigMaxEventsPerRequest<br/>
+<strong>Default Value</strong>: &ldquo;250"<br/>
+<strong>Acceptable Values</strong>: <em>integer as a string</em> — (any valid positive integer value)</p>
+
+<hr />
+
+<h4><a href="#kWTConfigCollectionUrlBase" id="kWTConfigCollectionUrlBase">Collection URL Base</a></h4>
+
+<p><strong>Description</strong>: The URL address of the Webtrends data collection server<br/>
+<strong>String Literal</strong>: wt_dc_collection_url_base<br/>
+<strong>Constant Name</strong>: kWTConfigCollectionUrlBase<br/>
+<strong>Default Value</strong>: &ldquo;https://scs.webtrends.com/v2/"<br/>
+<strong>Acceptable Values</strong>: <em>string</em> — A valid URL string including the protocol (http:// or https://)</p>
+
+<hr />
+
+<h4><a href="#kWTConfigDebug" id="kWTConfigDebug">Debug Logging Enabled</a></h4>
+
+<p><strong>Description</strong>: Enables or disables debug logging for the SDK. When enabled, event transmission and SDK state information will be printed to the console.<br/>
+<strong>String Literal</strong>: wt_dc_debug<br/>
+<strong>Constant Name</strong>: kWTConfigDebug<br/>
+<strong>Default Value</strong>: &ldquo;true"<br/>
+<strong>Acceptable Values</strong>: <em>boolean as a string</em> — "true&rdquo; or &ldquo;false&rdquo;</p>
+
+<hr />
+
+<h4><a href="#kWTConfigOnlySendOverWifi" id="kWTConfigOnlySendOverWifi">Only Send Over Wifi </a></h4>
+
+<p><strong>Description</strong>: Controls whether events are sent when wifi is unavailable.<br/>
+<strong>String Literal</strong>: wt_dc_only_send_over_wifi<br/>
+<strong>Constant Name</strong>: kWTConfigOnlySendOverWifi <br/>
+<strong>Default Value</strong>: &ldquo;false"<br/>
+<strong>Acceptable Values</strong>: <em>boolean as a string</em> — "true&rdquo; or &ldquo;false&rdquo;</p>
+
+<hr />
+
+<h4><a href="#kWTConfigHTTPConnectionTimeoutMilliseconds" id="kWTConfigHTTPConnectionTimeoutMilliseconds">HTTP Connection Timeout Milliseconds</a></h4>
+
+<p><strong>Description</strong>: Controls the maximum amount of time (in milliseconds) to pass before abandoning a Webtrends SDK-related HTTP request.<br/>
+<strong>String Literal</strong>: wt_dc_http_connect_timeout_millis<br/>
+<strong>Constant Name</strong>: kWTConfigHTTPConnectionTimeoutMilliseconds<br/>
+<strong>Default Value</strong>: &ldquo;10000"<br/>
+<strong>Acceptable Values</strong>: <em>integer as a string</em> — (any valid positive integer value)</p>
+
+<hr />
+
+<h4><a href="#kWTConfigHTTPReadTimeoutMilliseconds" id="kWTConfigHTTPReadTimeoutMilliseconds">HTTP Read Timeout Milliseconds</a></h4>
+
+<p><strong>Description</strong>: Controls the maximum amount of time to wait (in milliseconds) for a response from a Webtrends SDK-related HTTP connection.<br/>
+<strong>String Literal</strong>: wt_dc_http_read_timeout_millis<br/>
+<strong>Constant Name</strong>: kWTConfigHTTPReadTimeoutMilliseconds<br/>
+<strong>Default Value</strong>: &ldquo;30000"<br/>
+<strong>Acceptable Values</strong>: <em>integer as a string</em> — (any valid positive integer value)</p>
+
+<hr />
+
+<h4><a href="#kWTConfigBatteryMinimumChargePercentage" id="kWTConfigBatteryMinimumChargePercentage">Battery Minimum Charge Percentage</a></h4>
+
+<p><strong>Description</strong>: Controls at what battery level to stop Webtrends event transmission. When the battery level falls below this level, event transmission to the Webtrends data collection servers is disabled. After iOS reports that battery power is restored to a level above this threshold, event transmission will resume. Since iOS reports battery levels to the SDK in increments of 5%, actual battery level may not trigger event transmission to resume immediately, depending on the value of this configuration setting.<br/>
+<strong>String Literal</strong>: wt_dc_battery_min_charge_percent<br/>
+<strong>Constant Name</strong>: kWTConfigBatteryMinimumChargePercentage<br/>
+<strong>Default Value</strong>: &ldquo;20"<br/>
+<strong>Acceptable Values</strong>: <em>integer as a string</em> — representation of any integer between "0&rdquo; and &ldquo;100&rdquo;, inclusive.</p>
+
+<hr />
+
+<h4><a href="#kWTConfigRCSPollIntervalMilliseconds" id="kWTConfigRCSPollIntervalMilliseconds">RCS Poll Interval Milliseconds</a></h4>
+
+<p><strong>Description</strong>: Controls how often (in milliseconds) the Webtrends RCS service is polled for changes.<br/>
+<strong>String Literal</strong>: wt_dc_rcs_poll_interval_millis<br/>
+<strong>Constant Name</strong>: kWTConfigRCSPollIntervalMilliseconds<br/>
+<strong>Default Value</strong>: &ldquo;43200000&rdquo; (12 hours)<br/>
+<strong>Acceptable Values</strong>: <em>integer as a string</em> — representation of an integer >= &ldquo;3600000&rdquo; (One hour)</p>
+
+<hr />
+
+<h4><a href="#kWTConfigRCSEnabled" id="kWTConfigRCSEnabled">RCS Enabled</a></h4>
+
+<p><strong>Description</strong>: Enable/Disable polling of the Webtrends Remote Configuration Service (RCS)<br/>
+<strong>String Literal</strong>: wt_dc_rcs_enabled<br/>
+<strong>Constant Name</strong>: kWTConfigRCSEnabled<br/>
+<strong>Default Value</strong>: &ldquo;false"<br/>
+<strong>Acceptable Values</strong>: <em>boolean as a string</em> — "true&rdquo; or &ldquo;false&rdquo;</p>
+
+<hr />
+
+<h4><a href="#kWTConfigRCSUrlBase" id="kWTConfigRCSUrlBase">RCS URL Base</a></h4>
+
+<p><strong>Description</strong>: Contains the URL for the Webtrends Remote Configuration Service (RCS) server.<br/>
+<strong>String Literal</strong>: wt_dc_rcs_url_base<br/>
+<strong>Constant Name</strong>: kWTConfigRCSUrlBase<br/>
+<strong>Default Value</strong>: &ldquo;https://rcs.webtrends.com/rcs/v1/remoteConfig/mobile/"<br/>
+<strong>Acceptable Values</strong>: <em>string</em> — A valid URL string including the protocol (http:// or https://)</p>
+
+<hr />
+
+<h4><a href="#kWTConfigMaxSessionMilliseconds" id="kWTConfigMaxSessionMilliseconds">Max Session Milliseconds</a></h4>
+
+<p><strong>Description</strong>: Controls the maximum amount of time (in milliseconds) to wait before forcing a new session to start.<br/>
+<strong>String Literal</strong>: wt_dc_max_session_millis<br/>
+<strong>Constant Name</strong>: kWTConfigMaxSessionMilliseconds<br/>
+<strong>Default Value</strong>: &ldquo;28800000"<br/>
+<strong>Acceptable Values</strong>: <em>integer as a string</em> — (any valid positive integer value)</p>
+
+<hr />
+
+<h4><a href="#kWTConfigSessionTimeoutMilliseconds" id="kWTConfigSessionTimeoutMilliseconds">Session Timeout Milliseconds</a></h4>
+
+<p><strong>Description</strong>: Controls the maximum amount of time (in milliseconds) since the last event before forcing a new session to start.<br/>
+<strong>String Literal</strong>: wt_dc_session_timeout_millis<br/>
+<strong>Constant Name</strong>: kWTConfigSessionTimeoutMilliseconds<br/>
+<strong>Default Value</strong>: &ldquo;1800000"<br/>
+<strong>Acceptable Values</strong>: <em>integer as a string</em> — (any valid positive integer value)</p>
+
+<hr />
+
+<h4><a href="#kWTConfigAutomaticsEnabled" id="kWTConfigAutomaticsEnabled">Activity Automatics Enabled</a></h4>
+
+<p><strong>Description</strong>: Controls whether or not certain events will be logged automatically. See the <a href="Automatic-Events-Guide.html">Automatic Events Guide</a> for details on what events are automatically collected.<br/>
+<strong>String Literal</strong>: wt_dc_automatics_enabled<br/>
+<strong>Constant Name</strong>: kWTConfigAutomaticsEnabled<br/>
+<strong>Default Value</strong>: &ldquo;true"<br/>
+<strong>Acceptable Values</strong>: <em>boolean as a string</em> — "true&rdquo; or &ldquo;false&rdquo;</p>
+
+<hr />
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2015 Webtrends. All rights reserved. Updated: 2015-07-07</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="../../js/script.js"></script>
+</body>
+</html>

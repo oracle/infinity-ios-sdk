@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="docs/public_guides/Manual-Event-Logging-Guide.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/doc/Manual Event Logging Guide</TokenIdentifier>
+			<Abstract type="html">Webtrends SDK is a analytics library for iOS. This guide will walk you through the initial setup process, from integrating the SDK with your project, to sending events to Webtrends.</Abstract>
+			<DeclaredIn>Manual Event Logging Guide-template.markdown</DeclaredIn>
+            
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>
