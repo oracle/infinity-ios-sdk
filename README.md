@@ -14,7 +14,7 @@ After your pod has been installed, you'll need to set up a basic webtrends.plist
 <img src="http://help.webtrends.com/en/ios/docs/public_guides/images/webtrends.plist_screenshot.png" alt="webtrends.plist screenshot" />
 </div>
 
-You can download an example copy of `webtrends.plist` [here](http://help.webtrends.com/en/ios/docs/public_guides/webtrends.plist). Add the file to your project, open it, and replace `YOUR_DCSID_HERE` with your unique DCSID. There's a ton of configuration options available in `webtrends.plist`, but the only required setting is the DCSID. You can read more in the [Advanced Configuration Guide](http://help.webtrends.com/en/ios/docs/public_guides/Advanced-Configuration-Guide.html)
+You can download an example copy of `webtrends.plist` [here](https://raw.githubusercontent.com/Webtrends/ios-sdk/master/Documentation/html/docs/webtrends.plist). Add the file to your project, open it, and replace `YOUR_DCSID_HERE` with your unique DCSID. There's a ton of configuration options available in `webtrends.plist`, but the only required setting is the DCSID. You can read more in the [Advanced Configuration Guide](http://help.webtrends.com/en/ios/docs/public_guides/Advanced-Configuration-Guide.html)
 
 ##Common Actions
 The documentation below has detailed explanations of the entire SDK, but for convenience, this guide provides sample code for a couple common actions you might take with the SDK, such as triggering events, setting configuration settings, and pausing/resuming event sending.
