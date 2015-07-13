@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/WTWatchDataCollector.html">
+	<File path="Classes/WTEventMedia.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/WTWatchDataCollector</TokenIdentifier>
-			<Abstract type="html">WTWatchDataCollector is the central class provided by WebtrendsWatchKitSDK. Its central purpose is to pass events from a WatchKit extension along to the main SDK, which must be running on the companion app for events to be logged. It&apos;s primarily accessed through its sharedCollector singleton. It should not be manually initialized.</Abstract>
-			<DeclaredIn>WTWatchDataCollector.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/WTEventMedia</TokenIdentifier>
+			<Abstract type="html">WTEventMedia is a wrapper class to parameter types associated with media events.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
             
 			
 			<NodeRef refid="10"/>
@@ -13,82 +13,156 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/WTWatchDataCollector/sharedCollector</TokenIdentifier>
-			<Abstract type="html">WTWatchDataCollector should not be initialized manually, but should instead be messaged through this singleton instance.</Abstract>
-			<DeclaredIn>WTWatchDataCollector.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMedia/setMediaName:</TokenIdentifier>
+			<Abstract type="html">Specifies the name of the media content accessed during an event, for example the name of a video clip.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)sharedCollector</Declaration>
+			<Declaration>@property (nonatomic, copy) NSString *mediaName</Declaration>
 			
-			<ReturnValue><Abstract type="html">The WTWatchDataCollector singleton.</Abstract></ReturnValue>
-			<Anchor>//api/name/sharedCollector</Anchor>
+			
+			<Anchor>//api/name/mediaName</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WTWatchDataCollector/sendEventForActivation:</TokenIdentifier>
-			<Abstract type="html">Creates and sends an event for WKInterface activation. If the phone app is unreachable, the event isn&apos;t logged. If automatic events are enabled, an event of this type will automatically be logged, if not, it can be manually logged with this method.</Abstract>
-			<DeclaredIn>WTWatchDataCollector.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMedia/mediaName</TokenIdentifier>
+			<Abstract type="html">Specifies the name of the media content accessed during an event, for example the name of a video clip.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
 			
-			<Declaration>- (NSDictionary *)sendEventForActivation:(WTEventMeta *)meta</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>meta</Name>
-					<Abstract type="html">Specifies a WTEventMeta object that stores common parameter types attached to this event.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A dictionary of the event that is created</Abstract></ReturnValue>
-			<Anchor>//api/name/sendEventForActivation:</Anchor>
+			<Declaration>@property (nonatomic, copy) NSString *mediaName</Declaration>
+			
+			
+			<Anchor>//api/name/mediaName</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WTWatchDataCollector/sendEventForDeactivation:</TokenIdentifier>
-			<Abstract type="html">Creates and sends an event for WKInterface deactivation. If the phone app is unreachable, the event isn&apos;t logged. If automatic events are enabled, an event of this type will automatically be logged, if not, it can be manually logged with this method.</Abstract>
-			<DeclaredIn>WTWatchDataCollector.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/WTEventMedia/mediaName</TokenIdentifier>
+			<Abstract type="html">Specifies the name of the media content accessed during an event, for example the name of a video clip.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
 			
-			<Declaration>- (NSDictionary *)sendEventForDeactivation:(WTEventMeta *)meta</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>meta</Name>
-					<Abstract type="html">Specifies a WTEventMeta object that stores common parameter types attached to this event.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A dictionary of the event that is created</Abstract></ReturnValue>
-			<Anchor>//api/name/sendEventForDeactivation:</Anchor>
+			<Declaration>@property (nonatomic, copy) NSString *mediaName</Declaration>
+			
+			
+			<Anchor>//api/name/mediaName</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WTWatchDataCollector/sendEventForAction:</TokenIdentifier>
-			<Abstract type="html">Creates and sends an event for an arbitrary action, such as a button tap. If the phone app is unreachable, the event isn&apos;t logged. If automatic events are enabled, an event of this type will automatically be logged, if not, it can be manually logged with this method.</Abstract>
-			<DeclaredIn>WTWatchDataCollector.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMedia/setMediaType:</TokenIdentifier>
+			<Abstract type="html">Specifies a type of media accessed during the event, such as QuickTime or mp3.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
 			
-			<Declaration>- (NSDictionary *)sendEventForAction:(WTEventMeta *)meta</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>meta</Name>
-					<Abstract type="html">Specifies a WTEventMeta object that stores common parameter types attached to this event.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A dictionary of the event that is created</Abstract></ReturnValue>
-			<Anchor>//api/name/sendEventForAction:</Anchor>
+			<Declaration>@property (nonatomic, copy) NSString *mediaType</Declaration>
+			
+			
+			<Anchor>//api/name/mediaType</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/WTWatchDataCollector/sendEventForCustomEvent:</TokenIdentifier>
-			<Abstract type="html">Creates and sends a custom event, used to encapsulate any event not covered by the convenience event types. If the phone app is unreachable, the event isn&apos;t logged. If automatic events are enabled, an event of this type will automatically be logged, if not, it can be manually logged with this method.</Abstract>
-			<DeclaredIn>WTWatchDataCollector.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMedia/mediaType</TokenIdentifier>
+			<Abstract type="html">Specifies a type of media accessed during the event, such as QuickTime or mp3.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
 			
-			<Declaration>- (NSDictionary *)sendEventForCustomEvent:(WTEventMeta *)meta</Declaration>
+			<Declaration>@property (nonatomic, copy) NSString *mediaType</Declaration>
+			
+			
+			<Anchor>//api/name/mediaType</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTEventMedia/mediaType</TokenIdentifier>
+			<Abstract type="html">Specifies a type of media accessed during the event, such as QuickTime or mp3.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *mediaType</Declaration>
+			
+			
+			<Anchor>//api/name/mediaType</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMedia/setMediaEventType:</TokenIdentifier>
+			<Abstract type="html">Specifies the type of media event that occurred, such as a view of media content.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *mediaEventType</Declaration>
+			
+			
+			<Anchor>//api/name/mediaEventType</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMedia/mediaEventType</TokenIdentifier>
+			<Abstract type="html">Specifies the type of media event that occurred, such as a view of media content.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *mediaEventType</Declaration>
+			
+			
+			<Anchor>//api/name/mediaEventType</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTEventMedia/mediaEventType</TokenIdentifier>
+			<Abstract type="html">Specifies the type of media event that occurred, such as a view of media content.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *mediaEventType</Declaration>
+			
+			
+			<Anchor>//api/name/mediaEventType</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/WTEventMedia/eventMediaForName:mediaType:mediaEventType:</TokenIdentifier>
+			<Abstract type="html">Creates a WTEventMedia object that stores information about a given piece of media</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)eventMediaForName:(NSString *)mediaName mediaType:(NSString *)mediaType mediaEventType:(NSString *)mediaEventType</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>meta</Name>
-					<Abstract type="html">Specifies a WTEventMeta object that stores common parameter types attached to this event.</Abstract>
+					<Name>mediaName</Name>
+					<Abstract type="html">Specifies the name of the media content accessed during an event, for example the name of a video clip.</Abstract>
+				</Parameter><Parameter>
+					<Name>mediaType</Name>
+					<Abstract type="html">Specifies a type of media accessed during the event, such as QuickTime or mp3.</Abstract>
+				</Parameter><Parameter>
+					<Name>mediaEventType</Name>
+					<Abstract type="html">Specifies the type of media event that occurred, such as a view of media content.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A dictionary of the event that is created</Abstract></ReturnValue>
-			<Anchor>//api/name/sendEventForCustomEvent:</Anchor>
+			<ReturnValue><Abstract type="html">The WTEventMedia object describing your media</Abstract></ReturnValue>
+			<Anchor>//api/name/eventMediaForName:mediaType:mediaEventType:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMedia/initWithMediaName:mediaType:mediaEventType:</TokenIdentifier>
+			<Abstract type="html">Creates a WTEventMedia object that stores information about a given piece of media</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithMediaName:(NSString *)mediaName mediaType:(NSString *)mediaType mediaEventType:(NSString *)mediaEventType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mediaName</Name>
+					<Abstract type="html">Specifies the name of the media content accessed during an event, for example the name of a video clip.</Abstract>
+				</Parameter><Parameter>
+					<Name>mediaType</Name>
+					<Abstract type="html">Specifies a type of media accessed during the event, such as QuickTime or mp3.</Abstract>
+				</Parameter><Parameter>
+					<Name>mediaEventType</Name>
+					<Abstract type="html">Specifies the type of media event that occurred, such as a view of media content.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The WTEventMedia object describing your media</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithMediaName:mediaType:mediaEventType:</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		

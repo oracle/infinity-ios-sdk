@@ -40,6 +40,105 @@
 					<h1 class="title">WebtrendsSDK Reference</h1>
 
 					
+					<div class="section section-overview index-overview">
+						
+						
+						<p>The Webtrends SDK is a analytics library for iOS. This guide will walk you through the initial setup process, from integrating the SDK with your project, to sending events to Webtrends.</p>
+
+<h2>Basic Installation</h2>
+
+<p>In its simplest incarnation, the Webtrends SDK can be installed with a single line in your existing <code>Podfile</code>:</p>
+
+<pre><code>pod 'Webtrends-SDK/Core', '~&gt;3.0'
+</code></pre>
+
+<p>If you&rsquo;re not familiar with CocoaPods, or you need a more advanced installation (such as integrating the Webtrends WatchKit SDK), you can read our <a href="docs/public_guides/Getting-Started-Guide.html">Getting Started Guide</a>.</p>
+
+<h3>Set up webtrends.plist</h3>
+
+<p>After your pod has been installed, you&rsquo;ll need to set up a basic webtrends.plist file, described below.</p>
+
+<div style="text-align:center">
+<img src="docs/public_guides/images/webtrends.plist_screenshot.png" alt="webtrends.plist screenshot" />
+</div>
+
+
+<p>You can download an example copy of <code>webtrends.plist</code> <a href="docs/webtrends.plist">here</a>. Add the file to your project, open it, and replace <code>YOUR_DCSID_HERE</code> with your unique DCSID. There&rsquo;s a ton of configuration options available in <code>webtrends.plist</code>, but the only required setting is the DCSID. You can read more in the <a href="docs/public_guides/Advanced-Configuration-Guide.html">Advanced Configuration Guide</a></p>
+
+<h2>Common Actions</h2>
+
+<p>The documentation below has detailed explanations of the entire SDK, but for convenience, this guide provides sample code for a couple common actions you might take with the SDK, such as triggering events, setting configuration settings, and pausing/resuming event sending.</p>
+
+<h3>Triggering Events</h3>
+
+<p>If automatic events are enabled, many events are triggered automatically on your behalf. In most cases you won&rsquo;t need to do any additional work to receive events related to the application or view controller life cycles. You can read more about this in the <a href="docs/public_guides/Automatic-Events-Guide.html">Automatic Events Guide</a>.</p>
+
+<p>If you want to manually log events, the process is pretty simple. Here&rsquo;s an example of how to send an event associated with a button press:</p>
+
+<h5>Swift</h5>
+
+<pre><code>// eventPath can be nil if you want to use the default eventPath
+let meta = WTEventMeta(eventPath: nil, description: "Sign-in button tapped!", type: "Tap Event", customParams: nil)
+
+// Once we've set up our basic information, pass it to the data collector
+WTDataCollector.sharedCollector().triggerEventForAction(meta)
+</code></pre>
+
+<h5>Objective-C</h5>
+
+<pre><code>// eventPath can be nil if you want to use the default eventPath
+WTEventMeta *meta = [WTEventMeta eventMetaForPath:nil description:@"Sign-in button tapped!" type:@"Tap Event" customParams:nil];
+
+// Once we've set up our basic information, pass it to the data collector    
+[[WTDataCollector sharedCollector] triggerEventForAction:meta];
+</code></pre>
+
+<p>There are a wide variety of events you can trigger, all of which are documented in <a href="Classes/WTDataCollector.html">WTDataCollector</a> and the <a href="docs/public_guides/Manual-Events-Guide.html">Manual Events Guide</a>.</p>
+
+<h3>Setting Configuration Settings</h3>
+
+<p>Webtrends provides a wide variety of configurable options that you can use to customize how the SDK behaves. Here&rsquo;s an example of how to disable Webtrends debug logging programatically:</p>
+
+<h5>Swift</h5>
+
+<pre><code>WTDataCollector.sharedCollector().setValue("false", forConfigKey:kWTConfigDebug, persists: true)
+</code></pre>
+
+<h5>Objective-C</h5>
+
+<pre><code>[[WTDataCollector sharedCollector] setValue:@"false" forConfigKey:kWTConfigDebug persists:YES];
+</code></pre>
+
+<p>For a full list of configurable settings, see the <a href="docs/public_guides/Advanced-Configuration-Guide.html">Advanced Configuration Guide</a></p>
+
+<h3>Pausing/Resuming Event Sending</h3>
+
+<p>Here&rsquo;s an example of how to pause then resume event sending:</p>
+
+<h5>Swift</h5>
+
+<pre><code>WTDataCollector.sharedCollector().pause()
+WTDataCollector.sharedCollector().resume()
+</code></pre>
+
+<h5>Objective-C</h5>
+
+<pre><code>[[WTDataCollector sharedCollector] pause];
+[[WTDataCollector sharedCollector] resume];
+</code></pre>
+
+<h3>Hybrid Application Support</h3>
+
+<p>Webtrends provides a method of keeping continuing sessions between a web browser and a native app. The process is a little more involved than some of the examples above, but you can read about it in both the <a href="docs/public_guides/Hybrid-Events-Guide.html">Hybrid Events Guide</a> and the <a href="docs/public_guides/Embedded-Browser-Events-Guide.html">Embedded Browser Events Guide</a>.</p>
+
+<h1>All Documentation</h1>
+
+<p>The complete documentation for the Webtrends iOS SDK can be found at
+<a href="http://help.webtrends.com/en/ios/">http://help.webtrends.com/en/ios/</a>.</p>
+						
+						
+					</div>
+					
 
 					<div class="index-container">
 						
@@ -51,9 +150,15 @@
 								
 								<li><a href="docs/public_guides/Automatic-Events-Guide.html">Automatic Events Guide</a></li>
 								
+								<li><a href="docs/public_guides/Embedded-Browser-Events-Guide.html">Embedded Browser Events Guide</a></li>
+								
 								<li><a href="docs/public_guides/Getting-Started-Guide.html">Getting Started Guide</a></li>
 								
-								<li><a href="docs/public_guides/Manual-Event-Logging-Guide.html">Manual Event Logging Guide</a></li>
+								<li><a href="docs/public_guides/Hybrid-Events-Guide.html">Hybrid Events Guide</a></li>
+								
+								<li><a href="docs/public_guides/License-Agreement.html">License Agreement</a></li>
+								
+								<li><a href="docs/public_guides/Manual-Events-Guide.html">Manual Events Guide</a></li>
 								
 								<li><a href="docs/public_guides/Webtrends-WatchKit-SDK-Guide.html">Webtrends WatchKit SDK Guide</a></li>
 								
@@ -86,7 +191,7 @@
 					<footer>
 						<div class="footer-copyright">
 							
-							<p class="copyright">Copyright &copy; 2015 Webtrends. All rights reserved. Updated: 2015-07-07</p>
+							<p class="copyright">Copyright &copy; 2015 Webtrends. All rights reserved. Updated: 2015-07-13</p>
 							
 							
 							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

@@ -67,7 +67,7 @@
 
 <p>Automatic events are enabled by default, but they all have manual equivalents available. If you prefer to toggle all your events manually (for instance, so that you can inject custom data into them), you can disable the collection of automatic events with the following line of code:</p>
 
-<div class="swift-code-sample"><pre><code>WTDataCollector.sharedCollector().setValue("false", forConfigKey: forConfigKey:kWTConfigAutomaticsEnabled, persists: true)</code></pre></div>
+<div class="swift-code-sample"><pre><code>WTDataCollector.sharedCollector().setValue("false", forConfigKey:kWTConfigAutomaticsEnabled, persists: true)</code></pre></div>
 
 
 
@@ -186,55 +186,65 @@ func application(application: UIApplication, handleWatchKitExtensionRequest user
 
 <h2>Automatic Event Definitions</h2>
 
-<h2><a id="Application Start" href="#Application Start">Application Start</a></h2>
+<h3>Application Lifecycle events</h3>
+
+<h4><a id="Application Start" href="#Application Start">Application Start</a></h4>
 
 <p><strong>Description</strong>: Fires an event on application launch. The event includes boilerplate information for an app launch, plus the name of the application.<br/>
 <strong>Required Protocol Method</strong>: UIApplicationDelegate&rsquo;s <code>application:didFinishLaunchingWithOptions:</code><br/>
 <strong>Manual Equivalent</strong>: <a href="../../Classes/WTDataCollector.html#//api/name/triggerEventForApplication:startWithCustomParams:">[WTDataCollector triggerEventForApplication:startWithCustomParams:]</a></p>
 
-<h2><a id="Application Terminate" href="#Application Terminate">Application Terminate</a></h2>
+<h4><a id="Application Terminate" href="#Application Terminate">Application Terminate</a></h4>
 
 <p><strong>Description</strong>: Fires an event on application termination. The event includes boilerplate information for an app termination, plus the name of the application.  <br/>
 <strong>Required Protocol Method</strong>: UIApplicationDelegate&rsquo;s <code>applicationWillTerminate:</code>   <br/>
 <strong>Manual Equivalent</strong>: <a href="../../Classes/WTDataCollector.html#//api/name/triggerEventForApplication:terminateWithCustomParams:">[WTDataCollector triggerEventForApplication:terminateWithCustomParams:]</a></p>
 
-<h2><a id="Application Entering Background" href="#Application Entering Background">Application Entering Background</a></h2>
+<h4><a id="Application Entering Background" href="#Application Entering Background">Application Entering Background</a></h4>
 
 <p><strong>Description</strong>: Fires an event when the application enters the background. The event includes boilerplate information for an app entering the background, plus the name of the application.    <br/>
 <strong>Required Protocol Method</strong>: UIApplicationDelegate&rsquo;s <code>applicationDidEnterBackground:</code><br/>
 <strong>Manual Equivalent</strong>: <a href="../../Classes/WTDataCollector.html#//api/name/triggerEventForApplication:didEnterBackgroundWithCustomParams:">[WTDataCollector triggerEventForApplication:didEnterBackgroundWithCustomParams:]</a></p>
 
-<h2><a id="Application Entering Foreground" href="#Application Entering Foreground">Application Entering Foreground </a></h2>
+<h4><a id="Application Entering Foreground" href="#Application Entering Foreground">Application Entering Foreground </a></h4>
 
 <p><strong>Description</strong>: Fires an event when the application enters the foreground. The event includes boilerplate information for an app entering the foreground, plus the name of the application.<br/>
 <strong>Required Protocol Method</strong>: UIApplicationDelegate&rsquo;s <code>applicationWillEnterForeground:</code> <br/>
 <strong>Manual Equivalent</strong>: <a href="../../Classes/WTDataCollector.html#//api/name/triggerEventForApplication:willEnterForegroundWithCustomParams:">[WTDataCollector triggerEventForApplication:willEnterForegroundWithCustomParams:]</a></p>
 
-<h2><a id="Notification Received" href="#Notification Received">Notification Received</a></h2>
+<h4><a id="Notification Received" href="#Notification Received">Notification Received</a></h4>
 
 <p><strong>Description</strong>: Fires an event when the application receives a notification (can include both local and remote notifications, depending on which of the required protocol methods are implemented). The event includes the notification&rsquo;s payload, plus the name of the application.<br/>
 <strong>Required Protocol Method</strong>: UIApplicationDelegate&rsquo;s <code>application:didReceiveLocalNotification:</code> or <code>application:didReceiveRemoteNotification:</code> or <code>application:didReceiveRemoteNotification:fetchCompletionHandler:</code><br/>
 <strong>Manual Equivalent</strong>: <a href="../../Classes/WTDataCollector.html#//api/name/triggerEventForNotification:withCustomParams:">[WTDataCollector triggerEventForNotification:withCustomParams:]</a></p>
 
-<h2><a id="View Controller Appearance" href="#View Controller Appearance">View Controller Appearance</a></h2>
+<hr />
+
+<h3>View Controller Lifecycle Events</h3>
+
+<h4><a id="View Controller Appearance" href="#View Controller Appearance">View Controller Appearance</a></h4>
 
 <p><strong>Description</strong>: Fires an event when any view controller appears. The event includes boilerplate information for a view controller appearing, plus the title of the view controller.<br/>
 <strong>Required Protocol Method</strong>: none<br/>
 <strong>Manual Equivalent</strong>: <a href="../../Classes/WTDataCollector.html#//api/name/triggerEventForViewDidAppear:withCustomParams:">[WTDataCollector triggerEventForViewDidAppear:withCustomParams:]</a></p>
 
-<h2><a id="View Controller Disappearance" href="#View Controller Disappearance">View Controller Disappearance</a></h2>
+<h4><a id="View Controller Disappearance" href="#View Controller Disappearance">View Controller Disappearance</a></h4>
 
 <p><strong>Description</strong>: Fires an event when any view controller disappears. The event includes boilerplate information for a view controller disappearing, plus the title of the view controller.<br/>
 <strong>Required Protocol Method</strong>: none<br/>
 <strong>Manual Equivalent</strong>: <a href="../../Classes/WTDataCollector.html#//api/name/triggerEventForViewDidDisappear:withCustomParams:">[WTDataCollector triggerEventForViewDidDisappear:withCustomParams:]</a></p>
 
-<h2><a id="Interface Activated" href="#Interface Activated">Interface Activated</a></h2>
+<hr />
+
+<h3>Watch specific events</h3>
+
+<h4><a id="Interface Activated" href="#Interface Activated">Interface Activated</a></h4>
 
 <p><strong>Description</strong>: Fires an event when any watch interface activates. The event includes boilerplate information for a watch interface activating.
 <strong>Required Protocol Method</strong>: UIApplicationDelegate&rsquo;s <code>application:handleWatchKitExtensionRequest:reply:</code><br/>
 <strong>Manual Equivalent</strong>: <a href="../../Classes/WTWatchDataCollector.html#//api/name/sendEventForActivation:">[WTWatchDataCollector sendEventForActivation:]</a></p>
 
-<h2><a id="Interface Deactivated" href="#Interface Deactivated">Interface Deactivated</a></h2>
+<h4><a id="Interface Deactivated" href="#Interface Deactivated">Interface Deactivated</a></h4>
 
 <p><strong>Description</strong>: Fires an event when any watch interface deactivates. The event includes boilerplate information for a watch interface deactivating.<br/>
 <strong>Required Protocol Method</strong>: UIApplicationDelegate&rsquo;s <code>application:handleWatchKitExtensionRequest:reply:</code><br/>
@@ -243,7 +253,7 @@ func application(application: UIApplication, handleWatchKitExtensionRequest user
 					<footer>
 						<div class="footer-copyright">
 							
-							<p class="copyright">Copyright &copy; 2015 Webtrends. All rights reserved. Updated: 2015-07-07</p>
+							<p class="copyright">Copyright &copy; 2015 Webtrends. All rights reserved. Updated: 2015-07-13</p>
 							
 							
 							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

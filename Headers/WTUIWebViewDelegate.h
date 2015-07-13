@@ -15,7 +15,7 @@
  *  The native app must implement the Webtrends Mobile Library for iOS, the web content must be tagged with the Webtrends JavaScript tag, and you must be familiar with iOS UIWebViews.
  *
  *  If we don't need to do any web view delegation of our own, we'll simply create a retained instance of WTUIWebViewDelegate and let it do the work for us
- * There are two methods of alerting the Data Collector of JavaScript-triggered events. The first is using the supplied WTUIWebViewDelegate, shown in here:
+ * There are two methods of alerting the Data Collector of JavaScript-triggered events. The first is using the supplied WTUIWebViewDelegate, shown here:
  * ## Method 1 – Webtrends supplied delegate
  *  	- (void)viewDidLoad {
  *  	    [super viewDidLoad];
