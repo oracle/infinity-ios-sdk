@@ -1,4 +1,4 @@
 Documentation set was installed to Xcode!
 
-Path: /Users/samingle/Library/Developer/Shared/Documentation/DocSets/com.webtrends.webtrendssdk.WebtrendsSDK.docset
-Time: 2015-07-16 16:13:30 +0000
+Path: /Users/jenkins/Library/Developer/Shared/Documentation/DocSets/com.webtrends.webtrendssdk.WebtrendsSDK.docset
+Time: 2015-08-03 18:07:56 +0000
