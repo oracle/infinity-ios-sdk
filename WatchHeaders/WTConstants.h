@@ -31,6 +31,7 @@ extern NSString * const kWTConfigMaxSessionMilliseconds;
 extern NSString * const kWTConfigSessionTimeoutMilliseconds;
 extern NSString * const kWTConfigAutomaticsEnabled;
 extern NSString * const kWTConfigOnlySendOverWifi;
+extern NSString * const kWTConfigAppDelegateClassName;
 
 
 // Webtrends WatchKit Support
