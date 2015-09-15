@@ -100,7 +100,8 @@ override func viewDidLoad() {
     // append it to the URL before triggering the request
     // using the appendSessionParamsToUrl: method below
     NSURL *sessionedUrl = [[WTDataCollector sharedCollector] appendSessionParamsToUrl:url];
-    
+    self.wtDelegate = [WTUIWebViewDelegate new];
+
     // Set our retained WTUIWebViewDelegate as the UIWebView's delegate
     self.webView.delegate = self.wtDelegate;
     [self.webView loadRequest:[NSURLRequest requestWithURL:sessionedUrl]];
