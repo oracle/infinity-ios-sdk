@@ -44,7 +44,7 @@
  *  	    NSURL *sessionedUrl = [[WTDataCollector sharedCollector] appendSessionParamsToUrl:url];
  *
  *  	    // If we do this, we must implement webView:ShouldStartLoadWithRequest:navigationType
- *  	    self.webView.delegate = self
+ *  	    self.webView.delegate = self;
  *  	    [self.webView loadRequest:[NSURLRequest requestWithURL:sessionedUrl]];
  *  	}
  *
