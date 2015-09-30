@@ -33,7 +33,7 @@ extern NSString * const kWTConfigAutomaticsEnabled;
 extern NSString * const kWTConfigOnlySendOverWifi;
 extern NSString * const kWTConfigAppDelegateClassName;
 extern NSString * const kWTConfigSendUniqueIdEnabled;
-
+extern NSString * const kWTConfigSendScreenViewWithActivityViewEnabled;
 
 // Webtrends WatchKit Support
 extern NSString * const kWTExtensionRequestIdentifier;

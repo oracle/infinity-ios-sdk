@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Your extra code here.
     }
     
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         //Your extra code here.
         return true;
     }
@@ -81,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     *  3. Launch the main app from the device
     *  4. In Xcode, choose Window-> Devices -> <Your Device> -> View Device Logs
     */
-    func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
+    func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]?) -> Void)) {
         let alert = UIAlertView(title: "Watch Event Received", message: "An event from the Apple watch was received. See debug log for more details. See -application:handleWatchKitExtensionRequest:userInfo:reply in AppDelegate for instructions on attaching to the debugger or view debug logs while a WatchKit app is running", delegate: nil, cancelButtonTitle: "OK")
         alert.show()
         print(userInfo)
