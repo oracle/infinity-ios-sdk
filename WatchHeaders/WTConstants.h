@@ -32,7 +32,8 @@ extern NSString * const kWTConfigSessionTimeoutMilliseconds;
 extern NSString * const kWTConfigAutomaticsEnabled;
 extern NSString * const kWTConfigOnlySendOverWifi;
 extern NSString * const kWTConfigAppDelegateClassName;
-extern NSString * const kWTConfigSendUniqueIdEnabled;
+// Remove AdSupport AdvertisingIdentifier
+//extern NSString * const kWTConfigSendUniqueIdEnabled;
 extern NSString * const kWTConfigSendScreenViewWithActivityViewEnabled;
 
 // Webtrends WatchKit Support
