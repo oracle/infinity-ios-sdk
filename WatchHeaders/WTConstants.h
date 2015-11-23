@@ -32,6 +32,7 @@ extern NSString * const kWTConfigSessionTimeoutMilliseconds;
 extern NSString * const kWTConfigAutomaticsEnabled;
 extern NSString * const kWTConfigOnlySendOverWifi;
 extern NSString * const kWTConfigAppDelegateClassName;
+extern NSString * const kWTConfigCollectionUrlExtraQueryParams;
 // Remove AdSupport AdvertisingIdentifier
 //extern NSString * const kWTConfigSendUniqueIdEnabled;
 extern NSString * const kWTConfigSendScreenViewWithActivityViewEnabled;
