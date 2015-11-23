@@ -222,6 +222,22 @@ func application(application: UIApplication, handleWatchKitExtensionRequest user
 
 <h3>View Controller Lifecycle Events</h3>
 
+<p>View Controller Lifecycle events are handled automatically for all classes that inherit from UIViewController. There are a few exceptions to this rule. The following native iOS UIViewController subclasses <em>will not</em> trigger automatic events:</p>
+
+<ul>
+<li>UICompatibilityInputViewController</li>
+<li>UIInputWindowController</li>
+<li>UIAlertController</li>
+<li>UINavigationController</li>
+<li>UIPageViewController</li>
+<li>UITabBarController</li>
+<li>UISplitViewController</li>
+<li>UISearchContainerViewController</li>
+</ul>
+
+
+<p>Any direct subclasses of these <em>will trigger</em> automatic events.</p>
+
 <h4><a id="View Controller Appearance" href="#View Controller Appearance">View Controller Appearance</a></h4>
 
 <p><strong>Description</strong>: Fires an event when any view controller appears. The event includes boilerplate information for a view controller appearing, plus the title of the view controller.<br/>
