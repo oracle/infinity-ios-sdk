@@ -12,6 +12,6 @@
 #import "WTConstants.h"
 #import "WTDataCollector.h"
 #import "WTEventSupport.h"
-#import "WTUIWebViewDelegate.h"
+#import "WTWebViewDelegate.h"
 
 #endif

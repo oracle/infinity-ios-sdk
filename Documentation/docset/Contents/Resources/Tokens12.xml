@@ -1,16 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/WTUIWebViewDelegate.html">
+	<File path="Classes/WTWatchDataCollector.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/WTUIWebViewDelegate</TokenIdentifier>
-			<Abstract type="html">Generating events through the Webtrends JavaScript tag UIWebViews embedded in a native app can generate Webtrends events by using JavaScript helper methods that interact with the native app to generate and send events, or by using the Webtrends JavaScript tag in the embedded web content to generate and send events. Follow these instructions to use the Webtrends JavaScript tag.</Abstract>
-			<DeclaredIn>WTUIWebViewDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/WTWatchDataCollector</TokenIdentifier>
+			<Abstract type="html">WTWatchDataCollector is the central class provided by WebtrendsWatchKitSDK. Its central purpose is to pass events from a WatchKit extension along to the main SDK, which must be running on the companion app for events to be logged. It&apos;s primarily accessed through its sharedCollector singleton. It should not be manually initialized.</Abstract>
+			<DeclaredIn>WTWatchDataCollector.h</DeclaredIn>
             
 			
 			<NodeRef refid="12"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/WTWatchDataCollector/sharedCollector</TokenIdentifier>
+			<Abstract type="html">WTWatchDataCollector should not be initialized manually, but should instead be messaged through this singleton instance.</Abstract>
+			<DeclaredIn>WTWatchDataCollector.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)sharedCollector</Declaration>
+			
+			<ReturnValue><Abstract type="html">The WTWatchDataCollector singleton.</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedCollector</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTWatchDataCollector/sendEventForActivation:</TokenIdentifier>
+			<Abstract type="html">Creates and sends an event for WKInterface activation. If the phone app is unreachable, the event isn&apos;t logged. If automatic events are enabled, an event of this type will automatically be logged, if not, it can be manually logged with this method.</Abstract>
+			<DeclaredIn>WTWatchDataCollector.h</DeclaredIn>
+			
+			<Declaration>- (NSDictionary *)sendEventForActivation:(WTEventMeta *)meta</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>meta</Name>
+					<Abstract type="html">Specifies a WTEventMeta object that stores common parameter types attached to this event.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A dictionary of the event that is created</Abstract></ReturnValue>
+			<Anchor>//api/name/sendEventForActivation:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTWatchDataCollector/sendEventForDeactivation:</TokenIdentifier>
+			<Abstract type="html">Creates and sends an event for WKInterface deactivation. If the phone app is unreachable, the event isn&apos;t logged. If automatic events are enabled, an event of this type will automatically be logged, if not, it can be manually logged with this method.</Abstract>
+			<DeclaredIn>WTWatchDataCollector.h</DeclaredIn>
+			
+			<Declaration>- (NSDictionary *)sendEventForDeactivation:(WTEventMeta *)meta</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>meta</Name>
+					<Abstract type="html">Specifies a WTEventMeta object that stores common parameter types attached to this event.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A dictionary of the event that is created</Abstract></ReturnValue>
+			<Anchor>//api/name/sendEventForDeactivation:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTWatchDataCollector/sendEventForAction:</TokenIdentifier>
+			<Abstract type="html">Creates and sends an event for an arbitrary action, such as a button tap. If the phone app is unreachable, the event isn&apos;t logged. If automatic events are enabled, an event of this type will automatically be logged, if not, it can be manually logged with this method.</Abstract>
+			<DeclaredIn>WTWatchDataCollector.h</DeclaredIn>
+			
+			<Declaration>- (NSDictionary *)sendEventForAction:(WTEventMeta *)meta</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>meta</Name>
+					<Abstract type="html">Specifies a WTEventMeta object that stores common parameter types attached to this event.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A dictionary of the event that is created</Abstract></ReturnValue>
+			<Anchor>//api/name/sendEventForAction:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTWatchDataCollector/sendEventForCustomEvent:</TokenIdentifier>
+			<Abstract type="html">Creates and sends a custom event, used to encapsulate any event not covered by the convenience event types. If the phone app is unreachable, the event isn&apos;t logged. If automatic events are enabled, an event of this type will automatically be logged, if not, it can be manually logged with this method.</Abstract>
+			<DeclaredIn>WTWatchDataCollector.h</DeclaredIn>
+			
+			<Declaration>- (NSDictionary *)sendEventForCustomEvent:(WTEventMeta *)meta</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>meta</Name>
+					<Abstract type="html">Specifies a WTEventMeta object that stores common parameter types attached to this event.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A dictionary of the event that is created</Abstract></ReturnValue>
+			<Anchor>//api/name/sendEventForCustomEvent:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
 		
         
         

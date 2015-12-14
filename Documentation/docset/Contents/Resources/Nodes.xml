@@ -197,11 +197,6 @@
             
         </Node>
 		<Node id="12" type="file" documentType="reference">
-            <Name>WTUIWebViewDelegate</Name>
-            <Path>Classes/WTUIWebViewDelegate.html</Path>
-            
-        </Node>
-		<Node id="13" type="file" documentType="reference">
             <Name>WTWatchDataCollector</Name>
             <Path>Classes/WTWatchDataCollector.html</Path>
             
@@ -232,6 +227,11 @@
                 </Node>
                 
             </Subnodes>
+            
+        </Node>
+		<Node id="13" type="file" documentType="reference">
+            <Name>WTWebViewDelegate</Name>
+            <Path>Classes/WTWebViewDelegate.html</Path>
             
         </Node>
 		
