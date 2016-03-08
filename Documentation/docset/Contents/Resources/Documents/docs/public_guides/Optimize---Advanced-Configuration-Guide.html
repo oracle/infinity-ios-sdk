@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Optimize - Advanced Configuration Guide Document</title>
+
+	<link rel="stylesheet" href="../../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc wt-document">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../../index.html">WebtrendsSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../../index.html">Webtrends <img src="images/wtLogo.png" width=15 height=15></a> 
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../../index.html">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Optimize - Advanced Configuration Guide Document</h1>
+
+					<h2>Setting Configuration Settings</h2>
+
+<p>Setting and changing configuration settings can be done both manually and programmatically. See the <a href="Core-SDK---Setting-Configuration-Values.html" title="Setting Configuration Values">Core SDK - Setting Configuration Values</a> for more details.</p>
+
+<p><span id="Configuration-Settings"></span></p>
+
+<h2>Optimize Configuration Settings</h2>
+
+<p>The following settings are known to the Webtrends Optimize SDK. Changing the values associated with any of them will change the behavior of the SDK as explained under each setting&rsquo;s &ldquo;Description&rdquo;.</p>
+
+<h4><a href="#kWTConfigKeyToken" id="kWTConfigKeyToken">Key Token - Required</a></h4>
+
+<p><strong>Description</strong>: Your Optimize Key Token, assigned to your account by Webtrends. This setting is required when using the Optimize SDK.<br/>
+<strong>String Literal</strong>: &ldquo;wt_opt_key_token"<br/>
+<strong>Constant Name</strong>: kWTConfigKeyToken<br/>
+<strong>Default Value</strong>: none<br/>
+<strong>Acceptable Values</strong>: <em>string</em> — Your Webtrends-assigned key token</p>
+
+<hr />
+
+<h4><a href="#kWTConfigDomainId" id="kWTConfigDomainId">Domain ID - Required</a></h4>
+
+<p><strong>Description</strong>: Your Optimize Domain ID, sometimes referred to as an account number, assigned to your account by Webtrends. This setting is required when using the Optimize SDK.<br/>
+<strong>String Literal</strong>: &ldquo;wt_opt_domain_id"<br/>
+<strong>Constant Name</strong>: kWTConfigDomainId<br/>
+<strong>Default Value</strong>: none<br/>
+<strong>Acceptable Values</strong>: <em>string</em> — Your Webtrends-assigned domain ID</p>
+
+<hr />
+
+<h4><a href="#kWTConfigAccountGuid" id="kWTConfigAccountGuid">Account GUID</a></h4>
+
+<p><strong>Description</strong>: Your Webtrends account GUID. In order to send Optimize conversion events to our data collectors, you must set either this or the wt_dc_dcsid setting.<br/>
+<strong>String Literal</strong>: &ldquo;wt_opt_account_guid"<br/>
+<strong>Constant Name</strong>: kWTConfigAccountGuid<br/>
+<strong>Default Value</strong>: none<br/>
+<strong>Acceptable Values</strong>: <em>string</em> — Your Webtrends-assigned Account GUID, a 10-character alphanumeric string</p>
+
+<hr />
+
+<h4><a href="#kWTConfigOptimizePollIntervalMilliseconds" id="kWTConfigOptimizePollIntervalMilliseconds">Optimize Server Polling Interval</a></h4>
+
+<p><strong>Description</strong>: The length of time (in milliseconds) to wait between polling the Optimize server for new tests. Setting this too low can have a dramatic negative effect on battery and network performance.<br/>
+<strong>String Literal</strong>: &ldquo;wt_opt_poll_interval_millis"<br/>
+<strong>Constant Name</strong>: kWTConfigOptimizePollIntervalMilliseconds<br/>
+<strong>Default Value</strong>: 21600000 (every 6 hours)<br/>
+<strong>Acceptable Values</strong>: <em>integer as a string</em> — (any valid positive integer value)</p>
+
+<hr />
+
+<h4><a href="#kWTConfigOptimizeUrlBase" id="kWTConfigOptimizeUrlBase">Optimize Server Base URL</a></h4>
+
+<p><strong>Description</strong>: This is the base URL for querying the Webtrends Optimize server.<br/>
+<strong>String Literal</strong>: &ldquo;wt_opt_url_base"<br/>
+<strong>Constant Name</strong>: kWTConfigOptimizeUrlBase<br/>
+<strong>Default Value</strong>: "http://ots.optimize.webtrends.com/ots/api/rest-1.1/"<br/>
+<strong>Acceptable Values</strong>: <em>URL as a string</em> — (http: or https:, must contain &rdquo;/ots/api/rest-&ldquo; and end in &rdquo;/&ldquo;)</p>
+
+<hr />
+
+<h4><a href="#kWTConfigOptimizeStagingMode" id="kWTConfigOptimizeStagingMode">Optimize Staging Mode</a></h4>
+
+<p><strong>Description</strong>: Sets the mode of the tests to staging (true) or non-staging (false). Staging mode is generally only used in development. Once your application is deployed, this should be set to false.<br/>
+<strong>String Literal</strong>: &ldquo;wt_opt_staging_mode"<br/>
+<strong>Constant Name</strong>: kWTConfigOptimizeStagingMode<br/>
+<strong>Default Value</strong>: "true"<br/>
+<strong>Acceptable Values</strong>: <em>boolean as a string</em> — ("true&rdquo; or &ldquo;false&rdquo;)</p>
+
+<hr />
+
+<h4><a href="#kWTConfigOptimizeProjectLocations" id="kWTConfigOptimizeProjectLocations">Project Locations</a></h4>
+
+<p><strong>Description</strong>: A comma-separated list of project locations that will be applied to this application. The project locations are defined in the Optimize UI.
+<strong>String Literal</strong>: &ldquo;wt_opt_project_locations"<br/>
+<strong>Constant Name</strong>: kWTConfigOptimizeProjectLocations<br/>
+<strong>Default Value</strong>: none<br/>
+<strong>Acceptable Values</strong>: <em>array as a string</em> — (A string containing a comma-separated list of project locations)</p>
+
+<hr />
+
+<h4><a href="#kWTConfigDownloadTimeoutMilliseconds" id="kWTConfigDownloadTimeoutMilliseconds">Remote Resource Download Timeout</a></h4>
+
+<p><strong>Description</strong>: How long (in milliseconds) the SDK will wait for in-the-moment (non-cached) tests to download resources. For example, if a test calls for an image to be downloaded, the SDK will report an error if this threshold is exceeded.<br/>
+<strong>String Literal</strong>: &ldquo;wt_opt_download_timeout_millis"<br/>
+<strong>Constant Name</strong>: kWTConfigDownloadTimeoutMilliseconds<br/>
+<strong>Default Value</strong>: none<br/>
+<strong>Acceptable Values</strong>: <em>integer as a string</em> — (Any non-zero positive integer)</p>
+
+<hr />
+
+<h4><a href="#kWTConfigRequestTimeoutMilliseconds" id="kWTConfigRequestTimeoutMilliseconds">Optimize Server Request Timeout</a></h4>
+
+<p><strong>Description</strong>: How long (in milliseconds) the SDK will wait for the Optimize server to respond to control requests. <br/>
+<strong>String Literal</strong>: &ldquo;wt_opt_request_timeout_millis"<br/>
+<strong>Constant Name</strong>: kWTConfigRequestTimeoutMilliseconds<br/>
+<strong>Default Value</strong>: none<br/>
+<strong>Acceptable Values</strong>: <em>integer as a string</em> — (Any non-zero positive integer)</p>
+
+<hr />
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2016 Webtrends. All rights reserved. Updated: 2016-03-08</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="../../js/script.js"></script>
+</body>
+</html>

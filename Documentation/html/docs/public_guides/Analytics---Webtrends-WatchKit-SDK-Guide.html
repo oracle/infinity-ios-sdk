@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Analytics - Webtrends WatchKit SDK Guide Document</title>
+
+	<link rel="stylesheet" href="../../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc wt-document">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../../index.html">WebtrendsSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../../index.html">Webtrends <img src="images/wtLogo.png" width=15 height=15></a> 
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../../index.html">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Analytics - Webtrends WatchKit SDK Guide Document</h1>
+
+					<p>The Webtrends SDK provides an optional library that allows developers to track events in a WatchOS extension. To install the library, follow the directions provided in the <a href="Core-SDK---Getting-Started-Guide.html" title="Getting Started Guide">Getting Started Guide</a> first.</p>
+
+<h2>Additional Swift Setup</h2>
+
+<p>Assuming you&rsquo;ve followed all the steps in the <a href="Core-SDK---Getting-Started-Guide.html" title="Getting Started Guide">Getting Started Guide</a>, you&rsquo;ll still need to import the Webtrends watchOS SDK to integrate the library into your Swift-based watchOS extension&rsquo;s bridging header file. <strong>Note:</strong> <em>This is a seperate bridging header file than you used for your main application. Your watchOS Extension is sandboxed from the main application, and shouldn&rsquo;t run the entire core SDK, just the light-weight watchOS SDK defined in WebtrendsWatchSDK.h</em>.</p>
+
+<p>In your extension&rsquo;s bridging header, simply add the following line, which will make the entire Webtrends Watch library available to your swift app:</p>
+
+<div class="objective_c-sample-code"><pre><code>#import "WebtrendsWatchSDK.h"</code></pre></div>
+
+
+<h2>Requirements</h2>
+
+<p>The Webtrends watchOS SDK works by providing a thin layer for sending events to the parent app, which must be running the Webtrends SDK. This keeps battery usage to a minimum and keeps all your data in one place. The watchOS SDK also only tracks events that occur while the watch is in communication with its parent phone. Future versions of the SDK may support sending events from a queue when a connection is reestablished, but in this version, that feature hasn&rsquo;t been implemented.</p>
+
+<p>Additionally, in order for the parent application to see messages from the watchOS SDK, you must implement the following methods early in the application&rsquo;s lifecycle (in the AppDelegate, for example).</p>
+
+<p>The Webtrends watchOS SDK works by hooking in to the Watch Connectivity framework. If you haven’t already set up a WCSession in both your parent application and your watchOS application, see Apple&rsquo;s <a href="https://developer.apple.com/library/watchos/documentation/WatchConnectivity/Reference/WatchConnectivity_framework/index.html#//apple_ref/doc/uid/TP40015269" title="Apple Watch Guide">watchOS Watch Connectivity documentation</a> for information on how to do so. Once you have, implement the following code in your WCSessionDelegate:</p>
+
+<div class="swift-code-sample"><pre><code>@available(iOS 9.0, *)
+func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
+    let collector = WTDataCollector.sharedCollector()
+    if collector.saveWatchEvent(message) {
+        return
+    }
+    // Your code here for handling the receipt of a message from the watch.
+}</code></pre></div>
+
+
+
+
+<div class="objective_c-code-sample"><pre><code>- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary&lt;NSString *,id&gt; *)message
+{
+    WTDataCollector *collector = [WTDataCollector sharedCollector];
+    if ([collector saveWatchEvent:message]) {
+        return;
+    }
+
+    // Your code here for handling the receipt of a message from the watch.
+
+}</code></pre></div>
+
+
+<p>Your app can do whatever additional legwork it needs to do inside this method; the SDK will attach itself and log events behind the scenes.</p>
+
+<h2>Integrating with Your Extension</h2>
+
+<p>If you have automatic events (see the <a href="Analytics---Automatic-Events-Guide.html" title="Automatic Events Guide">Automatic Events Guide</a>) enabled in your parent app, the SDK will automatically track activation and deactivation of any WKInterface.</p>
+
+<p>Alternatively, you can manually log events as follows using any of the helper functions documented in <WTWatchDataCollector>. For example, a watch button touch event could be sent to the parent app as follows:</p>
+
+<div class="swift-code-sample"><pre><code>let meta = WTWatchEventMeta(eventPath: nil, description: "MyInterfaceController", type: "Tap Event", customParams: nil)
+WTWatchDataCollector.sharedCollector().sendEventForAction(meta)</code></pre></div>
+
+
+
+
+<div class="objective_c-code-sample"><pre><code>WTWatchEventMeta *meta = [WTWatchEventMeta eventMetaForPath:nil description:@"MyInterfaceController" type:@"Tap Event" customParams:nil];
+[[WTWatchDataCollector sharedCollector] sendEventForAction:meta];
+</code></pre></div>
+
+
+<p>For more information on manually tracking watchOS events, see the <a href="Analytics---Manual-Events-Guide.html" title="Automatic Events Guide">Manual Events Guide</a></p>
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2016 Webtrends. All rights reserved. Updated: 2016-03-08</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="../../js/script.js"></script>
+</body>
+</html>

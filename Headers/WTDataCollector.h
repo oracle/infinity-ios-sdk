@@ -254,6 +254,17 @@
  */
 - (NSDictionary *)triggerEventForCustomEvent:(WTEventMeta *) meta;
 
+
+/**
+ *  Read a watchkit sdk event in, and synchronously write it to the store
+ *
+ *  @param dictionary The dictionary potentially containing a watchkit event
+ *
+ *  @return YES if the dictionary is a Webtrends Event, NO if not
+ */
+- (BOOL)saveWatchEvent:(NSDictionary *)dictionary;
+
+
 /**
  * @name General Methods
  */

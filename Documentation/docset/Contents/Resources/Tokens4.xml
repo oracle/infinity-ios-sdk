@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="docs/public_guides/Getting-Started-Guide.html">
+	<File path="docs/public_guides/Analytics---Hybrid-Events-Guide.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/doc/Getting Started Guide</TokenIdentifier>
-			<Abstract type="html">The Webtrends SDK is a analytics library for iOS. This guide will walk you through the initial setup process, from integrating the SDK with your project, to sending events to Webtrends.</Abstract>
-			<DeclaredIn>Getting Started Guide-template.markdown</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/doc/Analytics - Hybrid Events Guide</TokenIdentifier>
+			<Abstract type="html">The Webtrends SDK includes components that allow you pass sessions back and forth between the app, and a website opened in Safari. This guide shows the two methods of data transfer: app to browser, and browser to app.</Abstract>
+			<DeclaredIn>Analytics - Hybrid Events Guide-template.markdown</DeclaredIn>
             
 			
 			<NodeRef refid="4"/>

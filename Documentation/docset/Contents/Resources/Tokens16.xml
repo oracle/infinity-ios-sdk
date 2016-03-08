@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="docs/public_guides/Optimize---Using-Optimize-in-your-Code.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/doc/Optimize - Using Optimize in your Code</TokenIdentifier>
+			<Abstract type="html">[PersTest]: images/ServerPersonalizedTest.png &quot;Personalized Test&quot;
+[PersRule]: images/ServerPersonalizedRule.png &quot;Personalized Rule&quot;
+[WTImageOptimizeFactor]: ../../Classes/WTImageOptimizeFactor.html &quot;WTImageOptimizeFactor&quot;
+[WTMultivariateOptimizeFactor]: ../../Classes/WTMultivariateOptimizeFactor.html &quot;WTMultivariateOptimizeFactor&quot;
+[WTSwitchingOptimizeFactor]: ../../Classes/WTSwitchingOptimizeFactor.html &quot;WTSwitchingOptimizeFactor&quot;
+[WTOptimizeFactor]: ../../Classes/WTOptimizeFactor.html &quot;WTOptimizeFactor&quot;</Abstract>
+			<DeclaredIn>Optimize - Using Optimize in your Code-template.markdown</DeclaredIn>
+            
+			
+			<NodeRef refid="16"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>

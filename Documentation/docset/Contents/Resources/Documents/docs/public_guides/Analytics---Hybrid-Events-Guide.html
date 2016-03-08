@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Analytics - Hybrid Events Guide Document</title>
+
+	<link rel="stylesheet" href="../../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc wt-document">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../../index.html">WebtrendsSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../../index.html">Webtrends <img src="images/wtLogo.png" width=15 height=15></a> 
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../../index.html">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Analytics - Hybrid Events Guide Document</h1>
+
+					<p>The Webtrends SDK includes components that allow you pass sessions back and forth between the app, and a website opened in Safari. This guide shows the two methods of data transfer: app to browser, and browser to app.</p>
+
+<h2>Requirements</h2>
+
+<p>In order to accept events back from a webpage, your app will need to implement a custom URL scheme, described below.</p>
+
+<h2>App To Browser</h2>
+
+<p>This section describes how to a launch a URL from a native app while maintaining user and session information between the Webtrends SDK in the native application and the Webtrends JavaScript tag on the target page.</p>
+
+<p>It is assumed that the target page is already tagged with the Webtrends JavaScript tag and the native app has implemented the Webtrends iOS SDK. For more information about these topics see:</p>
+
+<ul>
+<li><a href="http://help.webtrends.com/en/jstag/">Webtrends JavaScript tag</a></li>
+<li><a href="http://help.webtrends.com/en/ios/">Webtrends SDK</a></li>
+</ul>
+
+
+<h3>Step 1 – Tag your site with the id_receiver plug-in</h3>
+
+<p>Add the webtrends.id_receiver.js plugin to the JavaScript tag configuration on the target page.</p>
+
+<pre><code>window.webtrendsAsyncInit = function () {
+    var dcs = new Webtrends.dcs().init({ dcsid: "&lt;your_dcsid&gt;",
+        timezone: "&lt;your_timezone&gt;", plugins: {
+            id_receiver: {
+                src: "//s.webtrends.com/js/webtrends.id_receiver.js"
+            }
+         }
+    });
+
+    dcs.track(); 
+    }
+</code></pre>
+
+<h3>Step 2 — Open the website from your application.</h3>
+
+<p>Use the Webtrends helper method to load the URL. This will append user and session information to the URL which the JavaScript plug-in will parse and use for its configuration.</p>
+
+<div class="swift-code-sample"><pre><code>let url = NSURL(string: "https://yourdomain.com/")
+WTDataCollector.sharedCollector().openURL(url)</code></pre></div>
+
+
+
+
+<div class="objective_c-code-sample"><pre><code>NSURL *url = [NSURL URLWithString:@"http://yourdomain.com/"];
+[[WTDataCollector sharedCollector] openURL:url];</code></pre></div>
+
+
+<h2>Browser to App</h2>
+
+<p>The Webtrends 10.2 Javascript tag and the ID Broadcaster plug-in enable you to send visitor data from your website to your mobile application.</p>
+
+<p>To track visitors from your website to your mobile application, you need:</p>
+
+<ul>
+<li>The Webtrends Event Tracking SDK implemented in your iOS application (see the <a href="Getting-Started-Guide.html">Getting Started Guide</a>)</li>
+<li>The Webtrends 10.2 JavaScript tag, available at: <a href="http://s.webtrends.com/js/webtrends.js">http://s.webtrends.com/js/webtrends.js</a></li>
+<li>The Webtrends ID Broadcaster plug-in, available at: <a href="http://s.webtrends.com/js/webtrends.id_broadcaster.js">http://s.webtrends.com/js/webtrends.id_broadcaster.js</a></li>
+</ul>
+
+
+<h3>Step 1 – Register a custom URL scheme</h3>
+
+<p>Register a custom URL scheme for your app by opening its Info.plist file and adding values for URL identifier and URL Schemes.</p>
+
+<p>In your application&rsquo;s Info.plist, create a new url type as shown in the screenshot below (or you can use an existing one, if you&rsquo;ve already got one). For the purposes of this guide, we&rsquo;ve used <code>wtdcTestApp</code>, but you&rsquo;ll want to create your own.</p>
+
+<p><img src="images/custom_url.png" /></p>
+
+<h3>Step 2 – Tag the Website</h3>
+
+<p>Tag the website with the Webtrends JavaScript tag, using the id_broadcaster plug-in.</p>
+
+<p>Visitor data is added to links that match a list of element IDs or a list of domains, matched against the href of the link.</p>
+
+<p>In the following code snippet, make sure you replace the <code>wtdcTestApp</code> URL with the scheme you created in step 1.</p>
+
+<pre><code>    &lt;!DOCTYPE HTML&gt;
+    &lt;html&gt;&lt;head&gt;
+    &lt;title&gt;Hybrid Test website&lt;/title&gt;
+    &lt;script type="text/javascript"&gt;
+       window.webtrendsAsyncInit = function () {
+          var dcs = new Webtrends.dcs()
+          .init({
+             dcsid: "dcsx999x900000xxxxxxx4xx9_1234", //Replace with your DCSID
+             timezone: -7,
+             plugins: { 
+                id_broadcaster: { 
+                   src: "webtrends.id_broadcaster.js",
+                   //List of element ids that link to your iOS application.
+                   appids:["native"], 
+                }
+             }
+            })
+          .track();
+        };
+       (function(){
+          var s=document.createElement("script"); s.async=true; s.src="webtrends.js";    
+          var s2=document.getElementsByTagName("script")[0]; s2.parentNode.insertBefore(s,s2);
+       } ());
+    &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+       &lt;div&gt;
+             &lt;a id="native" href="wtdcTestApp://my/deep/link" &gt;Launch Test app w/ id&lt;/a&gt;
+             &lt;br /&gt;
+             &lt;a href="http://www.webtrends.com"&gt;Other Links...&lt;/a&gt;
+             &lt;br /&gt;
+       &lt;/div&gt;
+    &lt;/body&gt;&lt;/html&gt;
+</code></pre>
+
+<h3>Step 3 – Handle the openURL method</h3>
+
+<p>In your App Delegate, implement the following method if you haven&rsquo;t already:</p>
+
+<div class="swift-code-sample"><pre><code>func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+    // Your custom code here
+    return true;
+}</code></pre></div>
+
+
+
+
+<div class="objective_c-code-sample"><pre><code>-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    // Your custom code here
+    return YES;
+}</code></pre></div>
+
+
+<p>If you have automatic events disabled (see the <a href="Automatic-Events-Guide.html">Automatic Events Guide</a>), you&rsquo;ll also need to add the following line of code at some point in the previous App Delegate method:</p>
+
+<div class="swift-code-sample"><pre><code>WTDataCollector.sharedCollector().transferSessionWithURL(url)</code></pre></div>
+
+
+
+
+<div class="objective_c-code-sample"><pre><code>[[WTDataCollector sharedCollector] transferSessionWithURL:url];</code></pre></div>
+
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2016 Webtrends. All rights reserved. Updated: 2016-03-08</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="../../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/WTOptimizeLabel.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/WTOptimizeLabel</TokenIdentifier>
+			<Abstract type="html">An Optimizable UILabel. Tests can be configured to adjust this button&apos;s text, font, and colors.</Abstract>
+			<DeclaredIn>WTOptimizeLabel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="27"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTOptimizeLabel/setWtIdentifier:</TokenIdentifier>
+			<Abstract type="html">The optimize identifier asscoiated with this label. Identifiers can identify one set of visual instructions per app, and can be thought of similarly to css classes.</Abstract>
+			<DeclaredIn>WTOptimizeLabel.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBInspectable NSString *wtIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/wtIdentifier</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTOptimizeLabel/wtIdentifier</TokenIdentifier>
+			<Abstract type="html">The optimize identifier asscoiated with this label. Identifiers can identify one set of visual instructions per app, and can be thought of similarly to css classes.</Abstract>
+			<DeclaredIn>WTOptimizeLabel.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBInspectable NSString *wtIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/wtIdentifier</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTOptimizeLabel/wtIdentifier</TokenIdentifier>
+			<Abstract type="html">The optimize identifier asscoiated with this label. Identifiers can identify one set of visual instructions per app, and can be thought of similarly to css classes.</Abstract>
+			<DeclaredIn>WTOptimizeLabel.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) IBInspectable NSString *wtIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/wtIdentifier</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTOptimizeLabel/setWtFactor:</TokenIdentifier>
+			<Abstract type="html">The factor associated with the given identifer. Useful for reading custom factor parameters.</Abstract>
+			<DeclaredIn>WTOptimizeLabel.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, strong, nonatomic) WTMultivariateOptimizeFactor *wtFactor</Declaration>
+			
+			
+			<Anchor>//api/name/wtFactor</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTOptimizeLabel/wtFactor</TokenIdentifier>
+			<Abstract type="html">The factor associated with the given identifer. Useful for reading custom factor parameters.</Abstract>
+			<DeclaredIn>WTOptimizeLabel.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, strong, nonatomic) WTMultivariateOptimizeFactor *wtFactor</Declaration>
+			
+			
+			<Anchor>//api/name/wtFactor</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTOptimizeLabel/wtFactor</TokenIdentifier>
+			<Abstract type="html">The factor associated with the given identifer. Useful for reading custom factor parameters.</Abstract>
+			<DeclaredIn>WTOptimizeLabel.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, strong, nonatomic) WTMultivariateOptimizeFactor *wtFactor</Declaration>
+			
+			
+			<Anchor>//api/name/wtFactor</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

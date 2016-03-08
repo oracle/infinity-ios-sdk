@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Analytics - Automatic Events Guide Document</title>
+
+	<link rel="stylesheet" href="../../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc wt-document">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../../index.html">WebtrendsSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../../index.html">Webtrends <img src="images/wtLogo.png" width=15 height=15></a> 
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../../index.html">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Analytics - Automatic Events Guide Document</h1>
+
+					<p>In its default configuration, the Webtrends SDK will fire some events automatically. Once the SDK has been added to your project and configured (see the <a href="Core-SDK---Getting-Started-Guide.html" title="Getting Started Guide">Getting Started Guide</a> for more information), the following events will begin automatically logging:</p>
+
+<h4>Core SDK</h4>
+
+<ul>
+<li><a href="#Application Start">Application Start</a></li>
+<li><a href="#Application Terminate">Application Terminate</a></li>
+<li><a href="#Application Entering Background">Application Entering Background</a></li>
+<li><a href="#Application Entering Foreground ">Application Entering Foreground </a></li>
+<li><a href="#Notification Received">Notification Received</a></li>
+<li><a href="#View Controller Appearance">View Controller Appearance</a></li>
+<li><a href="#View Controller Disappearance">View Controller Disappearance</a></li>
+</ul>
+
+
+<h4>WatchKit SDK</h4>
+
+<ul>
+<li><a href="#Interface Activated">Interface Activated</a></li>
+<li><a href="#Interface Deactivated">Interface Deactivated</a></li>
+</ul>
+
+
+<h2>Toggling Automatic Events</h2>
+
+<p>Automatic events are enabled by default, but they all have manual equivalents available. If you prefer to toggle all your events manually (for instance, so that you can inject custom data into them), you can disable the collection of automatic events with the following line of code:</p>
+
+<div class="swift-code-sample"><pre><code>WTDataCollector.sharedCollector().setValue("false", forConfigKey:kWTConfigAutomaticsEnabled, persists: true)</code></pre></div>
+
+
+
+
+<div class="objective_c-code-sample"><pre><code>[[WTDataCollector sharedCollector] setValue:@"false" forConfigKey:kWTConfigAutomaticsEnabled persists:YES];</code></pre></div>
+
+
+<p>Alternatively, you can disable automatic events from <code>webtrends.plist</code>. See <a href="Analytics---Advanced-Configuration-Guide.html" title="Analytics Advanced Configuration Guide">Advanced Configuration Guide</a> for instructions.</p>
+
+<h2>Requirements for Automatic Events</h2>
+
+<p>Automatic events are attached to your existing App Delegate methods, if you have implemented them. The UIApplicationDelegate protocol has several optional methods that are associated with Webtrends automatic events. In order for these events to be fired, your app must implement the associated method, even if your implementation is empty. In these cases, you&rsquo;ll find that associated method listed under &ldquo;Required Protocol Method&rdquo; in the next section.</p>
+
+<p>In most cases, you&rsquo;ll want these methods implemented (and in the default template for a new project, Xcode will have already placed most of this code for you) in your AppDelegate class. If you subclass or change the name of your AppDelegate class, you must set the <code>wt_dc_app_delegate_class_name</code> config setting with the name of your AppDelegate class. See the <a href="Analytics---Advanced-Configuration-Guide.html" title="Analytics Advanced Configuration Guide">Advanced Configuration Guide</a> for details.</p>
+
+<div class="swift-code-sample"><pre><code>func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    //Your extra code here.    
+    return true
+}
+
+func applicationDidEnterBackground(application: UIApplication) {
+    //Your extra code here.
+}
+
+func applicationWillEnterForeground(application: UIApplication) {
+    //Your extra code here.
+}
+
+func applicationWillTerminate(application: UIApplication) {
+    //Your extra code here.
+}
+
+// These next three methods are only needed if your app receives notifications
+func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+    //Your extra code here.
+}
+
+func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+    //Your extra code here.
+}
+
+func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+    //Your extra code here.
+}
+
+// This method is only required if your app is using WatchKit
+func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
+    //Your extra code here.
+}</code></pre></div>
+
+
+
+
+<div class="objective_c-code-sample"><pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    //Your extra code here.
+    return YES;
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    //Your extra code here.
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    //Your extra code here.
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application
+{
+    //Your extra code here.
+}
+
+// These next three methods are only needed if your app receives notifications
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    //Your extra code here.
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    //Your extra code here.
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    //Your extra code here.
+}
+
+// This method is only required if your app is using WatchKit
+- (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply
+{
+    //Your extra code here.
+}</code></pre></div>
+
+
+<p>Additionally, if you have a hybrid application, you&rsquo;ll need the following method:</p>
+
+<div class="swift-code-sample"><pre><code>func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+    //Your extra code here.
+    return true;
+}</code></pre></div>
+
+
+<p>Your app can do whatever additional legwork it needs to do inside these methods; the SDK will attach itself and log events behind the scenes.</p>
+
+<div class="objective_c-code-sample"><pre><code>-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    //Your extra code here.
+    return YES;
+}</code></pre></div>
+
+
+<p>For more information on hybrid apps, see the <a href="Analytics---Hybrid-Events-Guide.html">Hybrid Application Guide</a></p>
+
+<h2>Automatic Event Definitions</h2>
+
+<h3>Application Lifecycle events</h3>
+
+<h4><a id="Application Start" href="#Application Start">Application Start</a></h4>
+
+<p><strong>Description</strong>: Fires an event on application launch. The event includes boilerplate information for an app launch, plus the name of the application.<br/>
+<strong>Required Protocol Method</strong>: UIApplicationDelegate&rsquo;s <code>application:didFinishLaunchingWithOptions:</code><br/>
+<strong>Manual Equivalent</strong>: <a href="../../Classes/WTDataCollector.html#//api/name/triggerEventForApplication:startWithCustomParams:">[WTDataCollector triggerEventForApplication:startWithCustomParams:]</a></p>
+
+<h4><a id="Application Terminate" href="#Application Terminate">Application Terminate</a></h4>
+
+<p><strong>Description</strong>: Fires an event on application termination. The event includes boilerplate information for an app termination, plus the name of the application.  <br/>
+<strong>Required Protocol Method</strong>: UIApplicationDelegate&rsquo;s <code>applicationWillTerminate:</code>   <br/>
+<strong>Manual Equivalent</strong>: <a href="../../Classes/WTDataCollector.html#//api/name/triggerEventForApplication:terminateWithCustomParams:">[WTDataCollector triggerEventForApplication:terminateWithCustomParams:]</a></p>
+
+<h4><a id="Application Entering Background" href="#Application Entering Background">Application Entering Background</a></h4>
+
+<p><strong>Description</strong>: Fires an event when the application enters the background. The event includes boilerplate information for an app entering the background, plus the name of the application.    <br/>
+<strong>Required Protocol Method</strong>: UIApplicationDelegate&rsquo;s <code>applicationDidEnterBackground:</code><br/>
+<strong>Manual Equivalent</strong>: <a href="../../Classes/WTDataCollector.html#//api/name/triggerEventForApplication:didEnterBackgroundWithCustomParams:">[WTDataCollector triggerEventForApplication:didEnterBackgroundWithCustomParams:]</a></p>
+
+<h4><a id="Application Entering Foreground" href="#Application Entering Foreground">Application Entering Foreground </a></h4>
+
+<p><strong>Description</strong>: Fires an event when the application enters the foreground. The event includes boilerplate information for an app entering the foreground, plus the name of the application.<br/>
+<strong>Required Protocol Method</strong>: UIApplicationDelegate&rsquo;s <code>applicationWillEnterForeground:</code> <br/>
+<strong>Manual Equivalent</strong>: <a href="../../Classes/WTDataCollector.html#//api/name/triggerEventForApplication:willEnterForegroundWithCustomParams:">[WTDataCollector triggerEventForApplication:willEnterForegroundWithCustomParams:]</a></p>
+
+<h4><a id="Notification Received" href="#Notification Received">Notification Received</a></h4>
+
+<p><strong>Description</strong>: Fires an event when the application receives a notification (can include both local and remote notifications, depending on which of the required protocol methods are implemented). The event includes the notification&rsquo;s payload, plus the name of the application.<br/>
+<strong>Required Protocol Method</strong>: UIApplicationDelegate&rsquo;s <code>application:didReceiveLocalNotification:</code> or <code>application:didReceiveRemoteNotification:</code> or <code>application:didReceiveRemoteNotification:fetchCompletionHandler:</code><br/>
+<strong>Manual Equivalent</strong>: <a href="../../Classes/WTDataCollector.html#//api/name/triggerEventForNotification:withCustomParams:">[WTDataCollector triggerEventForNotification:withCustomParams:]</a></p>
+
+<hr />
+
+<h3>View Controller Lifecycle Events</h3>
+
+<p>View Controller Lifecycle events are handled automatically for all classes that inherit from UIViewController. There are a few exceptions to this rule. The following native iOS UIViewController subclasses <em>will not</em> trigger automatic events:</p>
+
+<ul>
+<li>UICompatibilityInputViewController</li>
+<li>UIInputWindowController</li>
+<li>UIAlertController</li>
+<li>UINavigationController</li>
+<li>UIPageViewController</li>
+<li>UITabBarController</li>
+<li>UISplitViewController</li>
+<li>UISearchContainerViewController</li>
+</ul>
+
+
+<p>Any direct subclasses of these <em>will trigger</em> automatic events.</p>
+
+<h4><a id="View Controller Appearance" href="#View Controller Appearance">View Controller Appearance</a></h4>
+
+<p><strong>Description</strong>: Fires an event when any view controller appears. The event includes boilerplate information for a view controller appearing, plus the title of the view controller.<br/>
+<strong>Required Protocol Method</strong>: none<br/>
+<strong>Manual Equivalent</strong>: <a href="../../Classes/WTDataCollector.html#//api/name/triggerEventForViewDidAppear:withCustomParams:">[WTDataCollector triggerEventForViewDidAppear:withCustomParams:]</a></p>
+
+<h4><a id="View Controller Disappearance" href="#View Controller Disappearance">View Controller Disappearance</a></h4>
+
+<p><strong>Description</strong>: Fires an event when any view controller disappears. The event includes boilerplate information for a view controller disappearing, plus the title of the view controller.<br/>
+<strong>Required Protocol Method</strong>: none<br/>
+<strong>Manual Equivalent</strong>: <a href="../../Classes/WTDataCollector.html#//api/name/triggerEventForViewDidDisappear:withCustomParams:">[WTDataCollector triggerEventForViewDidDisappear:withCustomParams:]</a></p>
+
+<hr />
+
+<h3>Watch specific events</h3>
+
+<h4><a id="Interface Activated" href="#Interface Activated">Interface Activated</a></h4>
+
+<p><strong>Description</strong>: Fires an event when any watch interface activates. The event includes boilerplate information for a watch interface activating.
+<strong>Required Protocol Method</strong>: UIApplicationDelegate&rsquo;s <code>application:handleWatchKitExtensionRequest:reply:</code><br/>
+<strong>Manual Equivalent</strong>: [WTWatchDataCollector sendEventForActivation:]</p>
+
+<h4><a id="Interface Deactivated" href="#Interface Deactivated">Interface Deactivated</a></h4>
+
+<p><strong>Description</strong>: Fires an event when any watch interface deactivates. The event includes boilerplate information for a watch interface deactivating.<br/>
+<strong>Required Protocol Method</strong>: UIApplicationDelegate&rsquo;s <code>application:handleWatchKitExtensionRequest:reply:</code><br/>
+<strong>Manual Equivalent</strong>: [WTWatchDataCollector sendEventForActivation:]</p>
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2016 Webtrends. All rights reserved. Updated: 2016-03-08</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="../../js/script.js"></script>
+</body>
+</html>

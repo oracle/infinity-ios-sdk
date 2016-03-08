@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="docs/public_guides/Automatic-Events-Guide.html">
+	<File path="docs/public_guides/Analytics---Automatic-Events-Guide.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/doc/Automatic Events Guide</TokenIdentifier>
-			<Abstract type="html">In its default configuration, the Webtrends SDK will fire some events automatically. Once the SDK has been added to your project and configured (see the Getting Started Guide for more information), the following events will begin automatically logging:</Abstract>
-			<DeclaredIn>Automatic Events Guide-template.markdown</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/doc/Analytics - Automatic Events Guide</TokenIdentifier>
+			<Abstract type="html">[GettingStarted]: Core-SDK---Getting-Started-Guide.html &quot;Getting Started Guide&quot;
+[AnaConfig]: Analytics---Advanced-Configuration-Guide.html &quot;Analytics Advanced Configuration Guide&quot;
+[HybridGuide]: Analytics---Hybrid-Events-Guide.html</Abstract>
+			<DeclaredIn>Analytics - Automatic Events Guide-template.markdown</DeclaredIn>
             
 			
 			<NodeRef refid="2"/>

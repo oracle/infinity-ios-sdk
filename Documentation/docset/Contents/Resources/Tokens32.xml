@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/WTOptimizeWebViewDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/WTOptimizeWebViewDelegate</TokenIdentifier>
+			<Abstract type="html">A delegate that can be used on internal webViews that accepts cookies from Optimize-enabled web pages, allowing the transfer of data to keep the session synchronized between web and native app.</Abstract>
+			<DeclaredIn>WTOptimizeWebViewDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="32"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/WTOptimizeWebViewDelegate/shouldStartLoadWithRequest:</TokenIdentifier>
+			<Abstract type="html">Reads cookies from Optimize-enabled web pages</Abstract>
+			<DeclaredIn>WTOptimizeWebViewDelegate.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)shouldStartLoadWithRequest:(NSURLRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">the NSURLRequest of the page to be loaded</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">true for all web pages</Abstract></ReturnValue>
+			<Anchor>//api/name/shouldStartLoadWithRequest:</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

@@ -23,16 +23,15 @@ extern NSString * const kWTConfigCollectionUrlBase;
 extern NSString * const kWTConfigDebug;
 extern NSString * const kWTConfigHTTPConnectionTimeoutMilliseconds;
 extern NSString * const kWTConfigHTTPReadTimeoutMilliseconds;
-extern NSString * const kWTConfigBatteryMinimumChargePercentage;
 extern NSString * const kWTConfigRCSPollIntervalMilliseconds;
 extern NSString * const kWTConfigRCSEnabled;
 extern NSString * const kWTConfigRCSUrlBase;
 extern NSString * const kWTConfigMaxSessionMilliseconds;
 extern NSString * const kWTConfigSessionTimeoutMilliseconds;
 extern NSString * const kWTConfigAutomaticsEnabled;
-extern NSString * const kWTConfigOnlySendOverWifi;
 extern NSString * const kWTConfigAppDelegateClassName;
 extern NSString * const kWTConfigCollectionUrlExtraQueryParams;
+extern NSString * const kWTConfigReportLocationEnabled;
 // Remove AdSupport AdvertisingIdentifier
 //extern NSString * const kWTConfigSendUniqueIdEnabled;
 extern NSString * const kWTConfigSendScreenViewWithActivityViewEnabled;

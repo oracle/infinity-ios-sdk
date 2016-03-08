@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Optimize - Using Optimize in your Code Document</title>
+
+	<link rel="stylesheet" href="../../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc wt-document">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../../index.html">WebtrendsSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../../index.html">Webtrends <img src="images/wtLogo.png" width=15 height=15></a> 
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../../index.html">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Optimize - Using Optimize in your Code Document</h1>
+
+					<p>Most Optimize&trade; tests are downloaded from the server and cached locally on the device. This enables quick access to the factors that change the look of the UI elements that are being modified. This kind of test factor works great for tests that will be applied to a user experience every time, without regard to ephemeral conditions such as time of day, location, etc. For these kind of tests, we have the ability to create in-the-moment or non-cached tests that are applied <em>at the time of use</em>.</p>
+
+<h2>Cached Tests</h2>
+
+<p>Cached tests are implemented such that the SDK requests the test from the server, downloads necessary content to enable the test, and caches everything locally. When the view controller containing the UI elements is show to the user, the tests are all ready to display, causing no interruption to the user experience. If, by the time a view controller tries to render a test, the test is not ready (not fully downloaded or images have not been fetched, etc.), the SDK will not show the test to the user. Only the default view will be displayed. For this reason, it is important that all Optimize&trade; views contain reasonable default values for optimized content. In the event of network problems when the test is fetched, a reasonable default view will be displayed to the end user, who will never know the difference.</p>
+
+<h3>Using Test Factor Data in your Code</h3>
+
+<p>While it is customary to apply test factors directly to the UI elements in your view (such as label text, font, background color, etc.), it is also possible to use the returned test factor data in your code as a value. This could be as simple as putting a numeric value in a test factor on the server, then using the <a href="../../Classes/WTOptimizeManager.html#//api/name/optimizeFactorForIdentifier:">[WTOptimizeManager optimizeFactorForIdentifier:]</a> method to get at the factor&rsquo;s  properties, which contain the returned JSON.</p>
+
+<p>Each type of test has associated properties that can be useful to use in your code:</p>
+
+<ul>
+<li><a href="../../Classes/WTImageOptimizeFactor.html" title="WTImageOptimizeFactor">WTImageOptimizeFactor</a> contains the <strong>remoteURL</strong> and <strong>image</strong> properties</li>
+<li><a href="../../Classes/WTMultivariateOptimizeFactor.html" title="WTMultivariateOptimizeFactor">WTMultivariateOptimizeFactor</a> contains several properties pertaining to <strong>text, color, and font</strong>.</li>
+<li><a href="../../Classes/WTSwitchingOptimizeFactor.html" title="WTSwitchingOptimizeFactor">WTSwitchingOptimizeFactor</a> contains the <strong>selectedOption</strong> property, which can be used as a value on which to switch in your code&rsquo;s flow of control.</li>
+<li><a href="../../Classes/WTOptimizeFactor.html" title="WTOptimizeFactor">WTOptimizeFactor</a> is a parent of the factors above and contains the <strong>rawValue</strong> property (containing the raw JSON data from the server)</li>
+</ul>
+
+
+<p>The sample applications contain an example of using a <a href="../../Classes/WTSwitchingOptimizeFactor.html" title="WTSwitchingOptimizeFactor">WTSwitchingOptimizeFactor</a> to change the background color of a view controller:</p>
+
+<div class="swift-code-sample"><pre><code>if let factor = manager.optimizeFactorForIdentifier("$wt_m_ID_switchValue_WTSwitchingOptimizeFactor {
+    switch factor.selectedOption {
+    case 1:
+        // turn background color beige
+        self.view.backgroundColor = UIColor(red:0.95, green:0.92, blue:0.86, alpha:1.0)
+    case 2:
+        // turn background color light blue
+        self.view.backgroundColor = UIColor(red:0.69, green:0.85, blue:0.90, alpha:1.0)
+    default:
+        self.view.backgroundColor = UIColor.whiteColor()
+    }
+}</code></pre></div>
+
+
+
+
+<div class="objective_c-code-sample"><pre><code>WTSwitchingOptimizeFactor *factor = (WTSwitchingOptimizeFactor *) [manaoptimizeFactorForIdentifier:@"$wt_m_ID_switchValue_0"];
+switch (factor.selectedOption) {
+    case 1:
+        // Turn the background color to beige.
+        self.view.backgroundColor = [UIColor colorWithRed:0.95 green:0.92 blue:0.86 alpha:1.0];
+        break;
+    case 2:
+        // Turn the background color to light blue.
+        self.view.backgroundColor = [UIColor colorWithRed:0.69 green:0.85 blue:0.90 alpha:1.0];
+        break;
+        
+    default:
+        // Otherwise, turn the background white
+        self.view.backgroundColor = [UIColor whiteColor];
+        break;
+}</code></pre></div>
+
+
+<h2>Non-Cached (In-the-Moment) Tests</h2>
+
+<p>If, on the other hand, you wish to display content to the user that it is not possible to pre-cache, you must call the <a href="../../Classes/WTOptimizeManager.html#//api/name/fetchTestLocation:customData:completion:">[WTOptimizeManager fetchTestLocation:customData:completion:]</a> method to fetch a test from the server at render time. Since this is a network requests and could take several seconds (depending on connection quality and speed), your code should handle any blocking issues.</p>
+
+<p>Examples of in-the-moment tests might be:</p>
+
+<ul>
+<li>A test that returns a different message based on <strong>time of day</strong> or current <strong>location</strong>.</li>
+<li>Passing <strong>custom data</strong> values to the server, which returns a custom response based on rules.</li>
+</ul>
+
+
+<p>In the sample app, there is an example of an in-the-moment test for you to review. The application presents a popup menu in which the user can choose one of three greetings:</p>
+
+<ul>
+<li><strong>Personalized Greeting</strong><br/>
+  In which the key value pair &ldquo;greeting&rdquo;:&ldquo;personal&rdquo; is passed to the server</li>
+<li><strong>Generic Greeting</strong><br/>
+  In which the key:value pair &ldquo;greeting&rdquo;:&ldquo;generic&rdquo; is passed to the server</li>
+<li><strong>Default Greeting</strong><br/>
+  In which <em>nil</em> is passed to the server</li>
+</ul>
+
+
+<p>On the Optimize server, there is a corresponding personalized test:</p>
+
+<p><img src="images/ServerPersonalizedTest.png" title="Personalized Test" alt="PersTest" /></p>
+
+<p>set up with a personalized rule.</p>
+
+<p><img src="images/ServerPersonalizedRule.png" title="Personalized Rule" alt="PersRule" /></p>
+
+<p> The rule simply applies the test when the Data Object Attribute &ldquo;greeting&rdquo; (passed from the app) is equal to &ldquo;personal&rdquo;. When the application makes a call to fetch this test factor, the call will block, then return with the data. It is a good idea to present your end user with some indication of network activity (such as a spinner) while the test factor data is fetched from the server.</p>
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2016 Webtrends. All rights reserved. Updated: 2016-03-08</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="../../js/script.js"></script>
+</body>
+</html>

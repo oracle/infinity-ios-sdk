@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Optimize - Getting Started Guide Document</title>
+
+	<link rel="stylesheet" href="../../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc wt-document">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../../index.html">WebtrendsSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../../index.html">Webtrends <img src="images/wtLogo.png" width=15 height=15></a> 
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../../index.html">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Optimize - Getting Started Guide Document</h1>
+
+					<p>The Webtrends Optimize Mobile SDK is a library for iOS that enables your iOS application to implement multivariate and A/B testing. Elements within your application can be changed according to experiments you set up under the Webtrends Optimize product. Once it is installed and configured, you may create Optimize project to test factors in the UI elements or within the behavior of the code of your app.</p>
+
+<h1>Functional Overview</h1>
+
+<p>There are two basic roles that the Optimize&trade; SDK plays in your application:<br/>
+1. Change the look and feel of UI elements<br/>
+2. Track the effectiveness of those changes by tracking conversion rates</p>
+
+<p>For more inforamtion about tracking conversions, see our <a href="Optimize---Tracking-Conversions.html" title="Tracking Optimize Conversions">Tracking Conversions Guide</a>.</p>
+
+<p>Creating an app that uses the Optimize&trade; SDK is simple. Just follow these basic steps:</p>
+
+<ol>
+<li>Create an app.</li>
+<li>Install the SDK.</li>
+<li>Configure some of your UI elements to be Optimize&trade;-enabled.</li>
+<li>Create a project in Optimize that can act on those elements.</li>
+<li>Run the application and see the effects.</li>
+</ol>
+
+
+<h1>Installation</h1>
+
+<p>To install the SDK into your application, follow the installation instructions in the <a href="Core-SDK---Getting-Started-Guide.html" title="Getting Started Guide">Getting Started Guide</a>. Below is a walkthrough of the entire process of getting the SDK integrated into your application.</p>
+
+<h2>An Example Application</h2>
+
+<p>Once your project has the Optimize SDK installed, you may begin creating UI elements and code that will respond to Optimize tests. For this example, we will create a simple application that contains two Optimize-enabled UI elements, an image and a button.</p>
+
+<ol>
+<li>Create a new project. For this example, we are creating a single view controller and using the Swift language to build the application.</li>
+<li>Once the project is created, close Xcode.</li>
+<li>Open a terminal window and navigate to the directory of the new project.</li>
+<li><a href="#installPods">Install Webtrends SDK</a> via Cocoapods.</li>
+<li><a href="#webtrends.plist">Create a webtrends.plist file</a>.</li>
+<li><a href="#bridgingHeader">Create a bridging header</a> (if you are using the <em>Swift</em> programming language).</li>
+<li>In the storyboard, create a UIImageView and a UIButton on the main viewController. Change the class of these elements to WTOptimizeImageView and WTOptimizeButton.</li>
+<li>Give these UI elements a wtIdentifier value. The wtIdentifier can be set in the attributes inspector panel. This identifier will be used as a target within Optimize to apply UI changes. For this example, I have called the image <em>myOptImage</em> and the button <em>myOptButton</em>. <img src="images/wtIdentifier.png" title="Setting the wtIdentifier property" alt="Setting the wtIdentifier property" /></li>
+<li>For this page, we will be creating a project in the Optimize UI. This project must point to a <em>location</em>, which must be set in our <strong>webtrends.plist</strong> file using the <strong>wt_opt_project_locations</strong> key. I have called my project location <strong>simpleOpt.app/mainPage</strong>. For help on using the Optimize&trade; product, see the <a href="http://help.webtrends.com/en/Optimize/" title="Optimize Help Files">online help documentation</a>.</li>
+<li>In Optimize, create a location as a New Web Page. Name the location anything you wish and set the Web Page Address as <strong>simpleOpt.app/mainPage</strong>. No other information is required to create the location. <img src="images/createLocation.png" title="Creating a location in Optimize" alt="Create a location in Optimize" /></li>
+<li>After the location is created, you must create a site that points to the new location. For this example, create a site named <em>simpleOptApplication</em> and set the primary domain to <strong>simpleOpt.app</strong>.</li>
+<li>In Optimize, create a new project for this app. Name the project and set it as a <strong>Factorial</strong> project type. Set the location to the location you just created.</li>
+<li>Add two factors named myOptImage and myOptButton. Do not check the <em>Script Only</em> checkbox.  <img src="images/createOptFactors.png" title="Creating Factors" alt="Creating Optimize Factors" /></li>
+<li>For this project, we will skip creating a conversion event.</li>
+<li>Create a new test. Set the test state to <em>Staging</em> and <em>All Visitors</em>.</li>
+<li>For the images, create two levels, each with a different image URL in the script. Make sure the image factors are redirects. <img src="images/imageFactor.png" title="Creating an image factor" alt="Create Image Factor" /></li>
+<li><p>For the button, create two levels, each with a different JSON object such as:</p>
+
+<pre><code>{
+  "myOptButton": {
+    "buttonText":{
+      "normal":"Hit it!"
+    },
+    "backgroundColor":"#99ccff"
+  }
+}
+</code></pre></li>
+<li>When you run the app, the SDK reads from the Optimize server, downloads the tests, downloads the images, and stores them locally. In this simple app, there is not enough time to do all that overhead work before the first (and only) view is displayed. However, if the application is terminated and restarted, the new content will become visible and will persist for future app launches.<img src="images/grumpyCat.png" title="Grumpy Cat" alt="grumpy cat" /></li>
+</ol>
+
+
+<p>For more information on using the Optimize&trade; product to create projects, tests, factors, etc., please see the <a href="http://help.webtrends.com/en/Optimize/" title="Optimize Help Files">Optimize Help Files</a>.</p>
+
+<p><font color=red><strong>Important Note:</strong></font>
+In this very simple app, the only view controller loads very quickly, which does not allow the SDK time enough to ask the server for tests, download the tests, then download the replacement image. As a result, when the app is launched, you will not see any of the optimization tests displayed. However, if the app is closed and reopened, the optimizations will be displayed correctly.</p>
+
+<p>This is not a bug and can be prevented by avoiding the display of optimizations on a launch screen. By the time a user navigates to subsequent views in the app, the content should be displayed. For this reason, it is always a good idea to have sane default values for all Optimize UI elements such as images and text. In the event that a user launches the application without any network connectivity, your defaults will be displayed and there will be no negative impact to the user experience. This will <em>only</em> affect the experience the first time the app is launched. Any subsequent launches will pull data from a local cache and will be nearly instantaneous, whether the network is available or not.</p>
+
+<div id="installPods"></div>
+
+
+<h3>Installing the Webtrends SDK Pods</h3>
+
+<ol>
+<li>Once the project is created, close Xcode.</li>
+<li>Open a terminal window and navigate to the directory of the new project.</li>
+<li><p>Create a Podfile file in this directory containing:</p>
+
+<pre><code> pod 'Webtrends-SDK/Core'
+ pod 'Webtrends-SDK/Optimize'
+</code></pre></li>
+<li>Run the <code>pod install</code> command from the terminal window.</li>
+<li>Once the pods are successfully installed, open the .xcworkspace file. Do not open the old .xcodeproj file.</li>
+</ol>
+
+
+<div id="webtrends.plist"></div>
+
+
+<h3>Create a webtrends.plist File</h3>
+
+<p>Create a Property List file by selecting <strong>File -> New -> File&hellip;</strong> and choosing <strong>Property List</strong> from the <strong>Resource</strong> group. Name the file <strong>webtrends.plist</strong>.</p>
+
+<p>The <strong>webtrends.plist</strong> file contains required and optional configuration settings. The only required entries in this file are:</p>
+
+<p><strong>For Analytics&trade;:</strong></p>
+
+<ul>
+<li><strong>wt_dc_dcsid:</strong> Your Webtrends Analytics&trade; DCSID for this application</li>
+</ul>
+
+
+<p><strong>For Optimize&trade;:</strong></p>
+
+<ul>
+<li><strong>wt_opt_key_token:</strong> Your Webtrends Optimize&trade; key token</li>
+<li><strong>wt_opt_domain_id:</strong> Your Optimnize&trade; domain ID, also known as an account number</li>
+<li><strong>wt_opt_account_guid:</strong> Your Webtrends Account GUID. This is a 10-character alphanumeric string. Do not include the &ldquo;.acct.webtrends.com&rdquo; suffix.</li>
+<li><strong>wt_opt_project_locations:</strong> A comma-separated list of project locations. For this example, it will contain the project location that you define above in the Optimize&trade; application.</li>
+<li><strong>wt_opt_staging_mode:</strong> Set this to <em>true</em> if you have created Optimize&trade; tests in staging mode. This is commonly used while developing applications and Optimize&trade; tests. Once the application is ready for launch, remove this setting or set it to <em>false</em> and change the tests in Optimize&trade; to <em>Active</em>.</li>
+</ul>
+
+
+<p>Here is what your finished webtrends.plist file will look like. Your values will change, of course, but the keys will be the same as below.</p>
+
+<p><img src="images/SampleWebtrends.plist.png" title="Sample webtrends.plist file" alt="Sample webtrends.plist file" /></p>
+
+<p>Other configuration settings are optional and are detailed in the <a href="Analytics---Advanced-Configuration-Guide.html" title="Analytics Advanced Configuration Guide">Analytics Advanced Configuration Guide</a> or the <a href="Optimize---Advanced-Configuration-Guide.html" title="Analytics Advanced Configuration Guide">Optimize Advanced Configuration Guide</a>.</p>
+
+<div id="bridgingHeader"></div>
+
+
+<h3>Create a Bridging Header (Swift apps only)</h3>
+
+<p>iOS apps written in Swift require a bridging header to read Objective-C libraries. Creating one is very simple.</p>
+
+<ol>
+<li>Select <strong>File -> New -> File&hellip;</strong> and choose <strong>Header File</strong> from the <strong>iOS Source</strong> group.</li>
+<li>Open the file and import the <strong>WebtrendsSDK.h</strong> and (optionally) the <strong>OptimizeSDK.h</strong> header files. Your file will look something like this:</li>
+</ol>
+
+
+<pre><code>    // You'll need to import WebtrendsSDK.h into your bridging header in order to use the SDK
+    // from Swift. Apple's documentation has more information on how to set this up:
+    // https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html
+
+    @import Foundation;
+
+    #import "WebtrendsSDK.h"
+    #import "OptimizeSDK.h"
+</code></pre>
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2016 Webtrends. All rights reserved. Updated: 2016-03-08</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="../../js/script.js"></script>
+</body>
+</html>

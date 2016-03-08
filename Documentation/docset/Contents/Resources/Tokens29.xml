@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/WTOptimizeTest.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/WTOptimizeTest</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>WTOptimizeTest.h</DeclaredIn>
+            
+			
+			<NodeRef refid="29"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTOptimizeTest/setExpired:</TokenIdentifier>
+			<Abstract type="html">Returns true if the test is expired (as defined in the Optimize test).</Abstract>
+			<DeclaredIn>WTOptimizeTest.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic, getter=isExpired) BOOL expired</Declaration>
+			
+			
+			<Anchor>//api/name/expired</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTOptimizeTest/isExpired</TokenIdentifier>
+			<Abstract type="html">Returns true if the test is expired (as defined in the Optimize test).</Abstract>
+			<DeclaredIn>WTOptimizeTest.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic, getter=isExpired) BOOL expired</Declaration>
+			
+			
+			<Anchor>//api/name/expired</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTOptimizeTest/expired</TokenIdentifier>
+			<Abstract type="html">Returns true if the test is expired (as defined in the Optimize test).</Abstract>
+			<DeclaredIn>WTOptimizeTest.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic, getter=isExpired) BOOL expired</Declaration>
+			
+			
+			<Anchor>//api/name/expired</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTOptimizeTest/setReady:</TokenIdentifier>
+			<Abstract type="html">Returns true if all factors associated with this test are ready for use.</Abstract>
+			<DeclaredIn>WTOptimizeTest.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic, getter=isReady) BOOL ready</Declaration>
+			
+			
+			<Anchor>//api/name/ready</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTOptimizeTest/isReady</TokenIdentifier>
+			<Abstract type="html">Returns true if all factors associated with this test are ready for use.</Abstract>
+			<DeclaredIn>WTOptimizeTest.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic, getter=isReady) BOOL ready</Declaration>
+			
+			
+			<Anchor>//api/name/ready</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTOptimizeTest/ready</TokenIdentifier>
+			<Abstract type="html">Returns true if all factors associated with this test are ready for use.</Abstract>
+			<DeclaredIn>WTOptimizeTest.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, nonatomic, getter=isReady) BOOL ready</Declaration>
+			
+			
+			<Anchor>//api/name/ready</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

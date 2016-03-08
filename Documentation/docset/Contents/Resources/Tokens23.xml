@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/WTMultivariateOptimizeFactor.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/WTMultivariateOptimizeFactor</TokenIdentifier>
+			<Abstract type="html">Used to optimize various aesthetic options in multiple types of views. Generally accessed via one of the SDK-provided UIView subclasses, but can be directly accessed for creating testable custom UI.</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+            
+			
+			<NodeRef refid="23"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/setText:</TokenIdentifier>
+			<Abstract type="html">The parsed text value, generally used in labels, textViews, and textFields</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSString *text</Declaration>
+			
+			
+			<Anchor>//api/name/text</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/text</TokenIdentifier>
+			<Abstract type="html">The parsed text value, generally used in labels, textViews, and textFields</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSString *text</Declaration>
+			
+			
+			<Anchor>//api/name/text</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTMultivariateOptimizeFactor/text</TokenIdentifier>
+			<Abstract type="html">The parsed text value, generally used in labels, textViews, and textFields</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSString *text</Declaration>
+			
+			
+			<Anchor>//api/name/text</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/setButtonText:</TokenIdentifier>
+			<Abstract type="html">The button text dictionary, stores information mapping to a button&apos;s UIControlState</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSDictionary *buttonText</Declaration>
+			
+			
+			<Anchor>//api/name/buttonText</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/buttonText</TokenIdentifier>
+			<Abstract type="html">The button text dictionary, stores information mapping to a button&apos;s UIControlState</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSDictionary *buttonText</Declaration>
+			
+			
+			<Anchor>//api/name/buttonText</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTMultivariateOptimizeFactor/buttonText</TokenIdentifier>
+			<Abstract type="html">The button text dictionary, stores information mapping to a button&apos;s UIControlState</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSDictionary *buttonText</Declaration>
+			
+			
+			<Anchor>//api/name/buttonText</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/setPlaceholder:</TokenIdentifier>
+			<Abstract type="html">The placeholder text, generally used in textFields</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSString *placeholder</Declaration>
+			
+			
+			<Anchor>//api/name/placeholder</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/placeholder</TokenIdentifier>
+			<Abstract type="html">The placeholder text, generally used in textFields</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSString *placeholder</Declaration>
+			
+			
+			<Anchor>//api/name/placeholder</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTMultivariateOptimizeFactor/placeholder</TokenIdentifier>
+			<Abstract type="html">The placeholder text, generally used in textFields</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSString *placeholder</Declaration>
+			
+			
+			<Anchor>//api/name/placeholder</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/setBackgroundColor:</TokenIdentifier>
+			<Abstract type="html">The element&apos;s background color, used on any UI element.</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) UIColor *backgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/backgroundColor</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/backgroundColor</TokenIdentifier>
+			<Abstract type="html">The element&apos;s background color, used on any UI element.</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) UIColor *backgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/backgroundColor</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTMultivariateOptimizeFactor/backgroundColor</TokenIdentifier>
+			<Abstract type="html">The element&apos;s background color, used on any UI element.</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) UIColor *backgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/backgroundColor</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/setTextColor:</TokenIdentifier>
+			<Abstract type="html">*  The element&apos;s text color, generally used in labels, textViews, and textFields</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) UIColor *textColor</Declaration>
+			
+			
+			<Anchor>//api/name/textColor</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/textColor</TokenIdentifier>
+			<Abstract type="html">*  The element&apos;s text color, generally used in labels, textViews, and textFields</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) UIColor *textColor</Declaration>
+			
+			
+			<Anchor>//api/name/textColor</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTMultivariateOptimizeFactor/textColor</TokenIdentifier>
+			<Abstract type="html">*  The element&apos;s text color, generally used in labels, textViews, and textFields</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) UIColor *textColor</Declaration>
+			
+			
+			<Anchor>//api/name/textColor</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/setButtonTextColor:</TokenIdentifier>
+			<Abstract type="html">The button text color dictionary, stores information mapping to a button&apos;s UIControlState</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSDictionary *buttonTextColor</Declaration>
+			
+			
+			<Anchor>//api/name/buttonTextColor</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/buttonTextColor</TokenIdentifier>
+			<Abstract type="html">The button text color dictionary, stores information mapping to a button&apos;s UIControlState</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSDictionary *buttonTextColor</Declaration>
+			
+			
+			<Anchor>//api/name/buttonTextColor</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTMultivariateOptimizeFactor/buttonTextColor</TokenIdentifier>
+			<Abstract type="html">The button text color dictionary, stores information mapping to a button&apos;s UIControlState</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSDictionary *buttonTextColor</Declaration>
+			
+			
+			<Anchor>//api/name/buttonTextColor</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/setTextAlignment:</TokenIdentifier>
+			<Abstract type="html">The element&apos;s text alignment, generally used in labels, textViews, textFields, and buttons</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTextAlignment textAlignment</Declaration>
+			
+			
+			<Anchor>//api/name/textAlignment</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/textAlignment</TokenIdentifier>
+			<Abstract type="html">The element&apos;s text alignment, generally used in labels, textViews, textFields, and buttons</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTextAlignment textAlignment</Declaration>
+			
+			
+			<Anchor>//api/name/textAlignment</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTMultivariateOptimizeFactor/textAlignment</TokenIdentifier>
+			<Abstract type="html">The element&apos;s text alignment, generally used in labels, textViews, textFields, and buttons</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTextAlignment textAlignment</Declaration>
+			
+			
+			<Anchor>//api/name/textAlignment</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/setFont:</TokenIdentifier>
+			<Abstract type="html">The element&apos;s font, generally used in labels, textViews, textFields, and buttons</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) UIFont *font</Declaration>
+			
+			
+			<Anchor>//api/name/font</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/font</TokenIdentifier>
+			<Abstract type="html">The element&apos;s font, generally used in labels, textViews, textFields, and buttons</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) UIFont *font</Declaration>
+			
+			
+			<Anchor>//api/name/font</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTMultivariateOptimizeFactor/font</TokenIdentifier>
+			<Abstract type="html">The element&apos;s font, generally used in labels, textViews, textFields, and buttons</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) UIFont *font</Declaration>
+			
+			
+			<Anchor>//api/name/font</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/setImageDictionary:</TokenIdentifier>
+			<Abstract type="html">The button image dictionary, stores information mapping to a button&apos;s UIControlState</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSDictionary *imageDictionary</Declaration>
+			
+			
+			<Anchor>//api/name/imageDictionary</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/imageDictionary</TokenIdentifier>
+			<Abstract type="html">The button image dictionary, stores information mapping to a button&apos;s UIControlState</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSDictionary *imageDictionary</Declaration>
+			
+			
+			<Anchor>//api/name/imageDictionary</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTMultivariateOptimizeFactor/imageDictionary</TokenIdentifier>
+			<Abstract type="html">The button image dictionary, stores information mapping to a button&apos;s UIControlState</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSDictionary *imageDictionary</Declaration>
+			
+			
+			<Anchor>//api/name/imageDictionary</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/setBackgroundImageDictionary:</TokenIdentifier>
+			<Abstract type="html">The button background image, stores information mapping to a button&apos;s UIControlState. Can include information for creating resizable images.</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSDictionary *backgroundImageDictionary</Declaration>
+			
+			
+			<Anchor>//api/name/backgroundImageDictionary</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/backgroundImageDictionary</TokenIdentifier>
+			<Abstract type="html">The button background image, stores information mapping to a button&apos;s UIControlState. Can include information for creating resizable images.</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSDictionary *backgroundImageDictionary</Declaration>
+			
+			
+			<Anchor>//api/name/backgroundImageDictionary</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTMultivariateOptimizeFactor/backgroundImageDictionary</TokenIdentifier>
+			<Abstract type="html">The button background image, stores information mapping to a button&apos;s UIControlState. Can include information for creating resizable images.</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSDictionary *backgroundImageDictionary</Declaration>
+			
+			
+			<Anchor>//api/name/backgroundImageDictionary</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/setAttributedText:</TokenIdentifier>
+			<Abstract type="html">The parsed attributed text value, generally used in labels, textViews, and textFields</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSAttributedString *attributedText</Declaration>
+			
+			
+			<Anchor>//api/name/attributedText</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/attributedText</TokenIdentifier>
+			<Abstract type="html">The parsed attributed text value, generally used in labels, textViews, and textFields</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSAttributedString *attributedText</Declaration>
+			
+			
+			<Anchor>//api/name/attributedText</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTMultivariateOptimizeFactor/attributedText</TokenIdentifier>
+			<Abstract type="html">The parsed attributed text value, generally used in labels, textViews, and textFields</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSAttributedString *attributedText</Declaration>
+			
+			
+			<Anchor>//api/name/attributedText</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/setButtonAttributedText:</TokenIdentifier>
+			<Abstract type="html">The button attributed text dictionary, stores information mapping to a button&apos;s UIControlState</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSDictionary *buttonAttributedText</Declaration>
+			
+			
+			<Anchor>//api/name/buttonAttributedText</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTMultivariateOptimizeFactor/buttonAttributedText</TokenIdentifier>
+			<Abstract type="html">The button attributed text dictionary, stores information mapping to a button&apos;s UIControlState</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSDictionary *buttonAttributedText</Declaration>
+			
+			
+			<Anchor>//api/name/buttonAttributedText</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTMultivariateOptimizeFactor/buttonAttributedText</TokenIdentifier>
+			<Abstract type="html">The button attributed text dictionary, stores information mapping to a button&apos;s UIControlState</Abstract>
+			<DeclaredIn>WTMultivariateOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSDictionary *buttonAttributedText</Declaration>
+			
+			
+			<Anchor>//api/name/buttonAttributedText</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

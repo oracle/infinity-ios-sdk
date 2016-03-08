@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/WTEventMedia.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/WTEventMedia</TokenIdentifier>
+			<Abstract type="html">WTEventMedia is a wrapper class to parameter types associated with media events.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+            
+			
+			<NodeRef refid="20"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMedia/setMediaName:</TokenIdentifier>
+			<Abstract type="html">Specifies the name of the media content accessed during an event, for example the name of a video clip.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *mediaName</Declaration>
+			
+			
+			<Anchor>//api/name/mediaName</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMedia/mediaName</TokenIdentifier>
+			<Abstract type="html">Specifies the name of the media content accessed during an event, for example the name of a video clip.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *mediaName</Declaration>
+			
+			
+			<Anchor>//api/name/mediaName</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTEventMedia/mediaName</TokenIdentifier>
+			<Abstract type="html">Specifies the name of the media content accessed during an event, for example the name of a video clip.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *mediaName</Declaration>
+			
+			
+			<Anchor>//api/name/mediaName</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMedia/setMediaType:</TokenIdentifier>
+			<Abstract type="html">Specifies a type of media accessed during the event, such as QuickTime or mp3.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *mediaType</Declaration>
+			
+			
+			<Anchor>//api/name/mediaType</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMedia/mediaType</TokenIdentifier>
+			<Abstract type="html">Specifies a type of media accessed during the event, such as QuickTime or mp3.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *mediaType</Declaration>
+			
+			
+			<Anchor>//api/name/mediaType</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTEventMedia/mediaType</TokenIdentifier>
+			<Abstract type="html">Specifies a type of media accessed during the event, such as QuickTime or mp3.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *mediaType</Declaration>
+			
+			
+			<Anchor>//api/name/mediaType</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMedia/setMediaEventType:</TokenIdentifier>
+			<Abstract type="html">Specifies the type of media event that occurred, such as a view of media content.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *mediaEventType</Declaration>
+			
+			
+			<Anchor>//api/name/mediaEventType</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMedia/mediaEventType</TokenIdentifier>
+			<Abstract type="html">Specifies the type of media event that occurred, such as a view of media content.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *mediaEventType</Declaration>
+			
+			
+			<Anchor>//api/name/mediaEventType</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTEventMedia/mediaEventType</TokenIdentifier>
+			<Abstract type="html">Specifies the type of media event that occurred, such as a view of media content.</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *mediaEventType</Declaration>
+			
+			
+			<Anchor>//api/name/mediaEventType</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/WTEventMedia/eventMediaForName:mediaType:mediaEventType:</TokenIdentifier>
+			<Abstract type="html">Creates a WTEventMedia object that stores information about a given piece of media</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)eventMediaForName:(NSString *)mediaName mediaType:(NSString *)mediaType mediaEventType:(NSString *)mediaEventType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mediaName</Name>
+					<Abstract type="html">Specifies the name of the media content accessed during an event, for example the name of a video clip.</Abstract>
+				</Parameter><Parameter>
+					<Name>mediaType</Name>
+					<Abstract type="html">Specifies a type of media accessed during the event, such as QuickTime or mp3.</Abstract>
+				</Parameter><Parameter>
+					<Name>mediaEventType</Name>
+					<Abstract type="html">Specifies the type of media event that occurred, such as a view of media content.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The WTEventMedia object describing your media</Abstract></ReturnValue>
+			<Anchor>//api/name/eventMediaForName:mediaType:mediaEventType:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTEventMedia/initWithMediaName:mediaType:mediaEventType:</TokenIdentifier>
+			<Abstract type="html">Creates a WTEventMedia object that stores information about a given piece of media</Abstract>
+			<DeclaredIn>WTEventSupport.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithMediaName:(NSString *)mediaName mediaType:(NSString *)mediaType mediaEventType:(NSString *)mediaEventType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mediaName</Name>
+					<Abstract type="html">Specifies the name of the media content accessed during an event, for example the name of a video clip.</Abstract>
+				</Parameter><Parameter>
+					<Name>mediaType</Name>
+					<Abstract type="html">Specifies a type of media accessed during the event, such as QuickTime or mp3.</Abstract>
+				</Parameter><Parameter>
+					<Name>mediaEventType</Name>
+					<Abstract type="html">Specifies the type of media event that occurred, such as a view of media content.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The WTEventMedia object describing your media</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithMediaName:mediaType:mediaEventType:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

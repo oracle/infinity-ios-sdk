@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/WTOptimizeFactor.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/WTOptimizeFactor</TokenIdentifier>
+			<Abstract type="html">An Optimize Factor containing the specific changes to be implemented for a given Optimize Test. Generally this class is only referenced by way of its subclasses.</Abstract>
+			<DeclaredIn>WTOptimizeFactor.h</DeclaredIn>
+            
+			
+			<NodeRef refid="25"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTOptimizeFactor/setRawValue:</TokenIdentifier>
+			<Abstract type="html">The raw value obtained via NSJSONSerialization. This value contains an NSDictionary in the majority of cases, but not exclusively.</Abstract>
+			<DeclaredIn>WTOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) id rawValue</Declaration>
+			
+			
+			<Anchor>//api/name/rawValue</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTOptimizeFactor/rawValue</TokenIdentifier>
+			<Abstract type="html">The raw value obtained via NSJSONSerialization. This value contains an NSDictionary in the majority of cases, but not exclusively.</Abstract>
+			<DeclaredIn>WTOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) id rawValue</Declaration>
+			
+			
+			<Anchor>//api/name/rawValue</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTOptimizeFactor/rawValue</TokenIdentifier>
+			<Abstract type="html">The raw value obtained via NSJSONSerialization. This value contains an NSDictionary in the majority of cases, but not exclusively.</Abstract>
+			<DeclaredIn>WTOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) id rawValue</Declaration>
+			
+			
+			<Anchor>//api/name/rawValue</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTOptimizeFactor/setIdentifier:</TokenIdentifier>
+			<Abstract type="html">The optimize identifier asscoiated with this factor. Identifiers can identify one set of visual instructions per app, and can be thought of similarly to css classes.</Abstract>
+			<DeclaredIn>WTOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSString *identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTOptimizeFactor/identifier</TokenIdentifier>
+			<Abstract type="html">The optimize identifier asscoiated with this factor. Identifiers can identify one set of visual instructions per app, and can be thought of similarly to css classes.</Abstract>
+			<DeclaredIn>WTOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSString *identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTOptimizeFactor/identifier</TokenIdentifier>
+			<Abstract type="html">The optimize identifier asscoiated with this factor. Identifiers can identify one set of visual instructions per app, and can be thought of similarly to css classes.</Abstract>
+			<DeclaredIn>WTOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic, readonly) NSString *identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTOptimizeFactor/setReady:</TokenIdentifier>
+			<Abstract type="html">Whether or not all data associated with this factor is ready. In most cases, this references remote images.</Abstract>
+			<DeclaredIn>WTOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isReady) BOOL ready</Declaration>
+			
+			
+			<Anchor>//api/name/ready</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTOptimizeFactor/isReady</TokenIdentifier>
+			<Abstract type="html">Whether or not all data associated with this factor is ready. In most cases, this references remote images.</Abstract>
+			<DeclaredIn>WTOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isReady) BOOL ready</Declaration>
+			
+			
+			<Anchor>//api/name/ready</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTOptimizeFactor/ready</TokenIdentifier>
+			<Abstract type="html">Whether or not all data associated with this factor is ready. In most cases, this references remote images.</Abstract>
+			<DeclaredIn>WTOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, getter=isReady) BOOL ready</Declaration>
+			
+			
+			<Anchor>//api/name/ready</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

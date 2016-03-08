@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="docs/public_guides/Hybrid-Events-Guide.html">
+	<File path="docs/public_guides/Analytics---Manual-Events-Guide.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/doc/Hybrid Events Guide</TokenIdentifier>
-			<Abstract type="html">The Webtrends SDK includes components that allow you pass sessions back and forth between the app, and a website opened in Safari. This guide shows the two methods of data transfer: app to browser, and browser to app.</Abstract>
-			<DeclaredIn>Hybrid Events Guide-template.markdown</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/doc/Analytics - Manual Events Guide</TokenIdentifier>
+			<Abstract type="html">[GettingStarted]: Core-SDK---Getting-Started-Guide.html &quot;Getting Started Guide&quot;
+[AutoEvents]: Analytics---Automatic-Events-Guide.html &quot;Automatic Events Guide&quot;</Abstract>
+			<DeclaredIn>Analytics - Manual Events Guide-template.markdown</DeclaredIn>
             
 			
 			<NodeRef refid="5"/>

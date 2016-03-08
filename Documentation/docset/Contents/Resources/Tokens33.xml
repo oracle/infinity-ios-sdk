@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/WTSwitchingOptimizeFactor.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/WTSwitchingOptimizeFactor</TokenIdentifier>
+			<Abstract type="html">Used to perform basic A/B optimization. Use the selectedOption property to switch on</Abstract>
+			<DeclaredIn>WTSwitchingOptimizeFactor.h</DeclaredIn>
+            
+			
+			<NodeRef refid="33"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTSwitchingOptimizeFactor/setSelectedOption:</TokenIdentifier>
+			<Abstract type="html">The option selected by the Optimize test. Generally used in a switch statement to execute alternate code paths.</Abstract>
+			<DeclaredIn>WTSwitchingOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger selectedOption</Declaration>
+			
+			
+			<Anchor>//api/name/selectedOption</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/WTSwitchingOptimizeFactor/selectedOption</TokenIdentifier>
+			<Abstract type="html">The option selected by the Optimize test. Generally used in a switch statement to execute alternate code paths.</Abstract>
+			<DeclaredIn>WTSwitchingOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger selectedOption</Declaration>
+			
+			
+			<Anchor>//api/name/selectedOption</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/WTSwitchingOptimizeFactor/selectedOption</TokenIdentifier>
+			<Abstract type="html">The option selected by the Optimize test. Generally used in a switch statement to execute alternate code paths.</Abstract>
+			<DeclaredIn>WTSwitchingOptimizeFactor.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger selectedOption</Declaration>
+			
+			
+			<Anchor>//api/name/selectedOption</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

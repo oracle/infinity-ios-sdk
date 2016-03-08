@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>WTOptimizeManager Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">WebtrendsSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Webtrends</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/sharedManager">+ sharedManager</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/factorCount">- factorCount</option>
+		
+		<option value="//api/name/fetchTestLocation:customData:completion:">- fetchTestLocation:customData:completion:</option>
+		
+		<option value="//api/name/flushTestCache">- flushTestCache</option>
+		
+		<option value="//api/name/optimizeFactorForIdentifier:">- optimizeFactorForIdentifier:</option>
+		
+		<option value="//api/name/projectCount">- projectCount</option>
+		
+		<option value="//api/name/synchronizeSessionWithWebView:">- synchronizeSessionWithWebView:</option>
+		
+		<option value="//api/name/testCount">- testCount</option>
+		
+		<option value="//api/name/triggerEventForConversionWithTestAlias:projectLocation:conversionPoint:">- triggerEventForConversionWithTestAlias:projectLocation:conversionPoint:</option>
+		
+		<option value="//api/name/triggerPageView:withTestAlias:projectLocation:">- triggerPageView:withTestAlias:projectLocation:</option>
+		
+		<option value="//api/name/triggerPageViewEnd">- triggerPageViewEnd</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">WTOptimizeManager Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>WTOptimizeManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>WTOptimizeManager is the central class provided by OptimizeSDK. Its central purpose is to orchestrate optimization tests and report conversions to the Optimize data collection servers. It&rsquo;s primarily accessed through its sharedCollector singleton. It should not be manually initialized.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/sharedManager" title="sharedManager"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedManager">+&nbsp;sharedManager</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The singleton Optimize manager object used to access all Optimize SDK functionality.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype _Nonnull)sharedManager</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>WTOptimizeManager singleton object</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>You can use this method within your Webtrends-SDK-enabled application to get access to the WTOptimizeManager singleton object, its properties, and methods.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTOptimizeManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/optimizeFactorForIdentifier:" title="optimizeFactorForIdentifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/optimizeFactorForIdentifier:">&ndash;&nbsp;optimizeFactorForIdentifier:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Retrieve an Optimize test factor from the local collection of tests.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (WTOptimizeFactor *_Nullable)optimizeFactorForIdentifier:(NSString *_Nonnull)<em>identifier</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>identifier</code></th>
+						<td><p>The identifier associated with this factor</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The Optimize factor with the identifier</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTOptimizeManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/projectCount" title="projectCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/projectCount">&ndash;&nbsp;projectCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of projects stored locally</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (int64_t)projectCount</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the number of projects stored in the local database</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTOptimizeManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/testCount" title="testCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/testCount">&ndash;&nbsp;testCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of tests stored locally</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (int64_t)testCount</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the number of tests stored in the local database</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTOptimizeManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/factorCount" title="factorCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/factorCount">&ndash;&nbsp;factorCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of factors stored locally</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (int64_t)factorCount</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the number of factors stored in the local database</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTOptimizeManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerPageView:withTestAlias:projectLocation:" title="triggerPageView:withTestAlias:projectLocation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerPageView:withTestAlias:projectLocation:">&ndash;&nbsp;triggerPageView:withTestAlias:projectLocation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create a page view that will be associated with an existing test alias and project</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *_Nullable)triggerPageView:(id _Nonnull)<em>page</em> withTestAlias:(NSString *_Nonnull)<em>testAlias</em> projectLocation:(NSString *_Nonnull)<em>projectLocation</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>page</code></th>
+						<td><p>Usually self, but may be any object.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>testAlias</code></th>
+						<td><p>The test alias associated with this page view</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>projectLocation</code></th>
+						<td><p>The project location associated with this page view</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>a Page View event. It is not necessary to use the return value. The event will automatically be sent to the collection servers during the next event send.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Both testAlias and projectLocation must exist in the local optimize store (previously set up in the Optimize product and downloaded by the SDK to this application).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTOptimizeManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerEventForConversionWithTestAlias:projectLocation:conversionPoint:" title="triggerEventForConversionWithTestAlias:projectLocation:conversionPoint:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerEventForConversionWithTestAlias:projectLocation:conversionPoint:">&ndash;&nbsp;triggerEventForConversionWithTestAlias:projectLocation:conversionPoint:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Triggers a conversion event to be created</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *_Nullable)triggerEventForConversionWithTestAlias:(NSString *_Nonnull)<em>testAlias</em> projectLocation:(NSString *_Nonnull)<em>projectLocation</em> conversionPoint:(NSString *_Nonnull)<em>conversionPoint</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>testAlias</code></th>
+						<td><p>The test alias associated with this conversion</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>projectLocation</code></th>
+						<td><p>The project location associated with this conversion</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>conversionPoint</code></th>
+						<td><p>The conversion point associated with this conversion</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>a conversion event (as an NSDictionary). It is not necessary to use the return value. The event will automatically be sent to the collection servers during the next event send.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Conversion events must be defined in the Optimize application and preceded by a page view event.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTOptimizeManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/triggerPageViewEnd" title="triggerPageViewEnd"></a>
+	<h3 class="method-title"><code><a href="#//api/name/triggerPageViewEnd">&ndash;&nbsp;triggerPageViewEnd</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Mark the current page view as completed, so that subsequent calls to triggerPageView:withTestAlias:projectLocation will cause an additional page view to be tracked rather than ignored. This method is optional.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)triggerPageViewEnd</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTOptimizeManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fetchTestLocation:customData:completion:" title="fetchTestLocation:customData:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchTestLocation:customData:completion:">&ndash;&nbsp;fetchTestLocation:customData:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetch the test at a given location. Useful for tests that aren&rsquo;t permenantly cacheable, because they require in-the-moment data. Generally implemented with some sort of UI-blocking to prevent a content flash after the download has finished.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)fetchTestLocation:(NSString *_Nonnull)<em>location</em> customData:(NSDictionary *_Nullable)<em>data</em> completion:(void ( ^ _Nullable ) ( NSArray&lt;WTOptimizeTest*&gt; *_Nullable tests , NSError *_Nullable error ))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>location</code></th>
+						<td><p>The project location to search for</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Once fetched, returns an array of tests that match the given location</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTOptimizeManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/synchronizeSessionWithWebView:" title="synchronizeSessionWithWebView:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/synchronizeSessionWithWebView:">&ndash;&nbsp;synchronizeSessionWithWebView:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get cookie data from the SDK and send it to the webView&rsquo;s cookie storage</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)synchronizeSessionWithWebView:(id _Nonnull)<em>webView</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>webView</code></th>
+						<td><p>a UIWebView or WKWebView (or subclass) object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTOptimizeManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flushTestCache" title="flushTestCache"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flushTestCache">&ndash;&nbsp;flushTestCache</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If the SDK is in staging mode, flush all tests ands cookies currently cached in the system. Useful for active test development and debugging.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)flushTestCache</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WTOptimizeManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 Webtrends. All rights reserved. Updated: 2016-03-08</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

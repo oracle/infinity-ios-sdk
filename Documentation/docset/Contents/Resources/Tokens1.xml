@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="docs/public_guides/Advanced-Configuration-Guide.html">
+	<File path="docs/public_guides/Analytics---Advanced-Configuration-Guide.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/doc/Advanced Configuration Guide</TokenIdentifier>
-			<Abstract type="html">##Setting Configuration Settings via WTDataCollector</Abstract>
-			<DeclaredIn>Advanced Configuration Guide-template.markdown</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/doc/Analytics - Advanced Configuration Guide</TokenIdentifier>
+			<Abstract type="html">[AutoEvents]: Analytics---Automatic-Events-Guide.html &quot;Automatic Events Guide&quot;
+[CoreConfig]: Core-SDK---Setting-Configuration-Values.html &quot;Core SDK Config Guide&quot;
+##Setting Configuration Settings via WTDataCollector</Abstract>
+			<DeclaredIn>Analytics - Advanced Configuration Guide-template.markdown</DeclaredIn>
             
 			
 			<NodeRef refid="1"/>

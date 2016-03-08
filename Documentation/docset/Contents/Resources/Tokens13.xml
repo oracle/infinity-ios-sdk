@@ -1,73 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/WTWebViewDelegate.html">
+	<File path="docs/public_guides/Optimize---Getting-Started-Guide.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/WTWebViewDelegate</TokenIdentifier>
-			<Abstract type="html">* # UIWebView
-*  Generating events through the Webtrends JavaScript tag UIWebViews embedded in a native app can generate Webtrends events by using JavaScript helper methods that interact with the native app to generate and send events, or by using the Webtrends JavaScript tag in the embedded web content to generate and send events. Follow these instructions to use the Webtrends JavaScript tag.
-*
-*  The native app must implement the Webtrends Mobile Library for iOS, the web content must be tagged with the Webtrends JavaScript tag, and you must be familiar with iOS UIWebViews.
-*
-*  If we don&apos;t need to do any web view delegation of our own, we&apos;ll simply create a retained instance of WTWebViewDelegate and let it do the work for us
-* There are two methods of alerting the Data Collector of JavaScript-triggered events. The first is using the supplied WTWebViewDelegate, shown here:
-* ## Method 1 – Webtrends supplied delegate
-*  	- (void)viewDidLoad {
-*  	    [super viewDidLoad];
-  	    NSURL url = [NSURL URLWithString:@&quot;https://bank.wt-go.com/invest&quot;];
-*
-*  	    // If we want to share a session between the app and the website,
-*  	    // we&apos;ll append it to the URL before triggering the request
-*  	    // using the appendSessionParamsToUrl: method below
-  	    NSURL sessionedUrl = [[WTDataCollector sharedCollector] appendSessionParamsToUrl:url];
-*
-*  	    // Set our retained WTWebViewDelegate as the UIWebView&apos;s delegate
-*  	    self.webView.delegate = self.wtDelegate;
-*
-*  	    [self.webView loadRequest:[NSURLRequest requestWithURL:sessionedUrl]];
-*  	}
-*
-* If we need our own web view delegation methods, we&apos;d mark ourself as the delegate as follows.
-* ## Method 2 – Self-supplied delegate
-*  	- (void)viewDidLoad {
-*  	    [super viewDidLoad];
-  	    NSURL url = [NSURL URLWithString:@&quot;https://bank.wt-go.com/invest&quot;];
-*
-*  	    // If we want to share a session between the app and the website,
-*  	    // we&apos;ll append it to the URL before triggering the request
-*  	    // using the appendSessionParamsToUrl: method below
-  	    NSURL sessionedUrl = [[WTDataCollector sharedCollector] appendSessionParamsToUrl:url];
-*
-*  	    // If we do this, we must implement webView:ShouldStartLoadWithRequest:navigationType
-*  	    self.webView.delegate = self;
-*  	    [self.webView loadRequest:[NSURLRequest requestWithURL:sessionedUrl]];
-*  	}
-*
-*  	// This method must be present if we&apos;re not using a retained instance of WTWebViewDelegate
-*  	// as our delegate, otherwise the app won&apos;t be able to see JavaScript-triggered events
-  	- (BOOL)webView:(UIWebView )webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-*  	{
-*          if (![WTWebViewDelegate shouldStartLoadWithRequest:request])
-*          {
-*              return NO;
-*          }
-*  	    //Any custom logic here
-*  	    return YES;
-*  	}
-* # WKWebview
-* When using WKWebview, conform to WKNavigationDelegate, and implement -webView:decidePolicyForNavigationAction:decisionHandler:
-* Include the following inside your method:
-      - (void)webView:(WKWebView )webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler
-*      {
-*          BOOL shouldStart = [WTWebViewDelegate shouldStartLoadWithRequest:navigationAction.request];
-*          if (!shouldStart)
-*          {
-*              decisionHandler(WKNavigationActionPolicyCancel);
-*              return;
-*          }
-*          // Any custom decision policy code
-*      }</Abstract>
-			<DeclaredIn>WTWebViewDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/doc/Optimize - Getting Started Guide</TokenIdentifier>
+			<Abstract type="html">[GettingStarted]: Core-SDK---Getting-Started-Guide.html &quot;Getting Started Guide&quot;
+[AnaConfig]: Analytics---Advanced-Configuration-Guide.html &quot;Analytics Advanced Configuration Guide&quot;
+[OptConfig]: Optimize---Advanced-Configuration-Guide.html &quot;Analytics Advanced Configuration Guide&quot;
+[webtrends.plist]: images/SampleWebtrends.plist.png &quot;Sample webtrends.plist file&quot;
+[wtIdentifier]: images/wtIdentifier.png &quot;Setting the wtIdentifier property&quot;
+[createLocation]: images/createLocation.png &quot;Creating a location in Optimize&quot;
+[createOptFactor]: images/createOptFactors.png &quot;Creating Factors&quot;
+[imageFactor]: images/imageFactor.png &quot;Creating an image factor&quot;
+[grumpyCat]: images/grumpyCat.png &quot;Grumpy Cat&quot;
+[happyCat]: images/happyCat.png &quot;Grumpy Cat&quot;
+[OptHelp]: http://help.webtrends.com/en/Optimize/ &quot;Optimize Help Files&quot;
+[Conversions]: Optimize---Tracking-Conversions.html &quot;Tracking Optimize Conversions&quot;</Abstract>
+			<DeclaredIn>Optimize - Getting Started Guide-template.markdown</DeclaredIn>
             
 			
 			<NodeRef refid="13"/>

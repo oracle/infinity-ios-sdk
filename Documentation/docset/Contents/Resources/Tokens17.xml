@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="docs/public_guides/Sample-Applications-Guide.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/doc/Sample Applications Guide</TokenIdentifier>
+			<Abstract type="html">[SampleAppRepo]: https://github.com/Webtrends/mobile-sdk-sample-apps &quot;Sample App Github Repo&quot;
+[GettingStarted]: Core-SDK---Getting-Started-Guide.html &quot;Getting Started Guide&quot;
+[JSONGuide]: Optimize---Factor-JSON-Formatting-Guide.html &quot;JSON Formatting Guide&quot;
+[Watch]: Analytics---Webtrends-WatchKit-SDK-Guide.html &quot;Watch Kit Extension Guide&quot;</Abstract>
+			<DeclaredIn>Sample Applications Guide-template.markdown</DeclaredIn>
+            
+			
+			<NodeRef refid="17"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>

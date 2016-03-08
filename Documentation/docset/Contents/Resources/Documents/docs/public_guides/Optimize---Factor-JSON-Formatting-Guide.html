@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Optimize - Factor JSON Formatting Guide Document</title>
+
+	<link rel="stylesheet" href="../../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc wt-document">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../../index.html">WebtrendsSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../../index.html">Webtrends <img src="images/wtLogo.png" width=15 height=15></a> 
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../../index.html">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Optimize - Factor JSON Formatting Guide Document</h1>
+
+					<p>The Optimize SDK defines a JSON formatting language that can be used to dynamically re-style many components of your application. This guide describes that language, and how to implement it from the Optimize Console</p>
+
+<h1>Language Format</h1>
+
+<p>Each experiment is identified by it&rsquo;s Factor&rsquo;s <strong>Element ID</strong>, which corresponds to the <strong>wtIdentifier</strong> property in each Optimize UI class. When defining a Factor&rsquo;s JSON, always start with a dictionary with the Factor&rsquo;s Element ID as root dictionary key:</p>
+
+<pre><code>{
+    "myFactorElementId": {
+        ...
+    }
+} 
+</code></pre>
+
+<h2>Basics</h2>
+
+<p>Out of the box, the Optimize SDK supports automatic restyling for <strong>WTOptimizeLabel</strong>, <strong>WTOptimizeTextField</strong>, <strong>WTOptimizeTextView</strong>, <strong>WTOptimizeButton</strong>, and automatically swapping images for <strong>WTOptimizeImageView</strong>. Additionally, the raw values for factors are directly accessible, which allows for manually adjusting arbitrary properties based on factor parameters. These are all explained in greater detail <a href="#OptFactorsInCode">below</a>.</p>
+
+<h3>Setting Text Properties Via JSON</h3>
+
+<p><strong>WTOptimizeLabel</strong>, <strong>WTOptimizeTextField</strong>, and <strong>WTOptimizeTextView</strong> have a shared set of supported factor parameters, the basic parameters are defined in the following table:</p>
+
+<p><span id="text-parameter-definitions"></span></p>
+
+<h4>Text Parameter Definitions</h4>
+
+<table>
+<thead>
+<tr>
+<th>Configurable Properties            </th>
+<th align="left">        Description       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>text</strong></td>
+<td align="left">Sets the text of the element.</td>
+</tr>
+<tr>
+<td><strong>color</strong></td>
+<td align="left">Sets the text color of the element. Accepts a hexadecimal value as a string. Must be 6 (or 8 with alpha) digits.</td>
+</tr>
+<tr>
+<td><strong>backgroundColor</strong></td>
+<td align="left">Sets the background color of the object. Accepts a hexadecimal value as a string. Must be 6 (or 8 with alpha) digits.</td>
+</tr>
+<tr>
+<td><strong>textAlignment</strong></td>
+<td align="left">Sets the left/right/center alignment of the text within the object. Accepts <code>left</code>, <code>right</code>, <code>center</code>, or <code>justify</code>.</td>
+</tr>
+<tr>
+<td><strong>font</strong></td>
+<td align="left">Sets the element&rsquo;s font based on the following dictionary keys</td>
+</tr>
+<tr>
+<td><strong>- fontSize</strong></td>
+<td align="left">The size of the font</td>
+</tr>
+<tr>
+<td><strong>- fontName</strong></td>
+<td align="left">The name of the font</td>
+</tr>
+<tr>
+<td><strong>placeholder</strong></td>
+<td align="left">(<strong>WTOptimizeTextField</strong> only) Sets the placeholder text for a text field. Ignored by other view types.</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>Example JSON</h4>
+
+<p>This JSON will apply the text properties to some UI element in your project that has its <strong>wtIdentifier</strong> property set to &ldquo;myTextElementId&rdquo;. It could apply to a button (WTOptimizeButton), textView (WTOptimizeTextView), textField (WTOptimizeTextField), or label (WTOptimizeLabel). This JSON is attached to a test or target in the Optimize&trade; UI. When the SDK initializes (the app starts running), the SDK asks the Optimize server for tests and applies the result to UI elements that match each <strong>wtIdentifier</strong> property.</p>
+
+<pre><code>{
+    "myTextElementId": {
+        "text": "Good Morning",
+        "color": "#FF0000",
+        "backgroundColor": "#333333CC",
+        "textAlignment": "center",
+        "font": {
+            "fontSize": 14,
+            "fontName": "Avenir-BlackOblique"
+        }
+    }
+} 
+</code></pre>
+
+<h3>Setting Button Properties Via JSON</h3>
+
+<p><strong>WTOptimizeButton</strong> has its own set of supported factor parameters. All button factor parameters that are normally tied to a <strong>UIControlState</strong> accept a dictionary rather than their text equivalents, with keys for each of the control states.</p>
+
+<h4>Control State Keys</h4>
+
+<table>
+<thead>
+<tr>
+<th>Control State   </th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>normal</strong>      </td>
+<td>the value of this attribute applies to the button&rsquo;s normal control state</td>
+</tr>
+<tr>
+<td><strong>highlighted</strong> </td>
+<td>the value of this attribute applies to the button&rsquo;s highlighted control state</td>
+</tr>
+<tr>
+<td><strong>selected</strong>    </td>
+<td>the value of this attribute applies to the button&rsquo;s selected control state</td>
+</tr>
+<tr>
+<td><strong>disabled</strong>    </td>
+<td>the value of this attribute applies to the button&rsquo;s disabled control state</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>Parameter Definitions</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter       </th>
+<th>Description </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>buttonText</strong></td>
+<td>replace the text of the button for the normal control state</td>
+</tr>
+<tr>
+<td><strong>buttonColor</strong></td>
+<td>the button&rsquo;s title text color. Accepts a hexadecimal value as a string. Must be 6 (or 8 with alpha) digits</td>
+</tr>
+<tr>
+<td><strong>buttonImage</strong></td>
+<td>the button&rsquo;s foreground image. Accepts either an image name usable by <code>UIImage:imageNamed</code>, or the URL of a remote image.</td>
+</tr>
+<tr>
+<td><strong>buttonBackgroundImage</strong></td>
+<td>The (optionally resizable) background image for the button. Accepts a dictionary describing an optionally stretchable background image. Requires a <strong>name</strong> property conforming to the rules of <strong>buttonImage</strong>, and optionally excepts capInset properties (see example below)</td>
+</tr>
+<tr>
+<td><strong>backgroundColor</strong></td>
+<td>change the element&rsquo;s background color. Not a dictionary, <strong><UIButton></strong> background colors is stateless. Accepts a hexadecimal value as a string. Must be 6 (or 8 with alpha) digits</td>
+</tr>
+<tr>
+<td><strong>textAlignment</strong></td>
+<td>change the element&rsquo;s text alignment. Not a dictionary, <strong><UIButton></strong> text alignment is stateless. Accepts <code>left</code>, <code>right</code>, <code>center</code>, or <code>justify</code></td>
+</tr>
+<tr>
+<td><strong>font</strong></td>
+<td>Sets the element&rsquo;s font based on the following dictionary keys</td>
+</tr>
+<tr>
+<td><strong>- fontSize</strong></td>
+<td>The size of the font</td>
+</tr>
+<tr>
+<td><strong>- fontName</strong></td>
+<td>The name of the font</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>Example JSON</h4>
+
+<p>This JSON will apply the text properties to some UI element in your project that has its <strong>wtIdentifier</strong> property set to &ldquo;myTextElementId&rdquo;. When applied to a button (WTOptimizeButton), all the parameters will be applied. If applied to anything else, only the parameters that match the properties of the UI element would change. This JSON is attached to a test or target in the Optimize&trade; UI. When the SDK initializes (the app starts running), the SDK asks the Optimize server for tests and applies the result to UI elements that match each <strong>wtIdentifier</strong> property.</p>
+
+<pre><code>{
+    "myTextElementId": {
+        "buttonText": {
+            "normal": "Submit",
+            "disabled": "Processing..."
+        },
+        "buttonImage": {
+            "normal":"blueButtonImage"
+            "highlighted":"blueButtonImagePressed"
+        },
+        "buttonBackgroundImage": {
+            "normal": {
+                "name":"https://example.com/img/roundRect.png",
+                "insetLeft": 5,
+                "insetTop": 5,
+                "insetRight": 5,
+                "insetBottom": 5
+            }
+        },
+        "color": "#FF0000",
+        "backgroundColor": "#333333CC",
+        "textAlignment": "left",
+        "font": {
+            "fontSize": 14,
+            "fontName": "Avenir-BlackOblique"
+        }
+    }
+} 
+</code></pre>
+
+<h2>Advanced</h2>
+
+<p>In addition to the basic formatting options above, the JSON formatting language also specifies a method of hooking into <strong>NSAttributedString</strong>, so you can specify rich text for an element.</p>
+
+<h3>Setting Rich Text Properties Via JSON</h3>
+
+<p>The Webtrends Mobile SDK for Optimize&trade; allows you to use attributed text within your factors. Attributed text is set via start and end indexes, which are zero-based. If the start index is less than zero, it will be set to zero. If the end index is greater than the length of the string, the end will be set to the index of the last character of the string.</p>
+
+<h4>Parameter Definitions</h4>
+
+<ul>
+<li><strong>baseAttributes</strong>: A dictionary of text parameters
+
+<ul>
+<li>See <a href="#text-parameter-definitions">Text Parameter Definitions</a></li>
+</ul>
+</li>
+<li><strong>attributes</strong>: An array of dictionaries of text parameters and <strong>to</strong> and <strong>from</strong> index parameters
+
+<ul>
+<li>See <a href="#text-parameter-definitions">Text Parameter Definitions</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h4>Example JSON</h4>
+
+<p>In this example, we&rsquo;ll end up with text with a magenta (#FF00FF) background, slightly transparent red text (#FF0000CC), and 18px Avenir-Medium font. The first three characters of the string will be overridden with green text (#00FF00), and light-weight font. Characters 4-8 (&ldquo;quick&rdquo;) will be blue (#0000FF) with oblique text. Any characters after that will use the base attributes, except the last two words (characters 36 to 44) are bold.</p>
+
+<p><font size=5 face="Avenir-Medium" color=#FF0000CC><font face="Avenir-Light" color=#00FF00>The</font><font face="Avenir-LightOblique" color=#0000FF> quick</font> brown fox jumps over the <font face="Avenir-Heavy">lazy dog</font>.</font></p>
+
+<pre><code>"baseAttributes": {
+    "text":"The quick brown fox jumps over the lazy dog.",
+    "backgroundColor": "#FF00FF",
+    "color": "#FF0000CC",
+    "font": {
+        "fontSize": 18,
+        "fontName": "Avenir-Medium"
+    }
+},
+"attributes": [
+    {
+        "from": 0,
+        "to": 2,
+        "color": "#00FF00",
+        "font": {
+            "fontSize": 18,
+            "fontName": "Avenir-Light"
+        }
+    },
+    {
+        "from": 4,
+        "to": 8,
+        "color": "#0000FF",
+        "font": {
+            "fontSize": 18,
+            "fontName": "Avenir-LightOblique"
+        }
+    },
+    {
+        "from": 35,
+        "to": 43,
+        "color": "#0000FF",
+        "font": {
+            "fontSize": 18,
+            "fontName": "Avenir-Heavy"
+        }
+    }
+]
+</code></pre>
+
+<p><a id="OptFactorsInCode"></a></p>
+
+<h3>Accessing Optimize Factors in Code</h3>
+
+<p>Factors  may also be used in any class, not only in Webtrends classes and subclasses. Anything in the factor may be used within your code, which may branch or perform specific, pre-defined actions based on values within your JSON.</p>
+
+<p>For example, suppose you have a factor defined as follows:</p>
+
+<pre><code>{
+    "mouseParty": {
+        "catIsAway": true
+    }
+}
+</code></pre>
+
+<p>This data can become available in your code by getting the factor from the Optimize Manager and extracting a boolean value from it:</p>
+
+<div class="swift-code-sample"><pre><code>// Get a handle to the Optimize Manager singleton
+let manager = WTOptimizeManager.sharedManager()
+
+// Access the factor defined in the JSON above
+let factor = manager.optimizeFactorForIdentifier("mouseParty")
+
+// Extract the raw JSON from the factor
+let json = factor?.rawValue.objectForKey("mouseParty") as? NSDictionary
+
+// Create a boolean variable from the target key/value in the JSON
+if let miceCanPlay = json!["miceCanPlay"]!.boolValue {
+    if miceCanPlay {
+        // Code to run when the party is on
+    }
+    else {
+        // Code to run when the cat is watching
+    }
+}
+</code></pre></div>
+
+
+
+
+<div class="objective_c-code-sample"><pre><code>
+    // Get a handle to the Optimize Manager singleton
+    WTOptimizeManager *manager = [WTOptimizeManager sharedManager];
+    
+    // Access the factor defined in the JSON above
+    WTMultivariateOptimizeFactor *factor = (WTMultivariateOptimizeFactor *)[manager.optimizeStore jsonOptimizeFactorForIdentifier:@"mouseParty"];
+    
+    // Extract the raw JSON from the factor
+    NSDictionary *json = [factor.rawValue objectForKey:@"mouseParty"];
+    
+    // Create a boolean variable from the target key/value in the JSON
+    BOOL miceCanPlay = [json[@"catIsAway"] boolValue];
+    if (miceCanPlay)
+    {
+        // Code to run when the party is on
+    }
+    else
+    {
+        // Code to run when the cat is watching
+    }
+</code></pre></div>
+
+
+<p>Using this method of extracting individual elements from factors can be used anywhere in your iOS project, no matter what data is contained in the underlying factor JSON.</p>
+
+<h2>Experts Only</h2>
+
+<p>Lastly, the Optimize SDK supports direct passthrough to KVC. It does what it can to make these calls as safe as possible, but as with all things KVC, use this with care. With the exception of strings, the deserialized value from <code>NSJSONSerialization</code> is passed directly to <code>setValue:forKey:</code>. For strings, the SDK first attempts to coerce the string into a color. If it can be parsed as a hexadecimal string, it&rsquo;s passed along to KVC as a CGColorRef. If your implementation requires a UIColor instead, then a manual conversion will be needed. All other strings are passed as-is to <code>setValue:forKey:</code></p>
+
+<h4>Example JSON</h4>
+
+<pre><code>   "keyPaths": {
+       "layer.cornerRadius": 4,
+       "layer.borderWidth": 1,
+       "layer.borderColor": "#000000",
+       "layer.masksToBounds": true
+   },
+</code></pre>
+
+<h1>Caching</h1>
+
+<p>By default, any tests are assumed to be permanently valid. Sometimes, tests can be time sensitive, and it becomes useful to have a method for cache invalidation. In order to allow a test to expire, add a Pre Render Script that defines a <code>cacheLifetime</code> as follows:</p>
+
+<pre><code>{
+   "cacheLifetime":15000
+}
+</code></pre>
+
+<p>The value is in milliseconds, so a test with the JSON described above as its Pre Render Script would be valid for 15 seconds, and then require the data to be fetched again from the Optimize servers. If cacheLifetime is zero, not present, or there is no Pre Render Script, then the SDK will assume the test never expires.</p>
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2016 Webtrends. All rights reserved. Updated: 2016-03-08</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="../../js/script.js"></script>
+</body>
+</html>
