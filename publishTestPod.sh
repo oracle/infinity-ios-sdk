@@ -10,7 +10,8 @@
 set -e
 
 # Set up some variables
-PODSPEC=Webtrends-SDK.podspec
+PODSPEC=Webtrends-SDK
+PODURL=https://gh.webtrends.corp/qa/ios-staging-pod
 
 # Check if Cocoapods is installed
 type pod >/dev/null 2>&1 || { echo >&2 "ERROR: I require Cocoapods but it's not installed.  Aborting."; exit 1; }
@@ -21,12 +22,19 @@ type git >/dev/null 2>&1 || { echo >&2 "ERROR: I require git but it's not instal
 echo "Git is installed."
 
 # Check if the $TEST_POD_REPO_DIR environment variable is set. If not, set it to ~/Dev/ios-test-pod
-REPODIR=${TEST_POD_REPO_DIR:-~/Dev/ios-test-pod}
+REPODIR=${TEST_POD_REPO_DIR:-~/Dev/ios-staging-pod}
 echo "Local git repo is $REPODIR"
+
+# Check if pod repo exists and remove it to ensure that it will be correct.
+if [ ! -e ~/.cocoapods/$PODSPEC ]; then
+	pod repo remove "$PODSPEC"
+fi
+# Now add the correct repo in
+pod repo add "$PODSPEC" "$PODURL"
 
 
 # Check to see if we are in the right directory
-DIRECTORIES=( 'Documentation' 'Headers' 'SharedAssets' 'WatchHeaders' )
+DIRECTORIES=( 'Headers' 'SharedAssets' 'WatchHeaders' )
 for d in "${DIRECTORIES[@]}"
 do
 	if [ ! -d "${d}" ]; then
@@ -40,12 +48,12 @@ echo "Running in the correct directory"
 # Copy the files into the test pod repo directory (only if we're not already there).
 if [ ! "$PWD" = "$REPODIR" ]; then
 	echo "Copying files...";
-	cp -R ./. $REPODIR;
+	cp -R ./. "$REPODIR";
 else
 	echo "No need to copy anything. We're already in the repo directory.";
 fi
 
-cd $REPODIR
+cd "$REPODIR"
 if [ -d .git ]; then
   echo "Found your git repo.";
 else
@@ -53,16 +61,23 @@ else
 fi;
 
 # Check the podspec file
-if [ -e $PODSPEC ]; then
+if [ -e $PODSPEC.podspec ]; then
   echo "Found the podspec file.";
 else
-  echo >&2 "ERROR: Podspec file $PODSPEC does not exist. Aborting."
+  echo >&2 "ERROR: Podspec file $PODSPEC.podspec does not exist. Aborting."
   exit 1;
 fi;
 
 
 # Get the tag of the last pod version
-PREV_VERSION="$(git ls-remote --tags | grep -o '[0-9]*\.[0-9]*\.[0-9]*' | sort -r | head -n 1 | grep -o '[^\/]*$')"
+# Get a list of remote tags
+# Extract out just the version numbers
+# Turn all numbers into double digits
+# Sort the results
+# Turn them back into single digits
+# Report the last one
+PREV_VERSION="$(git ls-remote --tags | grep -o '[0-9]*\.[0-9]*\.[0-9]*' | sed 's/^[0-9]\./0&/; s/\.\([0-9]\)$/.0\1/; s/\.\([0-9]\)\./.0\1./g; s/\.\([0-9]\)\./.0\1./g' | sort | sed 's/^0// ; s/\.0/./g' | tail -1)" 
+
 echo "The last commited version was $PREV_VERSION"
 
 # Increment the version
@@ -73,25 +88,24 @@ echo "Next version will be: $NEXT_VERSION"
 # 1. Point the source to the test repo
 # 2. Change the pod version
 echo "Editing the podspec file"
-cat Webtrends-SDK.podspec | \
-	sed "s/https:\/\/github.com\/webtrends\/ios-sdk.git/https:\/\/gh.webtrends.corp\/cloughb\/ios-pod.git/g" | \
-	sed "s/3.0.0/$NEXT_VERSION/g" > Webtrends-SDK.podspec.tmp
+sed "s/https:\/\/github.com\/webtrends\/ios-sdk.git/https:\/\/gh.webtrends.corp\/qa\/ios-staging-pod.git/g" < "$PODSPEC".podspec | \
+	sed "s/3.0.0/$NEXT_VERSION/g" > "$PODSPEC".tmp
 echo "Overwriting the podspec file with the edited one"
-mv Webtrends-SDK.podspec.tmp Webtrends-SDK.podspec
+mv "$PODSPEC".tmp "$PODSPEC".podspec
 
 # pull the repo
 git pull origin master
 # commit the changes
 git add .
 git commit -m "$NEXT_VERSION"
-git tag $NEXT_VERSION
+git tag "$NEXT_VERSION"
 git push origin master
 git push --tags
 
 # Check the podspec file for accuracy (lint)
-echo "Linting the podspec file $PODSPEC"
-pod spec lint 2>&1 || { echo >&2 "ERROR: Podspec file does not lint. Aborting."; exit 1; }
+echo "Linting the podspec file $PODSPEC.podspec"
+pod spec lint Webtrends-SDK 2>&1 || { echo >&2 "ERROR: Podspec file does not lint. Aborting."; exit 1; }
 
 
 # Push the pod
-pod repo push Webtrends-SDK $PODSPEC
+pod repo push Webtrends-SDK $PODSPEC.podspec
