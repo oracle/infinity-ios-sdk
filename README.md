@@ -14,7 +14,7 @@
 The Webtrends SDK is a analytics library for iOS. This guide will walk you through the initial setup process, from integrating the SDK with your project, to sending events to Webtrends.
 
 ###Release Notes
-Version 3.1.0 of the Webtrends Mobile Lib includes components to support **Webtrends Optimize(tm)** in your iOS applications. This is a major new feature. For more details, see [the Webtrends Optimize page][Optimize] for more information. For details on implementing Optimize in your iOS application, please see [our help documentation][help].
+Version 3.2.2 of the Webtrends Mobile Lib includes a bug fix for misreporting the Webtrends Mobile SDK version in the wt.sdk_v parameter and the user-agent header.
 
 
 #Installation
