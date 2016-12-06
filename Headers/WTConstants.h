@@ -42,4 +42,45 @@ extern NSString * const kWTConfigSendScreenViewWithActivityViewEnabled;
 extern NSString * const kWTExtensionRequestIdentifier;
 extern NSString * const kWTExtensionRequestAutomaticIdentifier;
 
+//Client info keys
+extern NSString * const WT_CO;
+extern NSString * const WT_DM;
+extern NSString * const WT_OS;
+extern NSString * const WT_AV;
+extern NSString * const WT_A_NM;
+extern NSString * const WT_A_DC;
+extern NSString * const WT_UL;
+extern NSString * const WT_UC;
+extern NSString * const WT_SR;
+extern NSString * const WT_SDK_V;
+extern NSString * const WT_G_LONG;
+extern NSString * const WT_G_LAT;
+extern NSString * const WT_GC;
+extern NSString * const WT_CT;
+
+//Constants for event
+extern NSString * const WT_DCSURI;
+extern NSString * const WT_TI;
+extern NSString * const WT_PI;
+extern NSString * const WT_DL;
+extern NSString * const WT_SYS;
+extern NSString * const WT_ER;
+extern NSString * const WT_EV;
+extern NSString * const WT_A_AN;
+extern NSString * const WT_A_AC;
+extern NSString * const WT_OSS;
+extern NSString * const WT_OSS_R;
+extern NSString * const WT_CG_N;
+extern NSString * const WT_PN_ID;
+extern NSString * const WT_PN_SKU;
+extern NSString * const WT_CLIP_N;
+extern NSString * const WT_CLIP_T;
+extern NSString * const WT_CLIP_EV;
+extern NSString * const WT_CONV;
+extern NSString * const WT_SI_CS;
+extern NSString * const WT_DCSIPA;
+extern NSString * const WT_ETS;
+extern NSString * const WT_I_ORNT;
+extern NSString * const WT_A_AI;
+
 #endif

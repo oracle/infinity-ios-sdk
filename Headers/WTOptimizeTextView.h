@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "WTMultivariateOptimizeFactor.h"
+#import "WTOptimizeUIView.h"
 
 /**
  *  An Optimizable UITextView. Tests can be configured to adjust this view's text, font, and colors.
  */
-@interface WTOptimizeTextView : UITextView
+@interface WTOptimizeTextView : UITextView <WTOptimizeUIView, NSCopying>
 
 /**
  *  The optimize identifier asscoiated with this text view. Identifiers can identify one set of visual instructions per app, and can be thought of similarly to css classes.

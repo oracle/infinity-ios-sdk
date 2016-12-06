@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "WTMultivariateOptimizeFactor.h"
+#import "WTOptimizeUIView.h"
 
 /**
  *  An Optimizable UITextField. Tests can be configured to adjust this field's text, placeholder, font, and colors.
  */
-@interface WTOptimizeTextField : UITextField
+@interface WTOptimizeTextField : UITextField <WTOptimizeUIView, NSCopying>
 
 /**
  *  The optimize identifier asscoiated with this text field. Identifiers can identify one set of visual instructions per app, and can be thought of similarly to css classes.

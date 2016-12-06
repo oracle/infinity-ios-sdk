@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "WTMultivariateOptimizeFactor.h"
+#import "WTOptimizeUIView.h"
 
 /**
  *  An Optimizable UILabel. Tests can be configured to adjust this button's text, font, and colors.
  */
-@interface WTOptimizeLabel : UILabel
+@interface WTOptimizeLabel : UILabel <WTOptimizeUIView, NSCopying>
 
 /**
  *  The optimize identifier asscoiated with this label. Identifiers can identify one set of visual instructions per app, and can be thought of similarly to css classes.

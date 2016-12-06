@@ -108,4 +108,7 @@ extern NSString * const kWTFactorKeyImageInsetBottom;
 
 - (BOOL)applyKeyPaths:(id)object;
 
+-(void)resetKeyPaths:(id)object ToDefault: (id)objectWithDefaultStyle;
+
+
 @end

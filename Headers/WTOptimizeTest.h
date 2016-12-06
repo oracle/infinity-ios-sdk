@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WTDatabase.h"
+
 @class WTOptimizeFactor;
 @class WTOptimizeProject;
 
@@ -15,12 +17,15 @@
 @property (strong, nonatomic) NSArray *factors;
 @property (strong, nonatomic) NSString *guid;
 @property (nonatomic, strong) NSString *projectLocation;
+@property (nonatomic) NSInteger projectId;
 @property (nonatomic) NSInteger experimentId;
 @property (nonatomic) NSInteger testId;
 @property (strong, nonatomic) NSString *testAlias;
 @property (nonatomic, strong) NSString *projectTypeId;
 @property (nonatomic) NSTimeInterval expiration;
+
 - (WTOptimizeFactor *) factorForIdentifier:(NSString *)identifier;
++(void) cleanExpiredTests:(WTDatabase *)database;
 
 /**
  *  Returns true if the test is expired (as defined in the Optimize test).

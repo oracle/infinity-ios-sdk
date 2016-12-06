@@ -16,7 +16,7 @@
  *  WTOptimizeManager is the central class provided by OptimizeSDK. Its central purpose is to orchestrate optimization tests and report conversions to the Optimize data collection servers. It's primarily accessed through its sharedCollector singleton. It should not be manually initialized.
  *
  */
-@interface WTOptimizeManager : NSObject
+@interface WTOptimizeManager : NSObject <NSCopying>
 
 /**
  *  The singleton Optimize manager object used to access all Optimize SDK functionality.
@@ -108,5 +108,11 @@
  *  If the SDK is in staging mode, flush all tests ands cookies currently cached in the system. Useful for active test development and debugging.
  */
 - (void)flushTestCache;
+
+/**
+ * Update the test cache.
+ * @param asynchronously Set to true when the operation gets added to the task queue or false to block other tasks until completing this task. Set this to false when function is called from page with Optimize tests.
+*/
++(void)updateTestCache: (BOOL)asynchronously;
 
 @end

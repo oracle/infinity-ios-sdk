@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "WTImageOptimizeFactor.h"
+#import "WTOptimizeUIView.h"
 
 /**
  *  An Optimizable UIImageView. Tests can be configured to adjust the source image to either a local file, or a remote URL
  */
-@interface WTOptimizeImageView : UIImageView
+@interface WTOptimizeImageView : UIImageView <WTOptimizeUIView>
 
 /**
  *  The optimize identifier asscoiated with this imageview. Identifiers can identify one set of visual instructions per app, and can be thought of similarly to css classes.
