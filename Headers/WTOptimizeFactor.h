@@ -19,16 +19,23 @@
     @protected
     id _rawValue;
     NSString *_identifier;
+    NSString *_wtIdentifier;
 }
 
 /**
  *  The raw value obtained via NSJSONSerialization. This value contains an NSDictionary in the majority of cases, but not exclusively.
  */
-@property (strong, nonatomic, readonly) id rawValue;
+@property (strong, nonatomic) id rawValue;
 /**
  *  The optimize identifier asscoiated with this factor. Identifiers can identify one set of visual instructions per app, and can be thought of similarly to css classes.
  */
 @property (strong, nonatomic, readonly) NSString *identifier;
+
+/**
+ * This property indicates the wtIdentifier and has a corresponding field in the DB.
+ */
+@property (strong, nonatomic, readonly) NSString *wtIdentifier;
+
 /**
  *  Whether or not all data associated with this factor is ready. In most cases, this references remote images.
  */

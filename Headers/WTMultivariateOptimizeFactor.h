@@ -110,5 +110,7 @@ extern NSString * const kWTFactorKeyImageInsetBottom;
 
 -(void)resetKeyPaths:(id)object ToDefault: (id)objectWithDefaultStyle;
 
++(WTMultivariateOptimizeFactor *) mergeFactors:(NSArray *) factorsList;
+
 
 @end
