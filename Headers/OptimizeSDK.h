@@ -23,5 +23,6 @@
 #import "WTOptimizeLabel.h"
 #import "WTOptimizeTextField.h"
 #import "WTOptimizeTextView.h"
+#import "WTOptimizeUIView.h"
 
 #endif

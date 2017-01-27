@@ -110,7 +110,11 @@ extern NSString * const kWTFactorKeyImageInsetBottom;
 
 -(void)resetKeyPaths:(id)object ToDefault: (id)objectWithDefaultStyle;
 
-+(WTMultivariateOptimizeFactor *) mergeFactors:(NSArray *) factorsList;
++(WTMultivariateOptimizeFactor *) mergeFactors:(NSArray *) factorsList forView:(UIView*) view;
 
+/**
+ * Consturct the merged factors information required for 'pageView' event
+ */
+@property (strong, nonatomic) NSMutableDictionary *mergeInfo;
 
 @end

@@ -14,7 +14,9 @@
 The Webtrends SDK is a analytics library for iOS. This guide will walk you through the initial setup process, from integrating the SDK with your project, to sending events to Webtrends.
 
 ###Release Notes
-Version 3.2.3 of the Webtrends Mobile Lib includes a bug fix for misreporting the Webtrends Mobile SDK version in the wt.sdk_v parameter and the user-agent header. For more details, see [the Webtrends Optimize page][Optimize] for more information. For details on implementing Optimize in your iOS application, please see [our help documentation][help].
+The Webtrends iOS SDK 3.2.4 now supports the ability to deliver a test or target to the first screen an app user sees after launching the app. In addition, the ability to add a load progress indicator was added to the SDK. You can now configure the timeout value for the progress indicator as well. For users wanting more manual control of the Optimize test data cached in the SDK, the ability to manually flush the data cache and set cache refresh values has been provided. Lastly, partial test content rendering has been added to the SDK. You can now track which parts of a test were viewed and use that data to generate Infinity reports. More detail documentation is available in the [help] pages on what parameters are sent and what values they will contain.
+
+For more details, see [the Webtrends Optimize page][Optimize] for more information. For details on implementing Optimize in your iOS application, please see [our help documentation][help].
 
 
 #Installation
