@@ -1,5 +1,5 @@
 [Cocoapods]: https://cocoapods.org "Cocoapods Home Page"
-[plist]: https://raw.githubusercontent.com/Webtrends/ios-sdk/master/Documentation/html/docs/webtrends.plist "webtrends.plist"
+[plist]: http://help.webtrends.com/en/ios/docs/webtrends.plist "webtrends.plist"
 [AnaConfig]: Analytics---Advanced-Configuration-Guide.html "Analytics Advanced Configuration Guide"
 [OptConfig]: Optimize---Advanced-Configuration-Guide.html "Optimize Advanced Configuration Guide"
 [Swift]: https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html "Using Swift with Cocoa"
@@ -44,8 +44,10 @@ Next, select the components you need for your application by including the appro
 
 ###I just need the Analytics SDK, no Optimize or Apple Watch support
 	
-	pod 'Webtrends-SDK/Core', '~>3.0'
-
+	target 'MyApp' do
+        pod 'Webtrends-SDK/Core', '~> 3.0'
+	end
+	
 
 ###I need Analytics, including Apple Watch support
 Assuming your main iOS application target is called `MyApp` and your Apple Watch application target is called `MyApp Watchkit Extension`: 
