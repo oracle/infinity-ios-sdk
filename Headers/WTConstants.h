@@ -82,5 +82,6 @@ extern NSString * const WT_DCSIPA;
 extern NSString * const WT_ETS;
 extern NSString * const WT_I_ORNT;
 extern NSString * const WT_A_AI;
+extern NSString * const WT_ES;
 
 #endif
