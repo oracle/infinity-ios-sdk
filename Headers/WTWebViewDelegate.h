@@ -7,8 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#ifdef __cplusplus
+#import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
+#else
 @import UIKit;
 @import WebKit;
+#endif
 
 /**
  * # UIWebView

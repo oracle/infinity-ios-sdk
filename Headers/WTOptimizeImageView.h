@@ -25,4 +25,6 @@
  */
 @property (readonly, strong, nonatomic) WTImageOptimizeFactor *wtFactor;
 
+- (void)applyTest;
+
 @end

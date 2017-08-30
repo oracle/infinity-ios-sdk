@@ -14,6 +14,7 @@
 @interface WTOptimizeTest : NSObject
 
 @property (strong, nonatomic) NSArray *factors;
+@property (strong, nonatomic) NSArray *conversions;
 @property (strong, nonatomic) NSString *guid;
 @property (nonatomic, strong) NSString *projectLocation;
 @property (nonatomic) NSInteger projectId;
@@ -21,7 +22,9 @@
 @property (nonatomic) NSInteger testId;
 @property (strong, nonatomic) NSString *testAlias;
 @property (nonatomic, strong) NSString *projectTypeId;
+@property (strong, nonatomic) NSString *personalizedId;
 @property (nonatomic) NSTimeInterval expiration;
+@property (nonatomic) NSString *cacheStatus;
 
 - (WTOptimizeFactor *) factorForIdentifier:(NSString *)identifier;
 +(void) cleanExpiredTests;

@@ -20,6 +20,7 @@
     id _rawValue;
     NSString *_identifier;
     NSString *_wtIdentifier;
+    NSString *_cacheStatus;
 }
 
 /**

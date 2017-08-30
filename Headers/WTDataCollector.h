@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#ifdef __cplusplus
+#import <CoreData/CoreData.h>
+#else
 @import CoreData;
+#endif
 
 @class WTEventMeta;
 @class WTEventMedia;

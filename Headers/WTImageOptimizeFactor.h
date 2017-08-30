@@ -6,7 +6,11 @@
 //  Copyright (c) 2015 Webtrends. All rights reserved.
 //
 
+#ifdef __cplusplus
+#import <UIKit/UIKit.h>
+#else
 @import UIKit;
+#endif
 #import "WTOptimizeFactor.h"
 
 /**

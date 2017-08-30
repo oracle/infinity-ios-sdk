@@ -7,8 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#ifdef __cplusplus
+#import <WatchKit/WatchKit.h>
+#import <WatchConnectivity/WatchConnectivity.h>
+#else
 @import WatchKit;
 @import WatchConnectivity;
+#endif
 
 @class WTWatchEventMeta;
 

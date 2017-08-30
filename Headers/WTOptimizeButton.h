@@ -25,4 +25,9 @@
  */
 @property (readonly, strong, nonatomic) WTMultivariateOptimizeFactor *wtFactor;
 
+/**
+ *  The conversions associated with the given identifer.
+ */
+@property (readonly, strong, nonatomic) NSArray *wtConversions;
+
 @end

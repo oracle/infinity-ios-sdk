@@ -115,4 +115,29 @@
 */
 +(void)updateTestCache: (BOOL)asynchronously;
 
+/**
+ *  Show progress indicator on top view
+ */
++(void) showProgressIndicator;
+
+/**
+ *  Dismiss progress indicator from top view
+ */
++(void) dismissProgressIndicator;
+
+/**
+ *  Enable WTOptimizeManager
+ */
++(void) enable;
+
+/**
+ *  Disable WTOptimizeManager
+ */
++(void) disable;
+
+/**
+ *  @return TRUE if WTOptimizeManager is enabled
+ */
++(BOOL) isEnabled;
+
 @end

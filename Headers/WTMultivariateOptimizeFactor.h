@@ -8,7 +8,11 @@
 
 #import "WTOptimizeFactor.h"
 
+#ifdef __cplusplus
+#import <UIKit/UIKit.h>
+#else
 @import UIKit;
+#endif
 
 extern NSString * const kWTFactorKeyText;
 extern NSString * const kWTFactorKeyButtonText;
